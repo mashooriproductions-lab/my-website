@@ -1,0 +1,383 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Meta Ads Portfolio | Mashoori Productions</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700;900&amp;family=Inter:wght@400;500;600&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<style>
+        :root {
+            --glass-bg: rgba(255, 255, 255, 0.03);
+            --glass-border: rgba(255, 255, 255, 0.1);
+            --nebula-glow: radial-gradient(circle at 50% 50%, rgba(231, 0, 92, 0.15), transparent 70%);
+        }
+        body {
+            background-color: #121414;
+            color: #e2e2e2;
+            overflow-x: hidden;
+        }
+        .glass-panel {
+            background: var(--glass-bg);
+            backdrop-filter: blur(20px);
+            border: 1px solid var(--glass-border);
+        }
+        .card-highlight {
+            border-top: 1px solid rgba(255, 255, 255, 0.2);
+        }
+        .nebula-blur {
+            filter: blur(150px);
+            pointer-events: none;
+        }
+        .flashlight {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            pointer-events: none;
+            background: radial-gradient(600px circle at var(--x) var(--y), rgba(255,255,255,0.05), transparent 40%);
+            z-index: 9999;
+        }
+        .haptic-hover {
+            transition: transform 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275), box-shadow 0.4s ease;
+        }
+        .haptic-hover:hover {
+            transform: scale(1.02);
+            box-shadow: 0 0 30px rgba(0, 51, 255, 0.2);
+        }
+        .reveal-text {
+            opacity: 0;
+            filter: blur(10px);
+            transform: translateY(20px);
+            animation: reveal 0.8s forwards ease-out;
+        }
+        @keyframes reveal {
+            to {
+                opacity: 1;
+                filter: blur(0);
+                transform: translateY(0);
+            }
+        }
+    </style>
+<script id="tailwind-config">
+        tailwind.config = {
+          darkMode: "class",
+          theme: {
+            extend: {
+              "colors": {
+                      "secondary-container": "#3e4578",
+                      "surface-variant": "#333535",
+                      "background": "#121414",
+                      "on-secondary-fixed": "#0e1648",
+                      "on-surface": "#e2e2e2",
+                      "deep-space": "#001a97",
+                      "secondary": "#bcc3ff",
+                      "cosmic-blue": "#0033fe",
+                      "secondary-fixed": "#dfe0ff",
+                      "tertiary": "#ffd9dd",
+                      "surface-container-low": "#1a1c1c",
+                      "inverse-on-surface": "#2f3131",
+                      "on-secondary": "#252c5e",
+                      "surface-dim": "#121414",
+                      "tertiary-fixed": "#ffd9dd",
+                      "error-container": "#93000a",
+                      "outline": "#8e9192",
+                      "surface-container-highest": "#333535",
+                      "inverse-primary": "#5d5e5f",
+                      "on-primary": "#2f3131",
+                      "tertiary-container": "#ffb2bd",
+                      "surface-container-lowest": "#0d0f0f",
+                      "surface": "#121414",
+                      "on-error": "#690005",
+                      "primary-fixed": "#e3e2e2",
+                      "secondary-fixed-dim": "#bcc3ff",
+                      "on-error-container": "#ffdad6",
+                      "on-tertiary": "#52202a",
+                      "on-secondary-fixed-variant": "#3b4376",
+                      "inverse-surface": "#e2e2e2",
+                      "on-tertiary-fixed-variant": "#6d3640",
+                      "on-primary-fixed": "#1a1c1c",
+                      "surface-container-high": "#282a2a",
+                      "starlight-white": "#e2e2e2",
+                      "surface-tint": "#c6c6c6",
+                      "void-black": "#0c0f0f",
+                      "on-primary-container": "#515253",
+                      "on-tertiary-fixed": "#380b16",
+                      "on-tertiary-container": "#7b414b",
+                      "on-primary-fixed-variant": "#464747",
+                      "error": "#ffb4ab",
+                      "on-surface-variant": "#c4c7c7",
+                      "outline-variant": "#444748",
+                      "surface-bright": "#383939",
+                      "tertiary-fixed-dim": "#ffb2bd",
+                      "on-secondary-container": "#adb5f0",
+                      "nebula-pink": "#e7005c",
+                      "primary-container": "#c6c6c6",
+                      "on-background": "#e2e2e2",
+                      "primary": "#e2e2e2",
+                      "surface-container": "#1e2020",
+                      "primary-fixed-dim": "#c6c6c6"
+              },
+              "borderRadius": {
+                      "DEFAULT": "0.125rem",
+                      "lg": "0.25rem",
+                      "xl": "0.5rem",
+                      "full": "0.75rem"
+              },
+              "spacing": {
+                      "stack-xs": "0.25rem",
+                      "stack-lg": "3rem",
+                      "stack-xl": "5rem",
+                      "stack-md": "1.5rem",
+                      "stack-sm": "0.75rem",
+                      "margin-desktop": "5rem",
+                      "base": "8px",
+                      "margin-mobile": "1.25rem",
+                      "container-max": "1440px",
+                      "gutter": "1.5rem"
+              },
+              "fontFamily": {
+                      "headline-xl": ["Montserrat"],
+                      "label-md": ["Inter"],
+                      "body-md": ["Inter"],
+                      "display-lg": ["Montserrat"],
+                      "display-lg-mobile": ["Montserrat"],
+                      "label-sm": ["Inter"],
+                      "headline-lg": ["Montserrat"],
+                      "body-lg": ["Inter"],
+                      "headline-md": ["Montserrat"]
+              },
+              "fontSize": {
+                      "headline-xl": ["48px", {"lineHeight": "1.2", "letterSpacing": "-0.02em", "fontWeight": "700"}],
+                      "label-md": ["14px", {"lineHeight": "1.2", "letterSpacing": "0.05em", "fontWeight": "600"}],
+                      "body-md": ["16px", {"lineHeight": "1.6", "fontWeight": "400"}],
+                      "display-lg": ["72px", {"lineHeight": "1.1", "letterSpacing": "-0.04em", "fontWeight": "900"}],
+                      "display-lg-mobile": ["48px", {"lineHeight": "1.1", "letterSpacing": "-0.02em", "fontWeight": "900"}],
+                      "label-sm": ["12px", {"lineHeight": "1.2", "letterSpacing": "0.02em", "fontWeight": "500"}],
+                      "headline-lg": ["32px", {"lineHeight": "1.3", "fontWeight": "700"}],
+                      "body-lg": ["18px", {"lineHeight": "1.6", "fontWeight": "400"}],
+                      "headline-md": ["24px", {"lineHeight": "1.4", "fontWeight": "600"}]
+              }
+            },
+          },
+        }
+    </script>
+</head>
+<body class="selection:bg-nebula-pink selection:text-white">
+<div class="flashlight" id="flashlight"></div>
+<!-- Navigation Shell -->
+<header class="fixed top-0 w-full z-50 bg-background/80 backdrop-blur-xl border-b border-white/10">
+<nav class="flex justify-between items-center px-margin-mobile md:px-margin-desktop py-4 max-w-container-max mx-auto">
+<div class="font-headline-md text-headline-md text-primary tracking-tighter"><a href="index.html"> Mashoori Productions </a></div>
+<div class="hidden md:flex gap-8 items-center">
+<a class="font-body-md text-body-md text-on-surface-variant hover:text-primary transition-colors" href="index.html">Home</a>
+<a class="font-body-md text-body-md text-on-surface-variant hover:text-primary transition-colors" href="services.html">Services</a>
+<a class="font-body-md text-body-md text-primary border-b-2 border-primary pb-1" href="Main Portflio Page.html">Portfolio</a>
+<a class="font-body-md text-body-md text-on-surface-variant hover:text-primary transition-colors" href="pricing.html">Pricing</a>
+<a class="font-body-md text-body-md text-on-surface-variant hover:text-primary transition-colors" href="contact.html">Contact</a>
+</div>
+<button class="bg-gradient-to-r from-nebula-pink to-deep-space text-white px-6 py-2 font-label-md text-label-md rounded-lg haptic-hover">
+                Get Started
+            </button>
+</nav>
+</header>
+<main class="pt-32">
+<!-- Nebula Backgrounds -->
+<div class="absolute top-0 right-0 w-[600px] h-[600px] bg-nebula-pink/10 nebula-blur rounded-full"></div>
+<div class="absolute top-1/2 left-0 w-[500px] h-[500px] bg-cosmic-blue/10 nebula-blur rounded-full"></div>
+<!-- Hero Section -->
+<section class="px-margin-mobile md:px-margin-desktop max-w-container-max mx-auto mb-stack-xl text-center">
+<h1 class="reveal-text font-display-lg text-display-lg-mobile md:text-display-lg mb-stack-sm">
+                Precision <span class="text-transparent bg-clip-text bg-gradient-to-r from-nebula-pink to-cosmic-blue">Meta Ads</span>
+</h1>
+<p class="reveal-text font-body-lg text-body-lg text-on-surface-variant max-w-2xl mx-auto mb-stack-md" style="animation-delay: 0.2s;">
+                Turning impressions into impact. We combine cinematic creative production with data-driven optimization to scale brands on the Meta ecosystem.
+            </p>
+<div class="reveal-text flex flex-wrap justify-center gap-4" style="animation-delay: 0.4s;">
+<div class="glass-panel px-6 py-4 rounded-xl flex flex-col items-center">
+<span class="font-headline-lg text-headline-lg text-primary">4.2x</span>
+<span class="font-label-sm text-label-sm text-on-surface-variant uppercase tracking-widest">Avg ROAS</span>
+</div>
+<div class="glass-panel px-6 py-4 rounded-xl flex flex-col items-center">
+<span class="font-headline-lg text-headline-lg text-primary">$0.45</span>
+<span class="font-label-sm text-label-sm text-on-surface-variant uppercase tracking-widest">Avg CPC</span>
+</div>
+<div class="glass-panel px-6 py-4 rounded-xl flex flex-col items-center">
+<span class="font-headline-lg text-headline-lg text-primary">$12M+</span>
+<span class="font-label-sm text-label-sm text-on-surface-variant uppercase tracking-widest">Managed Spend</span>
+</div>
+</div>
+</section>
+<!-- Portfolio Grid (Bento Style) -->
+<section class="px-margin-mobile md:px-margin-desktop max-w-container-max mx-auto mb-stack-xl">
+<div class="grid grid-cols-1 md:grid-cols-12 gap-gutter">
+<!-- Case Study 1: Large Feature -->
+<div class="md:col-span-8 glass-panel rounded-xl overflow-hidden haptic-hover group relative">
+<div class="absolute inset-0 z-0">
+<img alt="Luxury Tech Campaign" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" data-alt="A high-end cinematic advertisement for a futuristic wearable technology brand. The scene features a sleek titanium smartwatch glowing with a soft blue interface, set against a dark, minimalist architectural background. The lighting is dramatic and precise, reflecting a cosmic aesthetic with deep shadows and sharp rim lights in shades of magenta and cool blue. The atmosphere conveys premium quality and technical innovation." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDHF_rzWsp7yiIrQbCechU6xZkOQxSv4c3LWf5ghMAggzQxgsOwtu9Zh1yj4yi4AqmIJr2WadJuwUPX0uj-_6WChmxK7D9fxNwW2bMAox9k1qsCGtCMhK3yzwIJ7z-t6HkULmF6u9TIngTIptlxZysEHvRaXPHUA-FX25L_Yav-JKeJ2PcY1Tx859fRfByqffTPVEtagIKezCgy96vBFUEKZ4ijjIB8gMqafI81HYp4mzzKnisvtTvVtA"/>
+<div class="absolute inset-0 bg-gradient-to-t from-background via-background/40 to-transparent"></div>
+</div>
+<div class="relative z-10 p-stack-lg flex flex-col justify-end h-full min-h-[500px]">
+<div class="flex gap-2 mb-stack-xs">
+<span class="px-3 py-1 bg-nebula-pink/20 text-nebula-pink font-label-sm text-label-sm rounded-full">E-Commerce</span>
+<span class="px-3 py-1 bg-cosmic-blue/20 text-cosmic-blue font-label-sm text-label-sm rounded-full">Scale Phase</span>
+</div>
+<h3 class="font-headline-xl text-headline-xl mb-stack-xs">Zenith Wearables</h3>
+<p class="font-body-md text-body-md text-on-surface-variant max-w-md mb-stack-md">Scaling a boutique tech brand from $20k to $150k monthly revenue within 90 days using dynamic creative testing.</p>
+<div class="grid grid-cols-3 gap-4 border-t border-white/10 pt-stack-md">
+<div>
+<p class="font-label-sm text-label-sm text-on-surface-variant">ROAS</p>
+<p class="font-headline-md text-headline-md text-primary">5.12x</p>
+</div>
+<div>
+<p class="font-label-sm text-label-sm text-on-surface-variant">CTR</p>
+<p class="font-headline-md text-headline-md text-primary">3.8%</p>
+</div>
+<div>
+<p class="font-label-sm text-label-sm text-on-surface-variant">CPA</p>
+<p class="font-headline-md text-headline-md text-primary">$14.20</p>
+</div>
+</div>
+</div>
+</div>
+<!-- Stats Sidebar Card -->
+<div class="md:col-span-4 glass-panel rounded-xl p-stack-md flex flex-col justify-between border-t border-white/20">
+<div>
+<span class="material-symbols-outlined text-nebula-pink text-4xl mb-stack-sm">query_stats</span>
+<h4 class="font-headline-md text-headline-md mb-stack-sm">Meta Algorithm Mastery</h4>
+<p class="font-body-md text-body-md text-on-surface-variant mb-stack-md">Our Advantage+ creative framework leverages AI to identify winning combinations before heavy spend occurs.</p>
+</div>
+<div class="space-y-4">
+<div class="flex justify-between items-center border-b border-white/5 pb-2">
+<span class="font-label-md text-label-md">Creative Fatigue Reduction</span>
+<span class="text-nebula-pink font-bold">-40%</span>
+</div>
+<div class="flex justify-between items-center border-b border-white/5 pb-2">
+<span class="font-label-md text-label-md">Hook Rate Avg</span>
+<span class="text-cosmic-blue font-bold">28.5%</span>
+</div>
+<div class="flex justify-between items-center">
+<span class="font-label-md text-label-md">Conversion Rate Lift</span>
+<span class="text-primary font-bold">+210%</span>
+</div>
+</div>
+</div>
+<!-- Case Study 2: Video Asset focus -->
+<div class="md:col-span-6 glass-panel rounded-xl overflow-hidden haptic-hover group relative h-[400px]">
+<img alt="Gaming Peripheral Campaign" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" data-alt="A macro shot of a glowing mechanical keyboard with vibrant RGB lighting in a dark room. The keys are emitting a cosmic purple and electric blue glow, reflecting off a polished glass desk surface. The composition is tight and artistic, emphasizing the texture and high-tech feel of the hardware. The lighting is moody and cinematic, consistent with a dark-mode professional creative agency aesthetic." src="https://lh3.googleusercontent.com/aida-public/AB6AXuAYqDuOQMaSIcIMKQFvU79KerHqP6ebPwv4TpgJ6PNKwYF9yQs-ZUGfN0HLxDVArbyJZqUlHywF0PB8oEiaNQMTKhQ_rZ3br9wIeqapd1BDLIaHyEztGoKzXa3FVZKe_3MZOi7z_vU7q0OCUvWhTtTSulJz5PUrE5bUTp3t-pueleYPIE1_kS2QQsNR_fR-eMWkrWX0VGztkQjqGU5AKvDoIXPsd5tchB3nri0chRwYhBvF39_iPaRGbQ"/>
+<div class="absolute inset-0 bg-gradient-to-t from-void-black via-transparent to-transparent"></div>
+<div class="absolute bottom-0 left-0 p-stack-md w-full">
+<h4 class="font-headline-md text-headline-md">Pulse Gaming Gear</h4>
+<p class="font-body-md text-body-md text-on-surface-variant">UGC-style cinematic trailers for Gen-Z audience.</p>
+<div class="flex gap-4 mt-stack-sm">
+<div class="text-nebula-pink font-bold">3.9x ROAS</div>
+<div class="text-on-surface-variant">|</div>
+<div class="text-starlight-white font-label-md">$0.12 CPC</div>
+</div>
+</div>
+</div>
+<!-- Case Study 3: Aesthetic Focus -->
+<div class="md:col-span-6 glass-panel rounded-xl overflow-hidden haptic-hover group relative h-[400px]">
+<img alt="Beauty &amp; Wellness Ad" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" data-alt="A minimalist skin care product bottle placed on a piece of dark, jagged volcanic rock. The background is a soft, deep grey gradient with atmospheric mist swirling around the base. Subtle rim lighting highlights the elegant curves of the glass bottle, creating a high-end luxury feel. The overall color palette is monochromatic with cold blue undertones, projecting a sense of clinical precision and sophisticated design." src="https://lh3.googleusercontent.com/aida-public/AB6AXuAF_i7avk6by5Wy8dqkSYtXz2639mQFUBeqpQVOmBtXlGY5KmHi-RMMibTdTPKO7E23oQnek1yZBXyaJI8QKZtDJEQl97VlKQlhaaJU1jRAIYeT9C1ujacHcq9U3BGFIygJtGxTytu6bT6UuqnAPTtgdRTrwZyTIocIuoWxzb4v5su8ucbAL9fVq7gJ8WDeVKze82M4X_TPYPMR1D_9JcmPswCf9-n9k7xV_bwtMGD37bFCfEmKqAxsrg"/>
+<div class="absolute inset-0 bg-gradient-to-t from-void-black via-transparent to-transparent"></div>
+<div class="absolute bottom-0 left-0 p-stack-md w-full">
+<h4 class="font-headline-md text-headline-md">Lumina Skincare</h4>
+<p class="font-body-md text-body-md text-on-surface-variant">High-aesthetic creative for premium conversion.</p>
+<div class="flex gap-4 mt-stack-sm">
+<div class="text-nebula-pink font-bold">6.1x ROAS</div>
+<div class="text-on-surface-variant">|</div>
+<div class="text-starlight-white font-label-md">$32.00 AOV Lift</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Process / Framework Section -->
+<section class="bg-void-black/50 py-stack-xl border-y border-white/5">
+<div class="px-margin-mobile md:px-margin-desktop max-w-container-max mx-auto">
+<div class="text-center mb-stack-lg">
+<h2 class="font-headline-xl text-headline-xl mb-stack-sm">The Cosmic Funnel</h2>
+<p class="font-body-lg text-body-lg text-on-surface-variant max-w-2xl mx-auto">Our 3-stage process for guaranteed performance on Meta.</p>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-3 gap-gutter">
+<div class="glass-panel p-stack-md rounded-xl card-highlight">
+<span class="material-symbols-outlined text-nebula-pink text-4xl mb-stack-sm">rocket_launch</span>
+<h4 class="font-headline-md text-headline-md mb-stack-xs">01. Discovery</h4>
+<p class="font-body-md text-body-md text-on-surface-variant">Audience psychographics and competitive analysis to find your "Unfair Advantage."</p>
+</div>
+<div class="glass-panel p-stack-md rounded-xl card-highlight">
+<span class="material-symbols-outlined text-cosmic-blue text-4xl mb-stack-sm">movie_filter</span>
+<h4 class="font-headline-md text-headline-md mb-stack-xs">02. Creative Lab</h4>
+<p class="font-body-md text-body-md text-on-surface-variant">Production of cinematic hooks and high-retention video assets tailored for Reels &amp; Feed.</p>
+</div>
+<div class="glass-panel p-stack-md rounded-xl card-highlight">
+<span class="material-symbols-outlined text-tertiary-container text-4xl mb-stack-sm">insights</span>
+<h4 class="font-headline-md text-headline-md mb-stack-xs">03. Optimization</h4>
+<p class="font-body-md text-body-md text-on-surface-variant">Aggressive horizontal scaling and micro-audience refinement for sustained ROI.</p>
+</div>
+</div>
+</div>
+</section>
+<!-- Testimonial / Results Banner -->
+<section class="px-margin-mobile md:px-margin-desktop max-w-container-max mx-auto py-stack-xl">
+<div class="glass-panel rounded-2xl p-stack-xl relative overflow-hidden text-center">
+<div class="absolute -top-24 -left-24 w-64 h-64 bg-cosmic-blue/20 nebula-blur rounded-full"></div>
+<h3 class="font-headline-lg text-headline-lg mb-stack-md italic relative z-10">
+                    "Mashoori Productions didn't just run ads; they built a creative engine that transformed our entire brand perception on Meta. Our ROAS has never been more stable."
+                </h3>
+<p class="font-label-md text-label-md text-nebula-pink uppercase tracking-widest relative z-10">— CEO, Zenith Wearables</p>
+</div>
+</section>
+</main>
+<!-- Footer Shell -->
+<footer class="w-full border-t border-white/5 bg-void-black pt-stack-xl pb-stack-md">
+<div class="grid grid-cols-1 md:grid-cols-4 gap-gutter px-margin-desktop max-w-container-max mx-auto">
+<div class="flex flex-col gap-4">
+<div class="font-headline-md text-headline-md text-primary">Mashoori Productions</div>
+<p class="font-body-md text-body-md text-on-surface-variant">High-performance creative agency specializing in Meta and TikTok advertising.</p>
+</div>
+<div class="flex flex-col gap-3">
+<h5 class="font-label-md text-label-md text-primary uppercase">Services</h5>
+<a class="text-on-surface-variant hover:text-nebula-pink transition-colors font-body-md" href="Graphic Designing.html">Graphic Design</a>
+<a class="text-on-surface-variant hover:text-nebula-pink transition-colors font-body-md" href="Video Production.html">Video Production</a>
+<a class="text-on-surface-variant hover:text-nebula-pink transition-colors font-body-md" href="SEO.html">SEO</a>
+</div>
+<div class="flex flex-col gap-3">
+<h5 class="font-label-md text-label-md text-primary uppercase">Connect</h5>
+<a class="text-on-surface-variant hover:text-nebula-pink transition-colors font-body-md" href="Web Dev.html">Web Dev</a>
+<a class="text-on-surface-variant hover:text-nebula-pink transition-colors font-body-md" href="Automation.html">AI Automation</a>
+</div>
+<div class="flex flex-col gap-3">
+<h5 class="font-label-md text-label-md text-primary uppercase">Legal</h5>
+<a class="text-on-surface-variant hover:text-nebula-pink transition-colors font-body-md" href="#">Privacy Policy</a>
+<p class="mt-4 font-body-md text-body-md text-on-surface-variant">© 2024 Mashoori Productions. All rights reserved.</p>
+</div>
+</div>
+</footer>
+<script>
+        // Flashlight Cursor Effect
+        const flashlight = document.getElementById('flashlight');
+        document.addEventListener('mousemove', (e) => {
+            flashlight.style.setProperty('--x', `${e.clientX}px`);
+            flashlight.style.setProperty('--y', `${e.clientY}px`);
+        });
+
+        // Intersection Observer for reveal animations
+        const observerOptions = {
+            threshold: 0.1
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('reveal-text');
+                }
+            });
+        }, observerOptions);
+
+        document.querySelectorAll('section > *').forEach(el => observer.observe(el));
+    </script>
+</body></html>

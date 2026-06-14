@@ -1,0 +1,344 @@
+<!DOCTYPE html>
+<html class="dark scroll-smooth" lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Contact | Mashoori Productions</title>
+<meta name="description" content="Get in touch with Mashoori Productions. Book a free strategy call or send us a message."/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Montserrat:wght@600;700;900&display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+tailwind.config={darkMode:"class",theme:{extend:{colors:{"surface-container-highest":"#333535","secondary":"#bcc3ff","inverse-primary":"#5e5e5e","outline":"#988e90","secondary-fixed":"#dfe0ff","on-background":"#e2e2e2","background":"#121414","inverse-on-surface":"#2f3131","error":"#ffb4ab","surface-container-lowest":"#0c0f0f","primary-fixed-dim":"#c6c6c6","on-secondary-fixed":"#000d60","tertiary-fixed":"#ffd9dd","surface":"#121414","tertiary":"#ffb2bd","primary-container":"#000000","on-error-container":"#ffdad6","tertiary-container":"#000000","surface-variant":"#333535","surface-dim":"#121414","surface-container":"#1e2020","on-surface-variant":"#cfc4c5","on-tertiary":"#670024","on-secondary-fixed-variant":"#0029d3","error-container":"#93000a","on-primary-container":"#757575","on-secondary-container":"#c4caff","on-tertiary-fixed-variant":"#900036","primary":"#c6c6c6","tertiary-fixed-dim":"#ffb2bd","primary-fixed":"#e2e2e2","on-tertiary-container":"#e7005c","surface-container-low":"#1a1c1c","on-primary-fixed":"#1b1b1b","on-error":"#690005","secondary-container":"#0033fe","on-tertiary-fixed":"#400013","on-secondary":"#001a97","on-primary-fixed-variant":"#474747","secondary-fixed-dim":"#bcc3ff","on-surface":"#e2e2e2","inverse-surface":"#e2e2e2","surface-bright":"#37393a","surface-container-high":"#282a2b","on-primary":"#303030","surface-tint":"#c6c6c6","outline-variant":"#4c4546"},borderRadius:{"DEFAULT":"0.125rem","lg":"0.25rem","xl":"0.5rem","full":"0.75rem"},spacing:{"base":"8px","stack-md":"24px","stack-xs":"4px","gutter":"24px","stack-lg":"48px","stack-sm":"12px","margin-desktop":"80px","margin-mobile":"20px","stack-xl":"80px","container-max":"1440px"},fontFamily:{"label-md":["Inter"],"headline-lg":["Montserrat"],"body-md":["Inter"],"headline-md":["Montserrat"],"display-lg-mobile":["Montserrat"],"headline-xl":["Montserrat"],"display-lg":["Montserrat"],"label-sm":["Inter"],"body-lg":["Inter"]},fontSize:{"label-md":["14px",{"lineHeight":"1.2","letterSpacing":"0.05em","fontWeight":"600"}],"headline-lg":["32px",{"lineHeight":"1.3","fontWeight":"700"}],"body-md":["16px",{"lineHeight":"1.6","fontWeight":"400"}],"headline-md":["24px",{"lineHeight":"1.4","fontWeight":"600"}],"display-lg-mobile":["48px",{"lineHeight":"1.1","letterSpacing":"-0.02em","fontWeight":"900"}],"headline-xl":["48px",{"lineHeight":"1.2","letterSpacing":"-0.02em","fontWeight":"700"}],"display-lg":["72px",{"lineHeight":"1.1","letterSpacing":"-0.04em","fontWeight":"900"}],"label-sm":["12px",{"lineHeight":"1.2","letterSpacing":"0.02em","fontWeight":"500"}],"body-lg":["18px",{"lineHeight":"1.6","fontWeight":"400"}]}}}}
+</script>
+<style>
+  .glass-panel{background:rgba(255,255,255,0.03);backdrop-filter:blur(20px);-webkit-backdrop-filter:blur(20px);border:1px solid rgba(255,255,255,0.1)}
+  .glass-panel-hover:hover{background:rgba(255,255,255,0.08);backdrop-filter:blur(40px);border-color:rgba(255,255,255,0.2);box-shadow:0 0 30px rgba(0,51,255,0.3)}
+  .text-glow{text-shadow:0 0 20px rgba(188,195,255,0.5)}
+  .btn-cosmic{background:linear-gradient(135deg,#001a97,#e7005c);position:relative;z-index:1;overflow:hidden}
+  .btn-cosmic::before{content:'';position:absolute;top:0;left:0;right:0;bottom:0;background:linear-gradient(135deg,#e7005c,#001a97);z-index:-1;transition:opacity 0.5s ease;opacity:0}
+  .btn-cosmic:hover::before{opacity:1}
+  .btn-cosmic:hover{box-shadow:0 0 20px rgba(231,0,92,0.5);transform:scale(1.05)}
+  .reveal-text{opacity:0;filter:blur(10px);transform:translateY(20px);transition:opacity 1s cubic-bezier(0.19,1,0.22,1),filter 1s cubic-bezier(0.19,1,0.22,1),transform 1s cubic-bezier(0.19,1,0.22,1)}
+  .reveal-text.visible{opacity:1;filter:blur(0);transform:translateY(0)}
+  #flashlight-cursor{pointer-events:none;position:fixed;top:0;left:0;width:100vw;height:100vh;background:radial-gradient(circle 300px at var(--x,50%) var(--y,50%),rgba(255,255,255,0.05) 0%,transparent 80%);z-index:9999;mix-blend-mode:screen}
+  .haptic-card{transition:transform 0.3s cubic-bezier(0.175,0.885,0.32,1.275)}
+  .haptic-card:hover{transform:translateY(-5px) scale(1.02)}
+  .card-highlight{position:relative}
+  .card-highlight::after{content:'';position:absolute;top:0;left:0;width:50%;height:1px;background:linear-gradient(90deg,rgba(255,255,255,0.4),transparent);border-top-left-radius:inherit}
+  .form-input{background:rgba(0,0,0,0.5);border:1px solid rgba(255,255,255,0.1);color:#e2e2e2;border-radius:0.5rem;padding:12px 16px;width:100%;font-family:Inter,sans-serif;font-size:16px;transition:all 0.3s ease;outline:none}
+  .form-input:focus{border-color:#0033fe;box-shadow:0 0 0 2px rgba(0,51,255,0.15)}
+  .form-input::placeholder{color:rgba(207,196,197,0.4)}
+  .faq-answer{max-height:0;overflow:hidden;transition:max-height 0.4s cubic-bezier(0.19,1,0.22,1),padding 0.3s ease}
+  .faq-item.open .faq-answer{max-height:200px;padding-bottom:16px}
+  .faq-item.open .faq-chevron{transform:rotate(180deg)}
+  .faq-chevron{transition:transform 0.3s ease}
+</style>
+</head>
+<body class="bg-background text-on-background antialiased selection:bg-secondary-container selection:text-on-secondary-container overflow-x-hidden">
+<div id="flashlight-cursor"></div>
+
+<!-- NAV -->
+<nav class="fixed top-0 w-full z-50 bg-black/30 backdrop-blur-xl border-b border-white/10 shadow-[0_0_30px_rgba(0,51,255,0.1)] transition-all duration-300" id="navbar">
+  <div class="flex justify-between items-center px-margin-mobile md:px-margin-desktop py-4 max-w-container-max mx-auto">
+    <a class="font-headline-md text-headline-md font-bold text-on-surface tracking-tighter hover:scale-105 transition-transform duration-300" href="index.html">Mashoori Productions</a>
+    <div class="hidden md:flex gap-gutter items-center">
+      <a class="font-body-md text-body-md uppercase tracking-[0.05em] text-on-surface-variant hover:text-on-surface hover:scale-105 transition-transform duration-300" href="index.html">Home</a>
+      <a class="font-body-md text-body-md uppercase tracking-[0.05em] text-on-surface-variant hover:text-on-surface hover:scale-105 transition-transform duration-300" href="services.html">Services</a>
+      <a class="font-body-md text-body-md uppercase tracking-[0.05em] text-on-surface-variant hover:text-on-surface hover:scale-105 transition-transform duration-300" href="Main Portflio Page.html">Portfolio</a>
+      <a class="font-body-md text-body-md uppercase tracking-[0.05em] text-on-surface-variant hover:text-on-surface hover:scale-105 transition-transform duration-300" href="pricing.html">Pricing</a>
+      <a class="font-body-md text-body-md uppercase tracking-[0.05em] text-primary border-b-2 border-primary pb-1 hover:scale-105 transition-transform duration-300" href="contact.html">Contact</a>
+    </div>
+    <a href="contact.html" class="hidden md:block px-6 py-2 rounded-full font-label-md text-label-md btn-cosmic text-white transition-all duration-300">Get Started</a>
+    <button class="md:hidden text-on-surface" id="mobile-toggle"><span class="material-symbols-outlined">menu</span></button>
+  </div>
+  <div class="hidden md:hidden flex-col gap-4 px-margin-mobile pb-6 pt-2 bg-black/60 backdrop-blur-xl" id="mobile-menu">
+    <a class="font-body-md text-body-md uppercase tracking-[0.05em] text-on-surface-variant" href="index.html">Home</a>
+    <a class="font-body-md text-body-md uppercase tracking-[0.05em] text-on-surface-variant" href="services.html">Services</a>
+    <a class="font-body-md text-body-md uppercase tracking-[0.05em] text-on-surface-variant" href="Main Portflio Page.html">Portfolio</a>
+    <a class="font-body-md text-body-md uppercase tracking-[0.05em] text-on-surface-variant" href="pricing.html">Pricing</a>
+    <a class="font-body-md text-body-md uppercase tracking-[0.05em] text-primary" href="contact.html">Contact</a>
+  </div>
+</nav>
+
+<!-- BG -->
+<div class="fixed inset-0 z-0 pointer-events-none">
+  <div class="absolute top-[-20%] left-[-10%] w-[50%] h-[50%] bg-secondary-container/20 rounded-full blur-[150px]"></div>
+  <div class="absolute bottom-[-10%] right-[-10%] w-[40%] h-[40%] bg-tertiary-container/20 rounded-full blur-[150px]"></div>
+</div>
+
+<main class="pt-[100px] pb-stack-xl max-w-container-max mx-auto relative z-10">
+
+  <!-- HERO -->
+  <section class="px-margin-mobile md:px-margin-desktop py-stack-xl flex flex-col items-center justify-center text-center">
+    <span class="font-label-md text-label-md text-secondary uppercase tracking-widest mb-4 block reveal-text">Get In Touch</span>
+    <h1 class="font-display-lg-mobile md:font-display-lg text-display-lg-mobile md:text-display-lg text-glow mb-stack-md reveal-text" style="transition-delay:0.1s">Let's Build Something<br>Extraordinary</h1>
+    <p class="font-body-lg text-body-lg text-on-surface-variant max-w-2xl reveal-text" style="transition-delay:0.2s">
+      Ready to become impossible to ignore? Book a free 30-minute strategy call and let's map out your path to digital dominance.
+    </p>
+  </section>
+
+  <!-- CONTACT METHODS -->
+  <section class="px-margin-mobile md:px-margin-desktop mb-stack-xl">
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-gutter mb-stack-xl">
+      <a href="tel:+923715789299" class="glass-panel glass-panel-hover rounded-xl p-stack-lg haptic-card card-highlight text-center reveal-text group">
+        <span class="material-symbols-outlined text-4xl text-secondary mb-4 block group-hover:scale-110 transition-transform">phone_in_talk</span>
+        <h3 class="font-headline-md text-headline-md text-on-surface mb-2">Call Us</h3>
+        <p class="font-body-md text-body-md text-on-surface-variant mb-3">Mon–Sat, 9am–7pm PKT</p>
+        <span class="font-label-md text-label-md text-secondary">+923715789299</span>
+      </a>
+      <a href="https://wa.me/923715789299" target="_blank" class="glass-panel glass-panel-hover rounded-xl p-stack-lg haptic-card card-highlight text-center reveal-text group" style="transition-delay:0.1s">
+        <span class="material-symbols-outlined text-4xl text-tertiary mb-4 block group-hover:scale-110 transition-transform">chat</span>
+        <h3 class="font-headline-md text-headline-md text-on-surface mb-2">WhatsApp</h3>
+        <p class="font-body-md text-body-md text-on-surface-variant mb-3">Fastest response · Usually within 1hr</p>
+        <span class="font-label-md text-label-md text-tertiary">Message Now →</span>
+      </a>
+      <a href="mailto:mashooriproductions@gmail.com" class="glass-panel glass-panel-hover rounded-xl p-stack-lg haptic-card card-highlight text-center reveal-text group" style="transition-delay:0.2s">
+        <span class="material-symbols-outlined text-4xl text-secondary mb-4 block group-hover:scale-110 transition-transform">mail</span>
+        <h3 class="font-headline-md text-headline-md text-on-surface mb-2">Email</h3>
+        <p class="font-body-md text-body-md text-on-surface-variant mb-3">We reply within 24 hours</p>
+        <span class="font-label-md text-label-md text-secondary">mashooriproductions@gmail.com</span>
+      </a>
+    </div>
+
+    <!-- FORM + INFO -->
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-gutter">
+      <!-- Contact Form -->
+      <div class="glass-panel rounded-xl p-stack-lg card-highlight reveal-text">
+        <h2 class="font-headline-lg text-headline-lg text-on-surface mb-2">Send Us A Message</h2>
+        <p class="font-body-md text-body-md text-on-surface-variant mb-stack-md">Tell us about your project and we'll get back to you within 24 hours.</p>
+        <div class="space-y-4">
+          <div class="grid grid-cols-2 gap-4">
+            <div>
+              <label class="font-label-sm text-label-sm text-on-surface-variant uppercase tracking-widest block mb-2">First Name</label>
+              <input type="text" placeholder="Ahmed" class="form-input"/>
+            </div>
+            <div>
+              <label class="font-label-sm text-label-sm text-on-surface-variant uppercase tracking-widest block mb-2">Last Name</label>
+              <input type="text" placeholder="Khan" class="form-input"/>
+            </div>
+          </div>
+          <div>
+            <label class="font-label-sm text-label-sm text-on-surface-variant uppercase tracking-widest block mb-2">Email</label>
+            <input type="email" placeholder="ahmed@company.com" class="form-input"/>
+          </div>
+          <div>
+            <label class="font-label-sm text-label-sm text-on-surface-variant uppercase tracking-widest block mb-2">Phone / WhatsApp</label>
+            <input type="tel" placeholder="+92 3715789299" class="form-input"/>
+          </div>
+          <div>
+            <label class="font-label-sm text-label-sm text-on-surface-variant uppercase tracking-widest block mb-2">Service Interested In</label>
+            <select class="form-input">
+              <option value="" disabled selected>Select a service...</option>
+              <option>Digital Marketing</option>
+              <option>Video Production</option>
+              <option>SEO</option>
+              <option>Graphic Design</option>
+              <option>Content Writing</option>
+              <option>Meta Ads</option>
+              <option>Marketing Automation</option>
+              <option>Full Package</option>
+            </select>
+          </div>
+          <div>
+            <label class="font-label-sm text-label-sm text-on-surface-variant uppercase tracking-widest block mb-2">Message</label>
+            <textarea rows="4" placeholder="Tell us about your business and goals..." class="form-input resize-none"></textarea>
+          </div>
+          <button type="submit" class="w-full px-6 py-4 rounded-full font-label-md text-label-md btn-cosmic text-white transition-all shadow-[0_0_30px_rgba(0,51,255,0.3)] hover:shadow-[0_0_40px_rgba(231,0,92,0.5)]" id="submit-btn">
+            Send Message <span class="material-symbols-outlined text-[18px] align-middle ml-1">send</span>
+          </button>
+          <div id="form-success" class="hidden text-center py-4 rounded-xl glass-panel text-secondary font-label-md text-label-md">
+            ✓ Message sent! We'll reply within 24 hours.
+          </div>
+        </div>
+      </div>
+
+      <!-- Info Side -->
+      <div class="flex flex-col gap-gutter reveal-text" style="transition-delay:0.15s">
+        <!-- Office Info -->
+        <div class="glass-panel rounded-xl p-stack-lg card-highlight">
+          <h3 class="font-headline-md text-headline-md text-on-surface mb-stack-md">Studio Location</h3>
+          <div class="space-y-4">
+            <div class="flex items-start gap-3">
+              <span class="material-symbols-outlined text-secondary mt-1">location_on</span>
+              <div>
+                <p class="font-body-md text-body-md text-on-surface">Wah Cantt, Punjab</p>
+                <p class="font-body-md text-body-md text-on-surface-variant">Pakistan</p>
+              </div>
+            </div>
+            <div class="flex items-start gap-3">
+              <span class="material-symbols-outlined text-secondary mt-1">schedule</span>
+              <div>
+                <p class="font-body-md text-body-md text-on-surface">Monday – Saturday</p>
+                <p class="font-body-md text-body-md text-on-surface-variant">9:00 AM – 7:00 PM PKT</p>
+              </div>
+            </div>
+            <div class="flex items-start gap-3">
+              <span class="material-symbols-outlined text-tertiary mt-1">bolt</span>
+              <div>
+                <p class="font-body-md text-body-md text-on-surface">Response Time</p>
+                <p class="font-body-md text-body-md text-on-surface-variant">WhatsApp: ~1 hour · Email: 24 hours</p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- What to expect -->
+        <div class="glass-panel rounded-xl p-stack-lg card-highlight">
+          <h3 class="font-headline-md text-headline-md text-on-surface mb-stack-md">What Happens Next?</h3>
+          <div class="space-y-4">
+            <div class="flex gap-4 items-start">
+              <div class="w-8 h-8 rounded-full btn-cosmic flex items-center justify-center text-white font-bold text-sm flex-shrink-0">1</div>
+              <div>
+                <p class="font-label-md text-label-md text-on-surface mb-1">We Review Your Inquiry</p>
+                <p class="font-body-md text-body-md text-on-surface-variant">Within 24 hours of receiving your message.</p>
+              </div>
+            </div>
+            <div class="flex gap-4 items-start">
+              <div class="w-8 h-8 rounded-full btn-cosmic flex items-center justify-center text-white font-bold text-sm flex-shrink-0">2</div>
+              <div>
+                <p class="font-label-md text-label-md text-on-surface mb-1">Free Strategy Call</p>
+                <p class="font-body-md text-body-md text-on-surface-variant">30-minute discovery session to understand your goals.</p>
+              </div>
+            </div>
+            <div class="flex gap-4 items-start">
+              <div class="w-8 h-8 rounded-full btn-cosmic flex items-center justify-center text-white font-bold text-sm flex-shrink-0">3</div>
+              <div>
+                <p class="font-label-md text-label-md text-on-surface mb-1">Custom Proposal</p>
+                <p class="font-body-md text-body-md text-on-surface-variant">A tailored strategy and pricing plan built for your business.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Social -->
+        <div class="glass-panel rounded-xl p-stack-lg card-highlight">
+          <h3 class="font-headline-md text-headline-md text-on-surface mb-stack-md">Follow Our Work</h3>
+          <div class="flex gap-3 flex-wrap">
+            <a href="#" class="flex items-center gap-2 px-4 py-2 rounded-full glass-panel hover:bg-white/10 transition-all font-label-sm text-label-sm text-on-surface-variant hover:text-secondary">
+              <span class="material-symbols-outlined text-[16px]">photo_camera</span> Instagram
+            </a>
+            <a href="#" class="flex items-center gap-2 px-4 py-2 rounded-full glass-panel hover:bg-white/10 transition-all font-label-sm text-label-sm text-on-surface-variant hover:text-secondary">
+              <span class="material-symbols-outlined text-[16px]">work</span> LinkedIn
+            </a>
+            <a href="#" class="flex items-center gap-2 px-4 py-2 rounded-full glass-panel hover:bg-white/10 transition-all font-label-sm text-label-sm text-on-surface-variant hover:text-secondary">
+              <span class="material-symbols-outlined text-[16px]">play_circle</span> YouTube
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FAQ -->
+  <section class="px-margin-mobile md:px-margin-desktop mb-stack-xl">
+    <div class="text-center mb-stack-xl">
+      <span class="font-label-md text-label-md text-tertiary uppercase tracking-widest mb-4 block reveal-text">FAQ</span>
+      <h2 class="font-display-lg-mobile md:font-headline-xl text-display-lg-mobile md:text-headline-xl text-on-surface reveal-text">Common Questions</h2>
+    </div>
+    <div class="max-w-3xl mx-auto space-y-3" id="faq-list">
+      <div class="faq-item glass-panel rounded-xl overflow-hidden reveal-text">
+        <button class="w-full flex justify-between items-center px-6 py-5 text-left gap-4" onclick="toggleFaq(this)">
+          <span class="font-headline-md text-headline-md text-on-surface text-[17px]">How long before we see results?</span>
+          <span class="material-symbols-outlined text-on-surface-variant faq-chevron flex-shrink-0">expand_more</span>
+        </button>
+        <div class="faq-answer px-6 font-body-md text-body-md text-on-surface-variant">Most clients see measurable results within 30–60 days. SEO typically takes 3–6 months for significant organic growth. Paid ads can show results within the first 2 weeks.</div>
+      </div>
+      <div class="faq-item glass-panel rounded-xl overflow-hidden reveal-text" style="transition-delay:0.05s">
+        <button class="w-full flex justify-between items-center px-6 py-5 text-left gap-4" onclick="toggleFaq(this)">
+          <span class="font-headline-md text-headline-md text-on-surface text-[17px]">Do you work with businesses outside Pakistan?</span>
+          <span class="material-symbols-outlined text-on-surface-variant faq-chevron flex-shrink-0">expand_more</span>
+        </button>
+        <div class="faq-answer px-6 font-body-md text-body-md text-on-surface-variant">Absolutely. We work with clients across Pakistan, UAE, UK, and North America. Our team operates remotely with async-friendly workflows so time zones are never a barrier.</div>
+      </div>
+      <div class="faq-item glass-panel rounded-xl overflow-hidden reveal-text" style="transition-delay:0.1s">
+        <button class="w-full flex justify-between items-center px-6 py-5 text-left gap-4" onclick="toggleFaq(this)">
+          <span class="font-headline-md text-headline-md text-on-surface text-[17px]">What makes you different from other agencies?</span>
+          <span class="material-symbols-outlined text-on-surface-variant faq-chevron flex-shrink-0">expand_more</span>
+        </button>
+        <div class="faq-answer px-6 font-body-md text-body-md text-on-surface-variant">We don't sell vanity metrics. Every strategy we build is tied to real business outcomes — leads, sales, and revenue. We're obsessed with ROI, not impressions.</div>
+      </div>
+      <div class="faq-item glass-panel rounded-xl overflow-hidden reveal-text" style="transition-delay:0.15s">
+        <button class="w-full flex justify-between items-center px-6 py-5 text-left gap-4" onclick="toggleFaq(this)">
+          <span class="font-headline-md text-headline-md text-on-surface text-[17px]">Is there a minimum contract length?</span>
+          <span class="material-symbols-outlined text-on-surface-variant faq-chevron flex-shrink-0">expand_more</span>
+        </button>
+        <div class="faq-answer px-6 font-body-md text-body-md text-on-surface-variant">We recommend a minimum 3-month commitment to see meaningful results, but we offer month-to-month options. We're confident enough in our work that we don't lock you in long-term.</div>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<!-- FOOTER -->
+<footer class="bg-surface-container-lowest border-t border-white/5 relative z-10">
+  <div class="max-w-container-max mx-auto px-margin-mobile md:px-margin-desktop py-stack-xl">
+    <div class="grid grid-cols-1 md:grid-cols-4 gap-stack-lg mb-stack-xl">
+      <div class="md:col-span-2">
+        <a href="index.html" class="font-headline-md text-headline-md text-on-surface font-bold tracking-tighter block mb-4">Mashoori Productions</a>
+        <p class="font-body-md text-body-md text-on-surface-variant mb-6 max-w-xs">We help businesses become impossible to ignore. Premium digital marketing, video production, SEO, branding, and automation.</p>
+      </div>
+      <div>
+        <h4 class="font-label-md text-label-md text-on-surface-variant uppercase tracking-widest mb-4">Pages</h4>
+        <ul class="space-y-3">
+          <li><a href="index.html" class="font-body-md text-body-md text-on-surface-variant hover:text-secondary transition-colors">Home</a></li>
+          <li><a href="services.html" class="font-body-md text-body-md text-on-surface-variant hover:text-secondary transition-colors">Services</a></li>
+          <li><a href="Main Portflio Page.html" class="font-body-md text-body-md text-on-surface-variant hover:text-secondary transition-colors">Portfolio</a></li>
+          <li><a href="pricing.html" class="font-body-md text-body-md text-on-surface-variant hover:text-secondary transition-colors">Pricing</a></li>
+          <li><a href="contact.html" class="font-body-md text-body-md text-secondary transition-colors">Contact</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4 class="font-label-md text-label-md text-on-surface-variant uppercase tracking-widest mb-4">Contact</h4>
+        <ul class="space-y-3">
+          <li class="font-body-md text-body-md text-on-surface-variant">Wah Cantt, Pakistan</li>
+          <li><a href="mailto:mashooriproductions@gmail.com" class="font-body-md text-body-md text-on-surface-variant hover:text-secondary transition-colors">mashooriproductions@gmail.com</a></li>
+          <li><a href="https://wa.me/923715789299" class="font-body-md text-body-md text-on-surface-variant hover:text-secondary transition-colors">WhatsApp Us</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="border-t border-white/5 pt-stack-md flex flex-col md:flex-row justify-between items-center gap-4">
+      <p class="font-label-sm text-label-sm text-on-surface-variant">© 2025 Mashoori Productions. Cosmic Excellence in Digital Marketing.</p>
+      <div class="flex gap-4">
+        <a href="#" class="font-label-sm text-label-sm text-on-surface-variant hover:text-secondary transition-colors">Privacy Policy</a>
+        <a href="#" class="font-label-sm text-label-sm text-on-surface-variant hover:text-secondary transition-colors">Terms of Service</a>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<script>
+  document.getElementById('flashlight-cursor').style.transition = 'background 0.1s ease';
+  document.addEventListener('mousemove', e => {
+    document.getElementById('flashlight-cursor').style.setProperty('--x', e.clientX+'px');
+    document.getElementById('flashlight-cursor').style.setProperty('--y', e.clientY+'px');
+  });
+  document.getElementById('mobile-toggle').addEventListener('click',()=>{
+    const m=document.getElementById('mobile-menu');
+    m.classList.toggle('hidden');m.classList.toggle('flex');
+  });
+  window.addEventListener('scroll',()=>{
+    document.getElementById('navbar').style.backgroundColor=window.scrollY>50?'rgba(0,0,0,0.7)':'rgba(0,0,0,0.3)';
+  });
+  const obs=new IntersectionObserver(entries=>{
+    entries.forEach(e=>{if(e.isIntersecting)e.target.classList.add('visible');});
+  },{threshold:0.1});
+  document.querySelectorAll('.reveal-text').forEach(el=>obs.observe(el));
+
+  function toggleFaq(btn){
+    const item=btn.parentElement;
+    const isOpen=item.classList.contains('open');
+    document.querySelectorAll('.faq-item').forEach(i=>i.classList.remove('open'));
+    if(!isOpen)item.classList.add('open');
+  }
+
+  document.getElementById('submit-btn').addEventListener('click',function(){
+    this.textContent='Sending...';
+    setTimeout(()=>{
+      this.classList.add('hidden');
+      document.getElementById('form-success').classList.remove('hidden');
+    },1500);
+  });
+</script>
+</body>
+</html>
