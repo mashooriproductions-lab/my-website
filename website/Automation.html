@@ -1,0 +1,399 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Mashoori Productions | Automation &amp; AI Portfolio</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700;900&amp;family=Inter:wght@400;500;600&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .glass-panel {
+            background: rgba(255, 255, 255, 0.03);
+            backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px);
+        }
+        .rim-light {
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+        }
+        .nebula-glow-blue {
+            background: radial-gradient(circle, rgba(0, 51, 254, 0.15) 0%, rgba(0, 51, 254, 0) 70%);
+        }
+        .nebula-glow-pink {
+            background: radial-gradient(circle, rgba(231, 0, 92, 0.15) 0%, rgba(231, 0, 92, 0) 70%);
+        }
+        .flashlight {
+            pointer-events: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: radial-gradient(circle 400px at var(--x) var(--y), rgba(188, 195, 255, 0.05), transparent 80%);
+            z-index: 50;
+        }
+        @keyframes reveal {
+            from { opacity: 0; transform: translateY(20px); filter: blur(10px); }
+            to { opacity: 1; transform: translateY(0); filter: blur(0); }
+        }
+        .reveal-text {
+            animation: reveal 0.8s cubic-bezier(0.175, 0.885, 0.32, 1.275) forwards;
+        }
+        .hover-glow:hover {
+            box-shadow: 0 0 30px rgba(0, 51, 255, 0.3);
+            transition: all 0.3s ease-in-out;
+        }
+    </style>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "secondary-container": "#3e4578",
+                        "surface-variant": "#333535",
+                        "background": "#121414",
+                        "on-secondary-fixed": "#0e1648",
+                        "on-surface": "#e2e2e2",
+                        "deep-space": "#001a97",
+                        "secondary": "#bcc3ff",
+                        "cosmic-blue": "#0033fe",
+                        "secondary-fixed": "#dfe0ff",
+                        "tertiary": "#ffd9dd",
+                        "surface-container-low": "#1a1c1c",
+                        "inverse-on-surface": "#2f3131",
+                        "on-secondary": "#252c5e",
+                        "surface-dim": "#121414",
+                        "tertiary-fixed": "#ffd9dd",
+                        "error-container": "#93000a",
+                        "outline": "#8e9192",
+                        "surface-container-highest": "#333535",
+                        "inverse-primary": "#5d5e5f",
+                        "on-primary": "#2f3131",
+                        "tertiary-container": "#ffb2bd",
+                        "surface-container-lowest": "#0d0f0f",
+                        "surface": "#121414",
+                        "on-error": "#690005",
+                        "primary-fixed": "#e3e2e2",
+                        "secondary-fixed-dim": "#bcc3ff",
+                        "on-error-container": "#ffdad6",
+                        "on-tertiary": "#52202a",
+                        "on-secondary-fixed-variant": "#3b4376",
+                        "inverse-surface": "#e2e2e2",
+                        "on-tertiary-fixed-variant": "#6d3640",
+                        "on-primary-fixed": "#1a1c1c",
+                        "surface-container-high": "#282a2a",
+                        "starlight-white": "#e2e2e2",
+                        "surface-tint": "#c6c6c6",
+                        "void-black": "#0c0f0f",
+                        "on-primary-container": "#515253",
+                        "on-tertiary-fixed": "#380b16",
+                        "on-tertiary-container": "#7b414b",
+                        "on-primary-fixed-variant": "#464747",
+                        "error": "#ffb4ab",
+                        "on-surface-variant": "#c4c7c7",
+                        "outline-variant": "#444748",
+                        "surface-bright": "#383939",
+                        "tertiary-fixed-dim": "#ffb2bd",
+                        "on-secondary-container": "#adb5f0",
+                        "nebula-pink": "#e7005c",
+                        "primary-container": "#c6c6c6",
+                        "on-background": "#e2e2e2",
+                        "primary": "#e2e2e2",
+                        "surface-container": "#1e2020",
+                        "primary-fixed-dim": "#c6c6c6"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.125rem",
+                        "lg": "0.25rem",
+                        "xl": "0.5rem",
+                        "full": "0.75rem"
+                    },
+                    "spacing": {
+                        "stack-xs": "0.25rem",
+                        "stack-lg": "3rem",
+                        "stack-xl": "5rem",
+                        "stack-md": "1.5rem",
+                        "stack-sm": "0.75rem",
+                        "margin-desktop": "5rem",
+                        "base": "8px",
+                        "margin-mobile": "1.25rem",
+                        "container-max": "1440px",
+                        "gutter": "1.5rem"
+                    },
+                    "fontFamily": {
+                        "headline-xl": ["Montserrat"],
+                        "label-md": ["Inter"],
+                        "body-md": ["Inter"],
+                        "display-lg": ["Montserrat"],
+                        "display-lg-mobile": ["Montserrat"],
+                        "label-sm": ["Inter"],
+                        "headline-lg": ["Montserrat"],
+                        "body-lg": ["Inter"],
+                        "headline-md": ["Montserrat"]
+                    },
+                    "fontSize": {
+                        "headline-xl": ["48px", { "lineHeight": "1.2", "letterSpacing": "-0.02em", "fontWeight": "700" }],
+                        "label-md": ["14px", { "lineHeight": "1.2", "letterSpacing": "0.05em", "fontWeight": "600" }],
+                        "body-md": ["16px", { "lineHeight": "1.6", "fontWeight": "400" }],
+                        "display-lg": ["72px", { "lineHeight": "1.1", "letterSpacing": "-0.04em", "fontWeight": "900" }],
+                        "display-lg-mobile": ["48px", { "lineHeight": "1.1", "letterSpacing": "-0.02em", "fontWeight": "900" }],
+                        "label-sm": ["12px", { "lineHeight": "1.2", "letterSpacing": "0.02em", "fontWeight": "500" }],
+                        "headline-lg": ["32px", { "lineHeight": "1.3", "fontWeight": "700" }],
+                        "body-lg": ["18px", { "lineHeight": "1.6", "fontWeight": "400" }],
+                        "headline-md": ["24px", { "lineHeight": "1.4", "fontWeight": "600" }]
+                    }
+                },
+            },
+        }
+    </script>
+</head>
+<body class="bg-background text-on-surface selection:bg-nebula-pink selection:text-white overflow-x-hidden">
+<div class="flashlight" id="flashlight"></div>
+<!-- TopNavBar -->
+<nav class="fixed top-0 w-full bg-background/80 backdrop-blur-xl border-b border-white/10 z-[100] shadow-none">
+<div class="flex justify-between items-center px-margin-desktop py-4 max-w-container-max mx-auto duration-300 ease-in-out">
+<div class="font-headline-md text-headline-md text-primary tracking-tighter"><a href="index.html"> Mashoori Productions </a></div>
+<!-- Desktop Links -->
+<div class="hidden md:flex gap-gutter items-center">
+<a class="font-body-md text-body-md text-on-surface-variant hover:text-primary transition-colors hover:opacity-80 transition-opacity" href="index.html">Home</a>
+<a class="font-body-md text-body-md text-primary border-b-2 border-primary pb-1 hover:opacity-80 transition-opacity" href="services.html">Services</a>
+<a class="font-body-md text-body-md text-on-surface-variant hover:text-primary transition-colors hover:opacity-80 transition-opacity" href="Main Portflio Page.html">Portfolio</a>
+<a class="font-body-md text-body-md text-on-surface-variant hover:text-primary transition-colors hover:opacity-80 transition-opacity" href="pricing.html">Pricing</a>
+<a class="font-body-md text-body-md text-on-surface-variant hover:text-primary transition-colors hover:opacity-80 transition-opacity" href="contact.html">Contact</a>
+</div>
+<button class="bg-gradient-to-r from-nebula-pink to-deep-space text-white px-6 py-2 rounded-full font-label-md text-label-md hover:scale-105 transition-transform shadow-[0_0_20px_rgba(231,0,92,0.3)]">
+                Get Started
+            </button>
+</div>
+</nav>
+<main class="relative">
+<!-- Atmospheric Elements -->
+<div class="absolute top-0 left-0 w-full h-[1024px] nebula-glow-blue pointer-events-none -z-10"></div>
+<div class="absolute top-[512px] right-0 w-[800px] h-[800px] nebula-glow-pink pointer-events-none -z-10"></div>
+<!-- Hero Section -->
+<section class="pt-[160px] pb-stack-xl px-margin-desktop max-w-container-max mx-auto text-center md:text-left">
+<div class="grid grid-cols-1 lg:grid-cols-2 gap-gutter items-center">
+<div class="reveal-text">
+<span class="text-secondary font-label-md text-label-md uppercase tracking-[0.2em] mb-4 block">Future-Proof Operations</span>
+<h1 class="font-display-lg text-display-lg text-primary mb-stack-md leading-none">Architecting <br/><span class="text-nebula-pink">Autonomous</span> Growth</h1>
+<p class="font-body-lg text-body-lg text-on-surface-variant max-w-xl mb-stack-lg">We bridge the gap between creative excellence and technical precision using AI-driven workflows and lead generation funnels that work while you sleep.</p>
+<div class="flex flex-wrap gap-stack-md justify-center md:justify-start">
+<button class="bg-secondary text-void-black px-8 py-4 rounded-lg font-label-md text-label-md hover-glow">Explore Workflows</button>
+<button class="border border-white/10 glass-panel px-8 py-4 rounded-lg font-label-md text-label-md text-primary hover:bg-white/5 transition-colors">Case Studies</button>
+</div>
+</div>
+<div class="relative mt-stack-xl lg:mt-0">
+<div class="glass-panel rim-light rounded-xl overflow-hidden aspect-video shadow-2xl relative">
+
+<div class="absolute inset-0 bg-gradient-to-t from-void-black/80 to-transparent flex items-end p-stack-md">
+<div>
+<p class="text-secondary font-label-sm text-label-sm mb-1 uppercase tracking-widest">Real-time Data</p>
+<p class="font-headline-md text-headline-md">Automated Pipeline V4.0</p>
+</div>
+</div>
+</div>
+<!-- Decorative Floating Elements -->
+<div class="absolute -top-10 -right-10 glass-panel rim-light p-4 rounded-xl hidden md:block">
+<span class="material-symbols-outlined text-nebula-pink text-4xl" data-icon="auto_awesome">auto_awesome</span>
+</div>
+</div>
+</div>
+</section>
+<!-- Bento Grid: Automation Pillars -->
+<section class="py-stack-xl px-margin-desktop max-w-container-max mx-auto">
+<div class="mb-stack-lg">
+<h2 class="font-headline-xl text-headline-xl text-primary">Core Capabilities</h2>
+<div class="h-1 w-24 bg-nebula-pink mt-4"></div>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-12 gap-gutter">
+<!-- Lead Funnels -->
+<div class="md:col-span-8 glass-panel rim-light p-stack-md rounded-xl group hover:border-secondary transition-colors cursor-pointer">
+<div class="flex justify-between items-start mb-stack-md">
+<div>
+<span class="material-symbols-outlined text-secondary text-3xl mb-2" data-icon="funnel_chart">area_chart</span>
+<h3 class="font-headline-lg text-headline-lg">Dynamic Lead Funnels</h3>
+</div>
+<span class="text-on-surface-variant font-label-sm text-label-sm">#CONVERSION_OPTIMIZED</span>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-2 gap-stack-md">
+<p class="font-body-md text-body-md text-on-surface-variant">Intelligent segmentation pipelines that qualify leads using AI-driven behavior analysis. Custom integrations with CRM and e-mail platforms ensure zero leakage.</p>
+<div class="rounded-lg overflow-hidden border border-white/5 h-48 bg-surface-container">
+<img class="w-full h-full object-cover grayscale group-hover:grayscale-0 group-hover:scale-110 transition-all duration-700" data-alt="A futuristic data visualization dashboard showing glowing blue and pink flowcharts with moving data nodes. The aesthetic is clean, technical, and high-contrast, fitting a cinematic dark mode portfolio for AI and automation. Subtle light flares and depth of field create a professional, high-end creative feel." src="https://lh3.googleusercontent.com/aida-public/AB6AXuAr3Kj3cryouXjXDhVDAtp6GeNUFvrxWQrfFl2eLSeIERV2NO-HwL_n1eGG7hBRyJgaxUhjn1OUNmNdvjmrYUHr4RiK5xXGMAXCLcMENEn_AIF2zdcUWCcvry1JJgtjJ6wwcekr9JX_Oc0JLdWrnovhNqqjeO5z5I2t6eNpqASjPdc9vnirOe-Pih51uTLEnEocONoE8CjxbbmeBm2VC4XHBxZB4rR5Ek4QfKb4eD7JzFLoilA3CFy85A"/>
+</div>
+</div>
+</div>
+<!-- Workflow Sync -->
+<div class="md:col-span-4 glass-panel rim-light p-stack-md rounded-xl group hover:border-nebula-pink transition-colors">
+<span class="material-symbols-outlined text-nebula-pink text-3xl mb-4" data-icon="sync_alt">sync_alt</span>
+<h3 class="font-headline-md text-headline-md mb-2">Omnichannel Sync</h3>
+<p class="font-body-md text-body-md text-on-surface-variant mb-stack-md">Automating the synchronization between your creative assets and distribution channels instantly.</p>
+<div class="flex items-center gap-2">
+<div class="w-8 h-8 rounded-full bg-surface-container-high flex items-center justify-center"><span class="material-symbols-outlined text-xs" data-icon="terminal">terminal</span></div>
+<div class="w-8 h-8 rounded-full bg-surface-container-high flex items-center justify-center"><span class="material-symbols-outlined text-xs" data-icon="cloud_sync">cloud_sync</span></div>
+<div class="w-8 h-8 rounded-full bg-surface-container-high flex items-center justify-center"><span class="material-symbols-outlined text-xs" data-icon="api">api</span></div>
+</div>
+</div>
+<!-- AI Integration -->
+<div class="md:col-span-4 glass-panel rim-light p-stack-md rounded-xl group border-l-4 border-l-secondary">
+<span class="material-symbols-outlined text-secondary text-3xl mb-4" data-icon="neurology">neurology</span>
+<h3 class="font-headline-md text-headline-md mb-2">Cognitive Agents</h3>
+<p class="font-body-md text-body-md text-on-surface-variant">Deploying LLM-powered agents that handle customer queries, content drafting, and internal knowledge base retrieval.</p>
+</div>
+<!-- Technical Visualizer -->
+<div class="md:col-span-8 glass-panel rim-light rounded-xl overflow-hidden min-h-[300px] relative">
+
+<div class="absolute inset-0 p-stack-md flex flex-col justify-end bg-gradient-to-t from-void-black/90 via-transparent">
+<h3 class="font-headline-lg text-headline-lg">Automated Workflow Visualizer</h3>
+<p class="font-body-md text-body-md text-on-surface-variant max-w-lg">A visual map of a typical client ecosystem, showing how creative production flows directly into automated ad sets and lead capture forms.</p>
+</div>
+</div>
+</div>
+</section>
+<!-- Portfolio Case Studies -->
+<section class="py-stack-xl bg-surface-container-lowest">
+<div class="px-margin-desktop max-w-container-max mx-auto">
+<div class="flex flex-col md:flex-row md:items-end justify-between mb-stack-lg gap-4">
+<div>
+<span class="text-nebula-pink font-label-md text-label-md uppercase tracking-[0.2em] block mb-2">Recent Deployments</span>
+<h2 class="font-headline-xl text-headline-xl text-primary">Success Stories</h2>
+</div>
+<button class="text-secondary font-label-md text-label-md flex items-center gap-2 group">
+                        View All Projects <span class="material-symbols-outlined group-hover:translate-x-2 transition-transform" data-icon="arrow_forward">arrow_forward</span>
+</button>
+</div>
+<div class="grid grid-cols-1 lg:grid-cols-3 gap-gutter">
+<!-- Project 1 -->
+<div class="group glass-panel rim-light rounded-xl overflow-hidden hover:scale-[1.02] transition-all duration-500">
+<div class="aspect-square relative overflow-hidden">
+<img class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700" data-alt="Close up of a high-tech circuit board with glowing blue light trails representing data flow and neural connections. The style is dark and cinematic with neon accents of pink and violet. 3D depth of field makes the components look physically real yet advanced. Professional tech branding aesthetic." src="https://lh3.googleusercontent.com/aida-public/AB6AXuA4XV9wUPiBV_mA_iH7XAfX6b2i606Y7TFzefbeay3jzJYaLDklP2MnJJdDUJlHY4Dzkmnl1taEZdB1zdOadvMdBEkHADR4JW17__f2glkOv58d_mdR426_RKJfsCsFC-4BC2V0s-8ImA1_bdsZPQuRMmC9Sbyn4Xc9tX34qBr3SR3VXEted15Gyu_4FI0YQLxzv3ejWkU3EvoAaZ3-zQzAAUnv49JSSZUB_iK_M0ZtCs7kOHNIODY1nA"/>
+<div class="absolute top-4 left-4">
+<span class="bg-void-black/80 backdrop-blur-md border border-white/10 px-3 py-1 rounded-full text-[10px] font-label-md text-secondary uppercase">SaaS Optimization</span>
+</div>
+</div>
+<div class="p-stack-md">
+<h4 class="font-headline-md text-headline-md mb-2">Project: NexaFlow</h4>
+<p class="font-body-md text-body-md text-on-surface-variant mb-4 line-clamp-2">Redesigned a customer journey that saw a 40% increase in lead retention using automated follow-up sequences.</p>
+<div class="flex flex-wrap gap-2">
+<span class="bg-surface-container-high px-2 py-1 rounded text-[10px] text-on-surface-variant">ZAPIER</span>
+<span class="bg-surface-container-high px-2 py-1 rounded text-[10px] text-on-surface-variant">OPENAI</span>
+<span class="bg-surface-container-high px-2 py-1 rounded text-[10px] text-on-surface-variant">HUBSPOT</span>
+</div>
+</div>
+</div>
+<!-- Project 2 -->
+<div class="group glass-panel rim-light rounded-xl overflow-hidden hover:scale-[1.02] transition-all duration-500">
+<div class="aspect-square relative overflow-hidden">
+<img class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700" data-alt="A stylized 3D render of a massive server room with floating holographic data panels and lines of connectivity flowing between them. The color palette is dominated by deep space blues and sharp magenta highlights. The scene is futuristic and evokes a sense of vast digital power and organized complexity." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDGz4_A4F6kIsIXDbBbGeKM_qdhtJ5D5-Z77QUibBlCMPOfbpwlNcodV8o32q4aO7sJLPp7x4kPnG9aPTOepgcdgDE5JkIIwfRdRQ_oZy9XryqJrtDRW_qtydIJRqaA6-opjNmiB-6fpVswkY5jP2BgMFN_ARxdczyB8QSN16rFigfJBeKKO8MqRuTR50TiN1rAGEZrWetuQsxVm7q-Qxs5D7zKqC9mwsQqltuizjr7kK-qzOgKWS_NdQ"/>
+<div class="absolute top-4 left-4">
+<span class="bg-void-black/80 backdrop-blur-md border border-white/10 px-3 py-1 rounded-full text-[10px] font-label-md text-nebula-pink uppercase">AI Infrastructure</span>
+</div>
+</div>
+<div class="p-stack-md">
+<h4 class="font-headline-md text-headline-md mb-2">Enterprise Brain</h4>
+<p class="font-body-md text-body-md text-on-surface-variant mb-4 line-clamp-2">Built a custom internal AI for a manufacturing firm that reduced report generation time from 5 days to 2 minutes.</p>
+<div class="flex flex-wrap gap-2">
+<span class="bg-surface-container-high px-2 py-1 rounded text-[10px] text-on-surface-variant">PYTHON</span>
+<span class="bg-surface-container-high px-2 py-1 rounded text-[10px] text-on-surface-variant">VECTOR DB</span>
+<span class="bg-surface-container-high px-2 py-1 rounded text-[10px] text-on-surface-variant">AWS</span>
+</div>
+</div>
+</div>
+<!-- Project 3 -->
+<div class="group glass-panel rim-light rounded-xl overflow-hidden hover:scale-[1.02] transition-all duration-500">
+<div class="aspect-square relative overflow-hidden">
+<img class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700" data-alt="Macro photography of a futuristic microchip with neon light flowing through its circuits. The composition is artistic and abstract, emphasizing precision engineering and speed. Vibrant cosmic blue and purple glow emanates from within the silicon structures, creating a cinematic noir mood." src="https://lh3.googleusercontent.com/aida-public/AB6AXuAnUlpIFjRVSI2SAHvfexUpubzIQXMeFrOBU_VYP8dik2IUm34fwC3T6eB2jLulYztHHhe-fmuO-XDvytZuu8fcMx9YD-kw1Okb8jTtmcqE4ZG_7WOdPOQUR5F0JyirMFp5Z_hNTMJ-ik91ZR7rW1bfsX1Rmbcj4fasvSqyfS3cOOMKqTPP76ruRjZ5mkPNrHqSPn404TMWJh46NiSWO-XTAtly2g8RGY_Ib5rymUDvkp1qG1mnhocx1w"/>
+<div class="absolute top-4 left-4">
+<span class="bg-void-black/80 backdrop-blur-md border border-white/10 px-3 py-1 rounded-full text-[10px] font-label-md text-secondary uppercase">E-Commerce Flow</span>
+</div>
+</div>
+<div class="p-stack-md">
+<h4 class="font-headline-md text-headline-md mb-2">AutoCart AI</h4>
+<p class="font-body-md text-body-md text-on-surface-variant mb-4 line-clamp-2">Dynamic pricing and inventory automation for a fashion brand, scaling their holiday revenue by 200%.</p>
+<div class="flex flex-wrap gap-2">
+<span class="bg-surface-container-high px-2 py-1 rounded text-[10px] text-on-surface-variant">SHOPIFY</span>
+<span class="bg-surface-container-high px-2 py-1 rounded text-[10px] text-on-surface-variant">KLAVIYO</span>
+<span class="bg-surface-container-high px-2 py-1 rounded text-[10px] text-on-surface-variant">MAKE</span>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- CTA Section -->
+<section class="py-stack-xl px-margin-desktop max-w-container-max mx-auto text-center relative overflow-hidden">
+<div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] nebula-glow-blue pointer-events-none -z-10"></div>
+<div class="max-w-3xl mx-auto py-stack-xl glass-panel rim-light rounded-2xl relative z-10 px-6">
+<h2 class="font-headline-xl text-headline-xl mb-stack-md">Ready to <span class="text-secondary">Automate?</span></h2>
+<p class="font-body-lg text-body-lg text-on-surface-variant mb-stack-lg">Let's build a custom roadmap for your business operations. Stop wasting time on manual repetitive tasks and start focusing on high-level strategy.</p>
+<div class="flex flex-col sm:flex-row gap-4 justify-center">
+<input class="bg-void-black border border-white/10 rounded-lg px-6 py-4 focus:border-secondary outline-none text-on-surface w-full sm:w-auto min-w-[300px]" placeholder="Enter your business email" type="email"/>
+<button class="bg-gradient-to-r from-nebula-pink to-deep-space text-white px-8 py-4 rounded-lg font-label-md text-label-md hover:scale-105 transition-transform shadow-[0_0_20px_rgba(231,0,92,0.4)] whitespace-nowrap">Schedule Discovery Call</button>
+</div>
+</div>
+</section>
+</main>
+<!-- Footer -->
+<footer class="w-full border-t border-white/5 bg-void-black pt-stack-xl pb-stack-md">
+<div class="grid grid-cols-1 md:grid-cols-4 gap-gutter px-margin-desktop max-w-container-max mx-auto">
+<div class="md:col-span-1">
+<div class="font-headline-md text-headline-md text-primary mb-4">Mashoori Productions</div>
+<p class="font-body-md text-body-md text-on-surface-variant">Bridging the gap between creative excellence and technical precision.</p>
+</div>
+<div>
+<h5 class="text-primary font-label-md text-label-md uppercase mb-6 tracking-widest">Solutions</h5>
+<ul class="space-y-3">
+<li><a class="font-body-md text-body-md text-on-surface-variant hover:text-nebula-pink transition-colors" href="Graphic Designing.html">Graphic Design</a></li>
+<li><a class="font-body-md text-body-md text-on-surface-variant hover:text-nebula-pink transition-colors" href="Video Production.html">Video Production</a></li>
+<li><a class="font-body-md text-body-md text-on-surface-variant hover:text-nebula-pink transition-colors" href="SEO.html">SEO</a></li>
+</ul>
+</div>
+<div>
+<h5 class="text-primary font-label-md text-label-md uppercase mb-6 tracking-widest">Innovation</h5>
+<ul class="space-y-3">
+<li><a class="font-body-md text-body-md text-on-surface-variant hover:text-nebula-pink transition-colors" href="Web Dev.html">Web Dev</a></li>
+<li><a class="font-body-md text-body-md text-on-surface-variant hover:text-nebula-pink transition-colors" href="Automation.html">AI Automation</a></li>
+<li><a class="font-body-md text-body-md text-on-surface-variant hover:text-nebula-pink transition-colors" href="#">Privacy Policy</a></li>
+</ul>
+</div>
+<div>
+<h5 class="text-primary font-label-md text-label-md uppercase mb-6 tracking-widest">Follow Us</h5>
+<div class="flex gap-4">
+<a class="w-10 h-10 rounded-full bg-surface-container flex items-center justify-center text-on-surface-variant hover:text-secondary transition-colors" href="#"><span class="material-symbols-outlined" data-icon="public">public</span></a>
+<a class="w-10 h-10 rounded-full bg-surface-container flex items-center justify-center text-on-surface-variant hover:text-secondary transition-colors" href="#"><span class="material-symbols-outlined" data-icon="groups">groups</span></a>
+<a class="w-10 h-10 rounded-full bg-surface-container flex items-center justify-center text-on-surface-variant hover:text-secondary transition-colors" href="#"><span class="material-symbols-outlined" data-icon="campaign">campaign</span></a>
+</div>
+</div>
+</div>
+<div class="mt-stack-lg border-t border-white/5 pt-stack-sm text-center">
+<p class="font-body-md text-body-md text-on-surface-variant">© 2024 Mashoori Productions. All rights reserved.</p>
+</div>
+</footer>
+<script>
+        // Flashlight cursor effect
+        const flashlight = document.getElementById('flashlight');
+        document.addEventListener('mousemove', e => {
+            flashlight.style.setProperty('--x', e.clientX + 'px');
+            flashlight.style.setProperty('--y', e.clientY + 'px');
+        });
+
+        // Simple Intersection Observer for reveal animations
+        const observerOptions = {
+            threshold: 0.1
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('reveal-text');
+                }
+            });
+        }, observerOptions);
+
+        document.querySelectorAll('section > div').forEach(el => observer.observe(el));
+    </script>
+</body></html>

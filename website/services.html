@@ -1,0 +1,252 @@
+<!DOCTYPE html>
+<html class="dark scroll-smooth" lang="en">
+<head>
+<meta charset="utf-8"/><meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Services | Mashoori Productions</title>
+<meta name="description" content="Full-service digital agency offering Digital Marketing, Video Production, SEO, Graphic Design, Meta Ads, Marketing Automation, and more."/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script src="https://cdn.jsdelivr.net/gh/studio-freight/lenis@1.0.29/bundled/lenis.min.js"></script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Montserrat:wght@600;700;900&display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+tailwind.config={darkMode:"class",theme:{extend:{colors:{"background":"#121414","on-background":"#e2e2e2","surface":"#121414","surface-dim":"#121414","surface-bright":"#37393a","surface-container-lowest":"#0c0f0f","surface-container-low":"#1a1c1c","surface-container":"#1e2020","surface-container-high":"#282a2b","surface-container-highest":"#333535","on-surface":"#e2e2e2","on-surface-variant":"#cfc4c5","surface-variant":"#333535","outline":"#988e90","outline-variant":"#4c4546","primary":"#c6c6c6","on-primary":"#303030","primary-container":"#000000","secondary":"#bcc3ff","on-secondary":"#001a97","secondary-container":"#0033fe","on-secondary-container":"#c4caff","tertiary":"#ffb2bd","on-tertiary":"#670024","tertiary-container":"#000000","on-tertiary-container":"#e7005c"},borderRadius:{"DEFAULT":"0.125rem","lg":"0.25rem","xl":"0.5rem","full":"0.75rem"},spacing:{"base":"8px","stack-xs":"4px","stack-sm":"12px","stack-md":"24px","stack-lg":"48px","stack-xl":"80px","gutter":"24px","margin-desktop":"80px","margin-mobile":"20px","container-max":"1440px"},fontFamily:{"display-lg":["Montserrat"],"display-lg-mobile":["Montserrat"],"headline-xl":["Montserrat"],"headline-lg":["Montserrat"],"headline-md":["Montserrat"],"body-lg":["Inter"],"body-md":["Inter"],"label-md":["Inter"],"label-sm":["Inter"]},fontSize:{"display-lg":["72px",{"lineHeight":"1.1","letterSpacing":"-0.04em","fontWeight":"900"}],"display-lg-mobile":["48px",{"lineHeight":"1.1","letterSpacing":"-0.02em","fontWeight":"900"}],"headline-xl":["48px",{"lineHeight":"1.2","letterSpacing":"-0.02em","fontWeight":"700"}],"headline-lg":["32px",{"lineHeight":"1.3","fontWeight":"700"}],"headline-md":["24px",{"lineHeight":"1.4","fontWeight":"600"}],"body-lg":["18px",{"lineHeight":"1.6","fontWeight":"400"}],"body-md":["16px",{"lineHeight":"1.6","fontWeight":"400"}],"label-md":["14px",{"lineHeight":"1.2","letterSpacing":"0.05em","fontWeight":"600"}],"label-sm":["12px",{"lineHeight":"1.2","letterSpacing":"0.02em","fontWeight":"500"}]}}}}
+</script>
+<style>
+.glass-panel{background:rgba(255,255,255,0.03);backdrop-filter:blur(20px);-webkit-backdrop-filter:blur(20px);border:1px solid rgba(255,255,255,0.1)}
+.glass-panel-hover:hover{background:rgba(255,255,255,0.08);backdrop-filter:blur(40px);border-color:rgba(255,255,255,0.2);box-shadow:0 0 30px rgba(0,51,255,0.3)}
+.text-glow{text-shadow:0 0 20px rgba(188,195,255,0.5)}
+.btn-cosmic{background:linear-gradient(135deg,#001a97,#e7005c);position:relative;z-index:1;overflow:hidden;transition:all .3s ease}
+.btn-cosmic::before{content:'';position:absolute;inset:0;background:linear-gradient(135deg,#e7005c,#001a97);z-index:-1;transition:opacity .5s;opacity:0}
+.btn-cosmic:hover::before{opacity:1}
+.btn-cosmic:hover{box-shadow:0 0 20px rgba(231,0,92,0.5);transform:scale(1.05)}
+.reveal-text{opacity:0;filter:blur(10px);transform:translateY(20px);transition:opacity 1s cubic-bezier(0.19,1,0.22,1),filter 1s,transform 1s}
+.reveal-text.visible{opacity:1;filter:blur(0);transform:translateY(0)}
+.char{display:inline-block;opacity:0;filter:blur(8px);transform:translateY(10px);transition:opacity .6s,filter .6s,transform .6s}
+.stagger-text.visible .char{opacity:1;filter:blur(0);transform:translateY(0)}
+#flashlight-cursor{pointer-events:none;position:fixed;top:0;left:0;width:100vw;height:100vh;background:radial-gradient(circle 300px at var(--x,50%) var(--y,50%),rgba(255,255,255,0.05) 0%,transparent 80%);z-index:9999;mix-blend-mode:screen}
+.haptic-card{transition:transform .3s cubic-bezier(0.175,0.885,0.32,1.275)}
+.haptic-card:hover{transform:translateY(-5px) scale(1.02)}
+.card-highlight{position:relative}
+.card-highlight::after{content:'';position:absolute;top:0;left:0;width:50%;height:1px;background:linear-gradient(90deg,rgba(255,255,255,0.4),transparent);border-top-left-radius:inherit}
+.service-detail{max-height:0;overflow:hidden;transition:max-height .5s cubic-bezier(0.19,1,0.22,1),padding .3s ease}
+.service-detail.open{max-height:400px;padding-top:16px}
+</style>
+</head>
+<body class="bg-background text-on-background antialiased overflow-x-hidden" data-page="services">
+<div id="flashlight-cursor"></div>
+
+<header id="navbar" class="bg-black/30 backdrop-blur-xl fixed top-0 w-full border-b border-white/10 shadow-[0_0_30px_rgba(0,51,255,0.1)] transition-all duration-300 z-50 flex justify-between items-center px-margin-mobile md:px-margin-desktop py-4">
+  <a href="index.html" class="font-headline-md text-headline-md font-bold text-on-surface tracking-tighter hover:scale-105 transition-transform duration-300">Mashoori Productions</a>
+  <nav class="hidden md:flex gap-8 uppercase tracking-[0.05em]">
+    <a href="index.html" class="text-on-surface-variant hover:text-on-surface hover:scale-105 transition-all">Home</a>
+    <a href="services.html" class="text-primary border-b-2 border-primary pb-1">Services</a>
+    <a href="Main Portflio Page.html" class="text-on-surface-variant hover:text-on-surface hover:scale-105 transition-all">Portfolio</a>
+    <a href="pricing.html" class="text-on-surface-variant hover:text-on-surface hover:scale-105 transition-all">Pricing</a>
+    <a href="contact.html" class="text-on-surface-variant hover:text-on-surface hover:scale-105 transition-all">Contact</a>
+  </nav>
+  <a href="contact.html" class="hidden md:block px-6 py-2 rounded-full font-label-md text-label-md btn-cosmic text-white">Get Started</a>
+  <button class="md:hidden text-on-surface" onclick="document.getElementById('mmenu-s').classList.toggle('hidden')"><span class="material-symbols-outlined">menu</span></button>
+</header>
+<div id="mmenu-s" class="hidden fixed top-[64px] left-0 right-0 z-40 bg-black/95 backdrop-blur-xl border-b border-white/10 p-6 flex flex-col gap-4">
+  <a href="index.html" class="text-on-surface-variant uppercase tracking-[0.05em] text-sm font-semibold">Home</a>
+  <a href="services.html" class="text-primary uppercase tracking-[0.05em] text-sm font-semibold">Services</a>
+  <a href="Main Portflio Page.html" class="text-on-surface-variant uppercase tracking-[0.05em] text-sm font-semibold">Portfolio</a>
+  <a href="pricing.html" class="text-on-surface-variant uppercase tracking-[0.05em] text-sm font-semibold">Pricing</a>
+  <a href="contact.html" class="text-on-surface-variant uppercase tracking-[0.05em] text-sm font-semibold">Contact</a>
+  <a href="contact.html" class="mt-2 px-6 py-3 rounded-full btn-cosmic text-white text-sm font-semibold text-center">Get Started</a>
+</div>
+
+<div class="fixed inset-0 z-0 pointer-events-none">
+  <div class="absolute top-[-20%] left-[-10%] w-[50%] h-[50%] bg-secondary-container/20 rounded-full blur-[150px]"></div>
+  <div class="absolute bottom-[-10%] right-[-10%] w-[40%] h-[40%] bg-tertiary-container/20 rounded-full blur-[150px]"></div>
+</div>
+
+<main class="relative z-10 pt-[100px]">
+
+<!-- HERO -->
+<section class="px-margin-mobile md:px-margin-desktop py-stack-xl max-w-container-max mx-auto text-center">
+  <span class="font-label-md text-label-md text-secondary uppercase tracking-widest mb-4 block reveal-text">Our Services</span>
+  <h1 class="font-display-lg-mobile md:font-display-lg text-display-lg-mobile md:text-display-lg text-glow mb-stack-md stagger-text" id="page-title">Built For Growth</h1>
+  <p class="font-body-lg text-body-lg text-on-surface-variant max-w-2xl mx-auto reveal-text" style="transition-delay:.3s">From strategy to execution — digital marketing, video production, SEO, branding, and automation under one roof.</p>
+</section>
+
+<!-- SERVICES GRID -->
+<section class="px-margin-mobile md:px-margin-desktop pb-stack-xl max-w-container-max mx-auto">
+  <div class="grid grid-cols-1 md:grid-cols-2 gap-gutter">
+
+    <!-- Digital Marketing -->
+    <div class="glass-panel rounded-xl p-stack-lg card-highlight haptic-card reveal-text group">
+      <div class="flex items-start gap-4 mb-stack-md">
+        <div class="w-14 h-14 rounded-xl flex items-center justify-center glass-panel flex-shrink-0 group-hover:bg-secondary-container/20 transition-all">
+          <span class="material-symbols-outlined text-secondary text-3xl" style="font-variation-settings:'FILL' 0">campaign</span>
+        </div>
+        <div>
+          <h2 class="font-headline-md text-headline-md text-on-surface mb-1">Digital Marketing</h2>
+          <p class="font-label-sm text-label-sm text-secondary uppercase tracking-widest">Multi-Channel Growth</p>
+        </div>
+      </div>
+      <p class="font-body-md text-body-md text-on-surface-variant mb-stack-md">Multi-channel campaigns designed to reach, engage, and convert your ideal customers at every touchpoint. We manage everything from strategy to creative to distribution.</p>
+      <ul class="flex flex-col gap-2 mb-stack-md">
+        <li class="flex items-center gap-2 font-body-md text-body-md text-primary"><span class="material-symbols-outlined text-tertiary text-[18px]" style="font-variation-settings:'FILL' 1">check_circle</span>Social Media Strategy & Management</li>
+        <li class="flex items-center gap-2 font-body-md text-body-md text-primary"><span class="material-symbols-outlined text-tertiary text-[18px]" style="font-variation-settings:'FILL' 1">check_circle</span>Email Marketing Campaigns</li>
+        <li class="flex items-center gap-2 font-body-md text-body-md text-primary"><span class="material-symbols-outlined text-tertiary text-[18px]" style="font-variation-settings:'FILL' 1">check_circle</span>Content Calendar & Scheduling</li>
+        <li class="flex items-center gap-2 font-body-md text-body-md text-primary"><span class="material-symbols-outlined text-tertiary text-[18px]" style="font-variation-settings:'FILL' 1">check_circle</span>Analytics & Monthly Reporting</li>
+      </ul>
+      <a href="contact.html" class="font-label-md text-label-md text-secondary hover:text-tertiary transition-colors inline-flex items-center gap-1">Get Started <span class="material-symbols-outlined text-[16px]">arrow_forward</span></a>
+    </div>
+
+    <!-- Video Production -->
+    <div class="glass-panel rounded-xl p-stack-lg card-highlight haptic-card reveal-text group" style="transition-delay:.05s">
+      <div class="flex items-start gap-4 mb-stack-md">
+        <div class="w-14 h-14 rounded-xl flex items-center justify-center glass-panel flex-shrink-0 group-hover:bg-secondary-container/20 transition-all">
+          <span class="material-symbols-outlined text-secondary text-3xl" style="font-variation-settings:'FILL' 0">videocam</span>
+        </div>
+        <div>
+          <h2 class="font-headline-md text-headline-md text-on-surface mb-1">Video Production</h2>
+          <p class="font-label-sm text-label-sm text-secondary uppercase tracking-widest">Cinematic Storytelling</p>
+        </div>
+      </div>
+      <p class="font-body-md text-body-md text-on-surface-variant mb-stack-md">Cinematic brand films, ads, reels, and social content that stop the scroll and tell your story with impact. Professional production from concept to final delivery.</p>
+      <ul class="flex flex-col gap-2 mb-stack-md">
+        <li class="flex items-center gap-2 font-body-md text-body-md text-primary"><span class="material-symbols-outlined text-tertiary text-[18px]" style="font-variation-settings:'FILL' 1">check_circle</span>Brand Films & Commercials</li>
+        <li class="flex items-center gap-2 font-body-md text-body-md text-primary"><span class="material-symbols-outlined text-tertiary text-[18px]" style="font-variation-settings:'FILL' 1">check_circle</span>Short-Form Social Content</li>
+        <li class="flex items-center gap-2 font-body-md text-body-md text-primary"><span class="material-symbols-outlined text-tertiary text-[18px]" style="font-variation-settings:'FILL' 1">check_circle</span>Product Showcase Videos</li>
+        <li class="flex items-center gap-2 font-body-md text-body-md text-primary"><span class="material-symbols-outlined text-tertiary text-[18px]" style="font-variation-settings:'FILL' 1">check_circle</span>Post-Production & Color Grading</li>
+      </ul>
+      <a href="contact.html" class="font-label-md text-label-md text-secondary hover:text-tertiary transition-colors inline-flex items-center gap-1">Get Started <span class="material-symbols-outlined text-[16px]">arrow_forward</span></a>
+    </div>
+
+    <!-- SEO -->
+    <div class="glass-panel rounded-xl p-stack-lg card-highlight haptic-card reveal-text group" style="transition-delay:.1s">
+      <div class="flex items-start gap-4 mb-stack-md">
+        <div class="w-14 h-14 rounded-xl flex items-center justify-center glass-panel flex-shrink-0 group-hover:bg-secondary-container/20 transition-all">
+          <span class="material-symbols-outlined text-secondary text-3xl" style="font-variation-settings:'FILL' 0">search</span>
+        </div>
+        <div>
+          <h2 class="font-headline-md text-headline-md text-on-surface mb-1">SEO</h2>
+          <p class="font-label-sm text-label-sm text-secondary uppercase tracking-widest">Organic Growth Engine</p>
+        </div>
+      </div>
+      <p class="font-body-md text-body-md text-on-surface-variant mb-stack-md">Rank higher, get found faster. We build sustainable organic traffic that compounds over time with technical SEO, content strategy, and authoritative link building.</p>
+      <ul class="flex flex-col gap-2 mb-stack-md">
+        <li class="flex items-center gap-2 font-body-md text-body-md text-primary"><span class="material-symbols-outlined text-tertiary text-[18px]" style="font-variation-settings:'FILL' 1">check_circle</span>Technical SEO Audit & Fixes</li>
+        <li class="flex items-center gap-2 font-body-md text-body-md text-primary"><span class="material-symbols-outlined text-tertiary text-[18px]" style="font-variation-settings:'FILL' 1">check_circle</span>Keyword Research & Strategy</li>
+        <li class="flex items-center gap-2 font-body-md text-body-md text-primary"><span class="material-symbols-outlined text-tertiary text-[18px]" style="font-variation-settings:'FILL' 1">check_circle</span>On-Page & Off-Page Optimization</li>
+        <li class="flex items-center gap-2 font-body-md text-body-md text-primary"><span class="material-symbols-outlined text-tertiary text-[18px]" style="font-variation-settings:'FILL' 1">check_circle</span>Local SEO for Pakistan Markets</li>
+      </ul>
+      <a href="contact.html" class="font-label-md text-label-md text-secondary hover:text-tertiary transition-colors inline-flex items-center gap-1">Get Started <span class="material-symbols-outlined text-[16px]">arrow_forward</span></a>
+    </div>
+
+    <!-- Graphic Design -->
+    <div class="glass-panel rounded-xl p-stack-lg card-highlight haptic-card reveal-text group" style="transition-delay:.15s">
+      <div class="flex items-start gap-4 mb-stack-md">
+        <div class="w-14 h-14 rounded-xl flex items-center justify-center glass-panel flex-shrink-0 group-hover:bg-secondary-container/20 transition-all">
+          <span class="material-symbols-outlined text-secondary text-3xl" style="font-variation-settings:'FILL' 0">brush</span>
+        </div>
+        <div>
+          <h2 class="font-headline-md text-headline-md text-on-surface mb-1">Graphic Design</h2>
+          <p class="font-label-sm text-label-sm text-secondary uppercase tracking-widest">Visual Identity</p>
+        </div>
+      </div>
+      <p class="font-body-md text-body-md text-on-surface-variant mb-stack-md">Visual identity systems, social graphics, and marketing collateral that make you look world-class. Every pixel is crafted to communicate authority and trust.</p>
+      <ul class="flex flex-col gap-2 mb-stack-md">
+        <li class="flex items-center gap-2 font-body-md text-body-md text-primary"><span class="material-symbols-outlined text-tertiary text-[18px]" style="font-variation-settings:'FILL' 1">check_circle</span>Logo & Brand Identity Design</li>
+        <li class="flex items-center gap-2 font-body-md text-body-md text-primary"><span class="material-symbols-outlined text-tertiary text-[18px]" style="font-variation-settings:'FILL' 1">check_circle</span>Social Media Templates & Posts</li>
+        <li class="flex items-center gap-2 font-body-md text-body-md text-primary"><span class="material-symbols-outlined text-tertiary text-[18px]" style="font-variation-settings:'FILL' 1">check_circle</span>Marketing Materials & Brochures</li>
+        <li class="flex items-center gap-2 font-body-md text-body-md text-primary"><span class="material-symbols-outlined text-tertiary text-[18px]" style="font-variation-settings:'FILL' 1">check_circle</span>Ad Creatives & Banners</li>
+      </ul>
+      <a href="contact.html" class="font-label-md text-label-md text-secondary hover:text-tertiary transition-colors inline-flex items-center gap-1">Get Started <span class="material-symbols-outlined text-[16px]">arrow_forward</span></a>
+    </div>
+
+    <!-- Meta Ads -->
+    <div class="glass-panel rounded-xl p-stack-lg card-highlight haptic-card reveal-text group" style="transition-delay:.2s">
+      <div class="flex items-start gap-4 mb-stack-md">
+        <div class="w-14 h-14 rounded-xl flex items-center justify-center glass-panel flex-shrink-0 group-hover:bg-secondary-container/20 transition-all">
+          <span class="material-symbols-outlined text-secondary text-3xl" style="font-variation-settings:'FILL' 0">ads_click</span>
+        </div>
+        <div>
+          <h2 class="font-headline-md text-headline-md text-on-surface mb-1">Meta Ads</h2>
+          <p class="font-label-sm text-label-sm text-secondary uppercase tracking-widest">Paid Performance</p>
+        </div>
+      </div>
+      <p class="font-body-md text-body-md text-on-surface-variant mb-stack-md">High-converting Facebook & Instagram ad campaigns engineered for maximum ROAS. We handle everything from audience research to creative testing to scaling.</p>
+      <ul class="flex flex-col gap-2 mb-stack-md">
+        <li class="flex items-center gap-2 font-body-md text-body-md text-primary"><span class="material-symbols-outlined text-tertiary text-[18px]" style="font-variation-settings:'FILL' 1">check_circle</span>Audience Research & Targeting</li>
+        <li class="flex items-center gap-2 font-body-md text-body-md text-primary"><span class="material-symbols-outlined text-tertiary text-[18px]" style="font-variation-settings:'FILL' 1">check_circle</span>Ad Creative Production</li>
+        <li class="flex items-center gap-2 font-body-md text-body-md text-primary"><span class="material-symbols-outlined text-tertiary text-[18px]" style="font-variation-settings:'FILL' 1">check_circle</span>A/B Testing & Optimization</li>
+        <li class="flex items-center gap-2 font-body-md text-body-md text-primary"><span class="material-symbols-outlined text-tertiary text-[18px]" style="font-variation-settings:'FILL' 1">check_circle</span>Retargeting & Lookalike Campaigns</li>
+      </ul>
+      <a href="contact.html" class="font-label-md text-label-md text-secondary hover:text-tertiary transition-colors inline-flex items-center gap-1">Get Started <span class="material-symbols-outlined text-[16px]">arrow_forward</span></a>
+    </div>
+
+    <!-- Marketing Automation -->
+    <div class="glass-panel rounded-xl p-stack-lg card-highlight haptic-card reveal-text group" style="transition-delay:.25s">
+      <div class="flex items-start gap-4 mb-stack-md">
+        <div class="w-14 h-14 rounded-xl flex items-center justify-center glass-panel flex-shrink-0 group-hover:bg-secondary-container/20 transition-all">
+          <span class="material-symbols-outlined text-secondary text-3xl" style="font-variation-settings:'FILL' 0">auto_mode</span>
+        </div>
+        <div>
+          <h2 class="font-headline-md text-headline-md text-on-surface mb-1">Marketing Automation</h2>
+          <p class="font-label-sm text-label-sm text-secondary uppercase tracking-widest">Scale Without Effort</p>
+        </div>
+      </div>
+      <p class="font-body-md text-body-md text-on-surface-variant mb-stack-md">Automated workflows that generate leads and nurture them 24/7. We build CRM integrations, email sequences, and lead funnels that work while you sleep.</p>
+      <ul class="flex flex-col gap-2 mb-stack-md">
+        <li class="flex items-center gap-2 font-body-md text-body-md text-primary"><span class="material-symbols-outlined text-tertiary text-[18px]" style="font-variation-settings:'FILL' 1">check_circle</span>Lead Generation Funnels</li>
+        <li class="flex items-center gap-2 font-body-md text-body-md text-primary"><span class="material-symbols-outlined text-tertiary text-[18px]" style="font-variation-settings:'FILL' 1">check_circle</span>Email Drip Sequences</li>
+        <li class="flex items-center gap-2 font-body-md text-body-md text-primary"><span class="material-symbols-outlined text-tertiary text-[18px]" style="font-variation-settings:'FILL' 1">check_circle</span>CRM Setup & Integration</li>
+        <li class="flex items-center gap-2 font-body-md text-body-md text-primary"><span class="material-symbols-outlined text-tertiary text-[18px]" style="font-variation-settings:'FILL' 1">check_circle</span>WhatsApp & SMS Automation</li>
+      </ul>
+      <a href="contact.html" class="font-label-md text-label-md text-secondary hover:text-tertiary transition-colors inline-flex items-center gap-1">Get Started <span class="material-symbols-outlined text-[16px]">arrow_forward</span></a>
+    </div>
+
+  </div>
+</section>
+
+<!-- CTA -->
+<section class="px-margin-mobile md:px-margin-desktop py-stack-xl text-center max-w-container-max mx-auto">
+  <div class="glass-panel rounded-xl p-stack-xl relative overflow-hidden">
+    <div class="absolute top-0 right-0 w-[300px] h-[300px] bg-secondary-container/15 rounded-full blur-[80px] -translate-y-1/2 translate-x-1/2 pointer-events-none"></div>
+    <h2 class="font-display-lg-mobile md:font-headline-xl text-display-lg-mobile md:text-headline-xl text-on-surface mb-stack-md stagger-text relative z-10" id="cta-title">Not Sure Which Service You Need?</h2>
+    <p class="font-body-lg text-body-lg text-on-surface-variant mb-stack-lg max-w-2xl mx-auto reveal-text relative z-10" style="transition-delay:.2s">Book a free 30-minute strategy call. We'll audit your current presence and recommend exactly what you need to grow.</p>
+    <div class="flex flex-col sm:flex-row gap-4 justify-center relative z-10 reveal-text" style="transition-delay:.3s">
+      <a href="contact.html" class="px-8 py-4 rounded-full btn-cosmic text-white font-label-md text-label-md shadow-[0_0_30px_rgba(0,51,255,0.3)]">Book Free Strategy Call</a>
+      <a href="pricing.html" class="px-8 py-4 rounded-full border border-white/20 glass-panel hover:bg-white/10 text-white font-label-md text-label-md transition-all inline-flex items-center gap-2">View Pricing <span class="material-symbols-outlined">arrow_forward</span></a>
+    </div>
+  </div>
+</section>
+</main>
+
+<footer class="w-full bg-surface-container-lowest border-t border-white/5 relative z-10">
+  <div class="flex flex-col md:flex-row justify-between items-center px-margin-mobile md:px-margin-desktop py-stack-lg gap-gutter max-w-container-max mx-auto">
+    <div class="font-headline-md text-headline-md text-on-surface opacity-80">Mashoori Productions</div>
+    <nav class="flex flex-wrap justify-center gap-4">
+      <a href="index.html" class="font-label-sm text-label-sm text-on-surface-variant hover:text-secondary transition-colors opacity-80 hover:opacity-100">Home</a>
+      <a href="services.html" class="font-label-sm text-label-sm text-secondary">Services</a>
+      <a href="portfolio.html" class="font-label-sm text-label-sm text-on-surface-variant hover:text-secondary transition-colors opacity-80 hover:opacity-100">Portfolio</a>
+      <a href="pricing.html" class="font-label-sm text-label-sm text-on-surface-variant hover:text-secondary transition-colors opacity-80 hover:opacity-100">Pricing</a>
+      <a href="contact.html" class="font-label-sm text-label-sm text-on-surface-variant hover:text-secondary transition-colors opacity-80 hover:opacity-100">Contact</a>
+    </nav>
+    <div class="font-label-sm text-label-sm text-secondary opacity-80">© 2025 Mashoori Productions.</div>
+  </div>
+</footer>
+
+<script>
+const fl=document.getElementById('flashlight-cursor');
+if(fl)document.addEventListener('mousemove',(e)=>{fl.style.setProperty('--x',e.clientX+'px');fl.style.setProperty('--y',e.clientY+'px');});
+const obs=new IntersectionObserver((entries)=>{entries.forEach(e=>{if(e.isIntersecting)e.target.classList.add('visible');});},{threshold:0.1});
+document.querySelectorAll('.reveal-text').forEach(el=>obs.observe(el));
+document.querySelectorAll('.stagger-text').forEach(el=>{
+  const text=el.innerText;el.innerText='';
+  [...text].forEach((c,i)=>{const s=document.createElement('span');s.innerText=c===' '?'\u00A0':c;s.className='char';s.style.transitionDelay=`${i*0.04}s`;el.appendChild(s);});
+  setTimeout(()=>el.classList.add('visible'),100);
+});
+const nb=document.getElementById('navbar');
+window.addEventListener('scroll',()=>{
+  if(window.scrollY>50){nb.classList.add('bg-black/80');nb.classList.remove('bg-black/30');}
+  else{nb.classList.add('bg-black/30');nb.classList.remove('bg-black/80');}
+});
+if(typeof Lenis!=='undefined'){const lenis=new Lenis({duration:1.4,easing:t=>Math.min(1,1.001-Math.pow(2,-10*t))});function raf(time){lenis.raf(time);requestAnimationFrame(raf);}requestAnimationFrame(raf);}
+</script>
+</body>
+</html>

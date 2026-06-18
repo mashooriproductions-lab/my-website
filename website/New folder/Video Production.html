@@ -1,0 +1,371 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Mashoori Productions | Video Portfolio</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@600;700;900&amp;family=Inter:wght@400;500;600&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .glass-panel {
+            background: rgba(255, 255, 255, 0.03);
+            backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px);
+        }
+        .rim-light {
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+        }
+        .nebula-glow-pink {
+            background: radial-gradient(circle, rgba(231, 0, 92, 0.15) 0%, rgba(12, 15, 15, 0) 70%);
+        }
+        .nebula-glow-blue {
+            background: radial-gradient(circle, rgba(0, 51, 254, 0.15) 0%, rgba(12, 15, 15, 0) 70%);
+        }
+        .flashlight {
+            background: radial-gradient(600px circle at var(--x) var(--y), rgba(255,255,255,0.05), transparent 40%);
+            pointer-events: none;
+            position: fixed;
+            inset: 0;
+            z-index: 10;
+        }
+        .card-hover-effect:hover {
+            box-shadow: 0 0 30px rgba(0, 51, 255, 0.2);
+            transform: scale(1.02);
+        }
+        @keyframes reveal {
+            from { opacity: 0; filter: blur(10px); transform: translateY(20px); }
+            to { opacity: 1; filter: blur(0); transform: translateY(0); }
+        }
+        .reveal-text {
+            animation: reveal 0.8s cubic-bezier(0.175, 0.885, 0.32, 1.275) forwards;
+        }
+    </style>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "secondary-container": "#3e4578",
+                        "surface-variant": "#333535",
+                        "background": "#121414",
+                        "on-secondary-fixed": "#0e1648",
+                        "on-surface": "#e2e2e2",
+                        "deep-space": "#001a97",
+                        "secondary": "#bcc3ff",
+                        "cosmic-blue": "#0033fe",
+                        "secondary-fixed": "#dfe0ff",
+                        "tertiary": "#ffd9dd",
+                        "surface-container-low": "#1a1c1c",
+                        "inverse-on-surface": "#2f3131",
+                        "on-secondary": "#252c5e",
+                        "surface-dim": "#121414",
+                        "tertiary-fixed": "#ffd9dd",
+                        "error-container": "#93000a",
+                        "outline": "#8e9192",
+                        "surface-container-highest": "#333535",
+                        "inverse-primary": "#5d5e5f",
+                        "on-primary": "#2f3131",
+                        "tertiary-container": "#ffb2bd",
+                        "surface-container-lowest": "#0d0f0f",
+                        "surface": "#121414",
+                        "on-error": "#690005",
+                        "primary-fixed": "#e3e2e2",
+                        "secondary-fixed-dim": "#bcc3ff",
+                        "on-error-container": "#ffdad6",
+                        "on-tertiary": "#52202a",
+                        "on-secondary-fixed-variant": "#3b4376",
+                        "inverse-surface": "#e2e2e2",
+                        "on-tertiary-fixed-variant": "#6d3640",
+                        "on-primary-fixed": "#1a1c1c",
+                        "surface-container-high": "#282a2a",
+                        "starlight-white": "#e2e2e2",
+                        "surface-tint": "#c6c6c6",
+                        "void-black": "#0c0f0f",
+                        "on-primary-container": "#515253",
+                        "on-tertiary-fixed": "#380b16",
+                        "on-tertiary-container": "#7b414b",
+                        "on-primary-fixed-variant": "#464747",
+                        "error": "#ffb4ab",
+                        "on-surface-variant": "#c4c7c7",
+                        "outline-variant": "#444748",
+                        "surface-bright": "#383939",
+                        "tertiary-fixed-dim": "#ffb2bd",
+                        "on-secondary-container": "#adb5f0",
+                        "nebula-pink": "#e7005c",
+                        "primary-container": "#c6c6c6",
+                        "on-background": "#e2e2e2",
+                        "primary": "#e2e2e2",
+                        "surface-container": "#1e2020",
+                        "primary-fixed-dim": "#c6c6c6"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.125rem",
+                        "lg": "0.25rem",
+                        "xl": "0.5rem",
+                        "full": "0.75rem"
+                    },
+                    "spacing": {
+                        "stack-xs": "0.25rem",
+                        "stack-lg": "3rem",
+                        "stack-xl": "5rem",
+                        "stack-md": "1.5rem",
+                        "stack-sm": "0.75rem",
+                        "margin-desktop": "5rem",
+                        "base": "8px",
+                        "margin-mobile": "1.25rem",
+                        "container-max": "1440px",
+                        "gutter": "1.5rem"
+                    },
+                    "fontFamily": {
+                        "headline-xl": ["Montserrat"],
+                        "label-md": ["Inter"],
+                        "body-md": ["Inter"],
+                        "display-lg": ["Montserrat"],
+                        "display-lg-mobile": ["Montserrat"],
+                        "label-sm": ["Inter"],
+                        "headline-lg": ["Montserrat"],
+                        "body-lg": ["Inter"],
+                        "headline-md": ["Montserrat"]
+                    },
+                    "fontSize": {
+                        "headline-xl": ["48px", {"lineHeight": "1.2", "letterSpacing": "-0.02em", "fontWeight": "700"}],
+                        "label-md": ["14px", {"lineHeight": "1.2", "letterSpacing": "0.05em", "fontWeight": "600"}],
+                        "body-md": ["16px", {"lineHeight": "1.6", "fontWeight": "400"}],
+                        "display-lg": ["72px", {"lineHeight": "1.1", "letterSpacing": "-0.04em", "fontWeight": "900"}],
+                        "display-lg-mobile": ["48px", {"lineHeight": "1.1", "letterSpacing": "-0.02em", "fontWeight": "900"}],
+                        "label-sm": ["12px", {"lineHeight": "1.2", "letterSpacing": "0.02em", "fontWeight": "500"}],
+                        "headline-lg": ["32px", {"lineHeight": "1.3", "fontWeight": "700"}],
+                        "body-lg": ["18px", {"lineHeight": "1.6", "fontWeight": "400"}],
+                        "headline-md": ["24px", {"lineHeight": "1.4", "fontWeight": "600"}]
+                    }
+                }
+            }
+        }
+    </script>
+</head>
+<body class="bg-background text-on-surface selection:bg-nebula-pink/30">
+<div class="flashlight" id="flashlight"></div>
+<!-- Navigation -->
+<header class="fixed top-0 w-full bg-background/80 backdrop-blur-xl border-b border-white/10 z-50">
+<nav class="flex justify-between items-center px-margin-mobile md:px-margin-desktop py-4 max-w-container-max mx-auto">
+<div class="font-headline-md text-headline-md text-primary tracking-tighter">Mashoori Productions</div>
+<div class="hidden md:flex gap-8">
+<a class="text-on-surface-variant hover:text-primary transition-colors font-body-md text-body-md" href="#">Home</a>
+<a class="text-on-surface-variant hover:text-primary transition-colors font-body-md text-body-md" href="#">Services</a>
+<a class="text-primary border-b-2 border-primary pb-1 font-body-md text-body-md" href="#">Portfolio</a>
+<a class="text-on-surface-variant hover:text-primary transition-colors font-body-md text-body-md" href="#">Pricing</a>
+<a class="text-on-surface-variant hover:text-primary transition-colors font-body-md text-body-md" href="#">Contact</a>
+</div>
+<button class="bg-gradient-to-r from-nebula-pink to-deep-space text-starlight-white px-6 py-2 rounded-xl font-label-md text-label-md hover:scale-105 transition-transform shadow-lg hover:shadow-nebula-pink/20">
+                Get Started
+            </button>
+</nav>
+</header>
+<main class="relative">
+<!-- Hero Section -->
+<section class="relative h-screen flex items-center justify-center overflow-hidden">
+
+<div class="absolute inset-0 bg-gradient-to-t from-background via-transparent to-background/50"></div>
+<div class="relative z-20 text-center px-margin-mobile">
+<span class="inline-block px-4 py-1 rounded-full glass-panel rim-light text-label-sm font-label-sm text-secondary mb-stack-sm tracking-[0.2em] reveal-text">CINEMATIC EXCELLENCE</span>
+<h1 class="font-display-lg-mobile md:font-display-lg text-display-lg-mobile md:text-display-lg text-starlight-white mb-stack-md max-w-4xl mx-auto leading-tight reveal-text">
+                    Immersive Stories. <br/><span class="text-transparent bg-clip-text bg-gradient-to-r from-cosmic-blue via-nebula-pink to-secondary">Cosmic Visuals.</span>
+</h1>
+<p class="font-body-lg text-body-lg text-on-surface-variant max-w-2xl mx-auto mb-stack-lg reveal-text" style="animation-delay: 0.2s">
+                    We craft cinematic brand films and commercials that resonate in the deep void of the digital landscape.
+                </p>
+<div class="flex flex-col md:flex-row items-center justify-center gap-4 reveal-text" style="animation-delay: 0.4s">
+<button class="w-full md:w-auto px-8 py-4 bg-gradient-to-r from-nebula-pink to-deep-space text-starlight-white rounded-xl font-label-md text-label-md hover:scale-105 transition-all shadow-xl hover:shadow-nebula-pink/40">
+                        View Showreel
+                    </button>
+<button class="w-full md:w-auto px-8 py-4 glass-panel rim-light text-primary border border-white/10 rounded-xl font-label-md text-label-md hover:bg-white/5 transition-colors">
+                        Our Process
+                    </button>
+</div>
+</div>
+<!-- Atmosphere Glows -->
+<div class="absolute -top-[20%] -left-[10%] w-[60%] h-[60%] nebula-glow-blue blur-[150px] pointer-events-none"></div>
+<div class="absolute -bottom-[20%] -right-[10%] w-[60%] h-[60%] nebula-glow-pink blur-[150px] pointer-events-none"></div>
+</section>
+<!-- Project Showcase Grid -->
+<section class="py-stack-xl px-margin-mobile md:px-margin-desktop max-w-container-max mx-auto relative">
+<div class="flex flex-col md:flex-row md:items-end justify-between mb-stack-xl gap-4">
+<div>
+<h2 class="font-headline-xl text-headline-xl text-starlight-white mb-stack-xs">Featured Works</h2>
+<p class="font-body-md text-body-md text-on-surface-variant">A collection of brand narratives and visual experiments.</p>
+</div>
+<div class="flex gap-4">
+<button class="px-4 py-2 glass-panel rim-light rounded-full text-label-sm font-label-sm text-secondary hover:text-primary transition-colors border border-white/5">All Projects</button>
+<button class="px-4 py-2 glass-panel rim-light rounded-full text-label-sm font-label-sm text-on-surface-variant hover:text-primary transition-colors border border-white/5">Commercials</button>
+<button class="px-4 py-2 glass-panel rim-light rounded-full text-label-sm font-label-sm text-on-surface-variant hover:text-primary transition-colors border border-white/5">Brand Films</button>
+</div>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-12 gap-gutter">
+<!-- Large Project Card -->
+<div class="md:col-span-8 group relative overflow-hidden glass-panel rounded-xl rim-light card-hover-effect transition-all duration-500 cursor-pointer">
+<div class="aspect-video relative overflow-hidden">
+<img class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" data-alt="A cinematic wide shot of a futuristic neon-lit city at night with glowing blue and magenta atmospheric lighting. The composition is balanced and professional, reflecting a high-end commercial production style with deep shadows and sharp highlights in a dark-mode space aesthetic." src="https://lh3.googleusercontent.com/aida-public/AB6AXuD4cPhL9djhjNbPj0ZEgZAeIatHvnlZvNWtZmwzSnIN4nZFgVXDkyoLKNBOd7FlMwXyOhayAJcuWrS7m5kI8ic_sU7X4jRWuRHevadSnYSNMKfLrHt0P_PiGZ63IW7TRJwvKf9yYJ-iqKK47wtnHrjZLCRDkS7oCwIPiJY_m4nTB6Fuug5oFSuVA4C5JFhH7ucJlG4aqY34EehXFAiPTAKJxPIYGtwellFMCLsMSy3NM39dUzB8-NPkFg"/>
+<div class="absolute inset-0 bg-gradient-to-t from-void-black via-transparent to-transparent opacity-80"></div>
+</div>
+<div class="absolute bottom-0 left-0 p-stack-md w-full">
+<div class="flex items-center gap-2 mb-2">
+<span class="px-2 py-0.5 bg-cosmic-blue/20 text-cosmic-blue rounded text-[10px] font-bold tracking-widest uppercase">Brand Film</span>
+<span class="text-label-sm font-label-sm text-on-surface-variant">2024</span>
+</div>
+<h3 class="font-headline-lg text-headline-lg text-starlight-white">The Nebula Protocol</h3>
+<p class="font-body-md text-body-md text-on-surface-variant/80 mt-2 opacity-0 group-hover:opacity-100 transform translate-y-4 group-hover:translate-y-0 transition-all duration-500">
+                            A high-octane visual journey exploring the intersection of human consciousness and artificial intelligence.
+                        </p>
+</div>
+</div>
+<!-- Vertical Small Card -->
+<div class="md:col-span-4 group relative overflow-hidden glass-panel rounded-xl rim-light card-hover-effect transition-all duration-500 cursor-pointer">
+<div class="h-full relative overflow-hidden">
+<img class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" data-alt="Close-up artistic shot of swirling liquid gold and deep purple ink in water, creating a nebula-like abstract effect. The lighting is dramatic and cinematic, highlighting the intricate textures and fluid motion against a pitch-black background to emphasize a cosmic and creative visual theme." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCTrxLmYISpX873gyMkFqKmyyVzFVFhqwPxTm4Nst3Nr_Xuse0_mNu_cDy46dHIvjNehCKEBY9wQpOR8aqUTQTlEFQhjSQgSVwzIN-gEcgw_l2OANWmsX8GGH6JUglKG390LA8L3VM_Ez4xoX4YLyt7B6i9scJXLsr5XMoj-veDoTuQrC-kn6CglnEOQNWnXALzJhXPJNeo0FsUF8HklRIQGn8GUCnohhnmme8kZdk8kuBBEGvpaXepxA"/>
+<div class="absolute inset-0 bg-gradient-to-t from-void-black via-transparent to-transparent opacity-80"></div>
+<div class="absolute bottom-0 left-0 p-stack-md w-full">
+<span class="px-2 py-0.5 bg-nebula-pink/20 text-nebula-pink rounded text-[10px] font-bold tracking-widest uppercase mb-2 inline-block">Commercial</span>
+<h3 class="font-headline-md text-headline-md text-starlight-white">Zenith Watch Co.</h3>
+</div>
+</div>
+</div>
+<!-- Mid-size Bento Style -->
+<div class="md:col-span-4 group relative overflow-hidden glass-panel rounded-xl rim-light card-hover-effect transition-all duration-500 cursor-pointer">
+<div class="aspect-square relative overflow-hidden">
+<img class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" data-alt="A silhouette of a filmmaker operating a high-end cinema camera on a dolly track, silhouetted against a bright white background light. The surrounding environment is dark and moody, with dust particles visible in the light beams, conveying a professional and focused production atmosphere." src="https://lh3.googleusercontent.com/aida-public/AB6AXuChn9cYIz2zRVOAXh9bh8NP_v74wFQLJHkgQ4SJo4DOIWxLPmNV1OSFpqpeaQRPc1QQwdg9mRQYl4B4H_t2WI31iBsD6VATKk50VtybloNLDJ95b-GatXaU6F0YhUzHRJ00xsa2ZXYh2OBeS8eldInE4dP65wlvpSU-99jlNtXBwwb1cSVGI61EGD7NNBufvu3r_1W9MHZ1QOvYRTdgwP3susuJqM0gNLPEkMlLtYbL0S20EvvCSCp77Q"/>
+<div class="absolute inset-0 bg-gradient-to-t from-void-black via-transparent to-transparent opacity-80"></div>
+<div class="absolute bottom-0 left-0 p-stack-md w-full">
+<h3 class="font-headline-md text-headline-md text-starlight-white">Behind the Void</h3>
+</div>
+</div>
+</div>
+<div class="md:col-span-8 group relative overflow-hidden glass-panel rounded-xl rim-light card-hover-effect transition-all duration-500 cursor-pointer">
+<div class="aspect-video relative overflow-hidden">
+<img class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" data-alt="Abstract cinematic visual showing a high-speed light trail of blue and white sparks against a dark industrial background. The shot captures a sense of immense speed and energy, utilizing motion blur and high-contrast lighting to create a professional, tech-oriented brand film aesthetic." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBctUTFlEWicStfVESkjZ3FWO0twBj45aKg2ZH9_Qxm2B5mA4dZDgDioaiDhbZxzxWJ45YKTBaWetHGVDwLkkEH5K79tHT3raIYIPfGqjh4PMx1VVoNyyGfBMRHcJfyBOEgUvNZ1e4Scz9AerHy-rVPbFkL50S7dligpgq270JsLZyMb7UP3iQ_zX9SQtNtTZz9FMjWLWgcPQmVReEmt1DMBQhUqjxOrVQ79URotL5Kl0vMjQEsJET46w"/>
+<div class="absolute inset-0 bg-gradient-to-t from-void-black via-transparent to-transparent opacity-80"></div>
+<div class="absolute bottom-0 left-0 p-stack-md w-full">
+<span class="px-2 py-0.5 bg-cosmic-blue/20 text-cosmic-blue rounded text-[10px] font-bold tracking-widest uppercase mb-2 inline-block">Brand Identity</span>
+<h3 class="font-headline-lg text-headline-lg text-starlight-white">Stellar Core Systems</h3>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Stats / CTA Section -->
+<section class="py-stack-xl glass-panel rim-light relative overflow-hidden">
+<div class="absolute inset-0 nebula-glow-blue opacity-50"></div>
+<div class="max-w-container-max mx-auto px-margin-mobile md:px-margin-desktop relative z-10">
+<div class="grid grid-cols-2 md:grid-cols-4 gap-gutter text-center">
+<div class="space-y-2">
+<div class="font-display-lg-mobile text-display-lg-mobile text-primary">150+</div>
+<div class="font-label-md text-label-md text-on-surface-variant uppercase tracking-widest">Productions</div>
+</div>
+<div class="space-y-2">
+<div class="font-display-lg-mobile text-display-lg-mobile text-nebula-pink">12</div>
+<div class="font-label-md text-label-md text-on-surface-variant uppercase tracking-widest">Awards Won</div>
+</div>
+<div class="space-y-2">
+<div class="font-display-lg-mobile text-display-lg-mobile text-cosmic-blue">45k</div>
+<div class="font-label-md text-label-md text-on-surface-variant uppercase tracking-widest">Hours Filmed</div>
+</div>
+<div class="space-y-2">
+<div class="font-display-lg-mobile text-display-lg-mobile text-primary">24</div>
+<div class="font-label-md text-label-md text-on-surface-variant uppercase tracking-widest">Countries</div>
+</div>
+</div>
+<div class="mt-stack-xl text-center">
+<h2 class="font-headline-xl text-headline-xl text-starlight-white mb-stack-md">Ready to Launch Your Story?</h2>
+<button class="bg-gradient-to-r from-nebula-pink to-deep-space text-starlight-white px-12 py-5 rounded-xl font-label-md text-label-md hover:scale-105 transition-all shadow-2xl hover:shadow-nebula-pink/50">
+                        Schedule a Strategy Call
+                    </button>
+</div>
+</div>
+</section>
+</main>
+<!-- Footer -->
+<footer class="bg-void-black border-t border-white/5 py-stack-xl">
+<div class="grid grid-cols-1 md:grid-cols-4 gap-gutter px-margin-mobile md:px-margin-desktop max-w-container-max mx-auto">
+<div class="md:col-span-1">
+<div class="font-headline-md text-headline-md text-primary mb-stack-sm">Mashoori Productions</div>
+<p class="font-body-md text-body-md text-on-surface-variant mb-stack-md">Elevating brands through the power of cinematic storytelling and visual precision.</p>
+<div class="flex gap-4">
+<a class="w-10 h-10 rounded-full glass-panel rim-light flex items-center justify-center hover:text-nebula-pink transition-colors" href="#">
+<span class="material-symbols-outlined">play_circle</span>
+</a>
+<a class="w-10 h-10 rounded-full glass-panel rim-light flex items-center justify-center hover:text-nebula-pink transition-colors" href="#">
+<span class="material-symbols-outlined">camera_enhance</span>
+</a>
+<a class="w-10 h-10 rounded-full glass-panel rim-light flex items-center justify-center hover:text-nebula-pink transition-colors" href="#">
+<span class="material-symbols-outlined">share</span>
+</a>
+</div>
+</div>
+<div>
+<h4 class="font-label-md text-label-md text-primary mb-stack-sm uppercase tracking-widest">Services</h4>
+<ul class="space-y-3 font-body-md text-body-md text-on-surface-variant">
+<li><a class="hover:text-nebula-pink transition-colors" href="#">Graphic Design</a></li>
+<li><a class="hover:text-nebula-pink transition-colors" href="#">Video Production</a></li>
+<li><a class="hover:text-nebula-pink transition-colors" href="#">SEO</a></li>
+</ul>
+</div>
+<div>
+<h4 class="font-label-md text-label-md text-primary mb-stack-sm uppercase tracking-widest">Agency</h4>
+<ul class="space-y-3 font-body-md text-body-md text-on-surface-variant">
+<li><a class="hover:text-nebula-pink transition-colors" href="#">Web Dev</a></li>
+<li><a class="hover:text-nebula-pink transition-colors" href="#">AI Automation</a></li>
+<li><a class="hover:text-nebula-pink transition-colors" href="#">Privacy Policy</a></li>
+</ul>
+</div>
+<div>
+<h4 class="font-label-md text-label-md text-primary mb-stack-sm uppercase tracking-widest">Connect</h4>
+<p class="font-body-md text-body-md text-on-surface-variant mb-4">Stay updated with our latest celestial drops.</p>
+<div class="flex">
+<input class="bg-surface-container border-none rounded-l-xl focus:ring-1 focus:ring-nebula-pink text-starlight-white w-full" placeholder="Email Address" type="email"/>
+<button class="bg-nebula-pink text-starlight-white px-4 rounded-r-xl">
+<span class="material-symbols-outlined">send</span>
+</button>
+</div>
+</div>
+</div>
+<div class="mt-stack-xl pt-stack-md border-t border-white/5 text-center px-margin-mobile">
+<p class="font-label-sm text-label-sm text-on-surface-variant/50">© 2024 Mashoori Productions. All rights reserved.</p>
+</div>
+</footer>
+<script>
+        // Flashlight Cursor Effect
+        const flashlight = document.getElementById('flashlight');
+        window.addEventListener('mousemove', e => {
+            flashlight.style.setProperty('--x', e.clientX + 'px');
+            flashlight.style.setProperty('--y', e.clientY + 'px');
+        });
+
+        // Intersection Observer for Reveal Animation
+        const observerOptions = {
+            threshold: 0.1
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('reveal-text');
+                }
+            });
+        }, observerOptions);
+
+        document.querySelectorAll('h2, h3, p, .glass-panel').forEach(el => {
+            el.style.opacity = "0";
+            observer.observe(el);
+        });
+
+        // Add reveal class to hero elements immediately
+        document.querySelectorAll('.reveal-text').forEach(el => {
+            el.style.opacity = "1";
+        });
+    </script>
+</body></html>

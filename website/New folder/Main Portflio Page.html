@@ -1,0 +1,404 @@
+<!DOCTYPE html>
+
+<html class="dark scroll-smooth" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Mashoori Productions - Galactic Portfolio</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&amp;family=Montserrat:wght@600;700;900&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "tertiary": "#ffd9dd",
+                        "primary-fixed": "#e3e2e2",
+                        "secondary-container": "#3e4578",
+                        "primary": "#e2e2e2",
+                        "surface-variant": "#333535",
+                        "on-tertiary": "#52202a",
+                        "error": "#ffb4ab",
+                        "secondary-fixed-dim": "#bcc3ff",
+                        "surface-container-high": "#282a2a",
+                        "cosmic-blue": "#0033fe",
+                        "on-tertiary-fixed": "#380b16",
+                        "on-primary": "#2f3131",
+                        "surface-container-low": "#1a1c1c",
+                        "starlight-white": "#e2e2e2",
+                        "on-error-container": "#ffdad6",
+                        "deep-space": "#001a97",
+                        "on-secondary-fixed": "#0e1648",
+                        "surface": "#121414",
+                        "on-primary-fixed-variant": "#464747",
+                        "inverse-on-surface": "#2f3131",
+                        "tertiary-fixed": "#ffd9dd",
+                        "surface-bright": "#383939",
+                        "void-black": "#0c0f0f",
+                        "secondary-fixed": "#dfe0ff",
+                        "on-secondary-fixed-variant": "#3b4376",
+                        "inverse-primary": "#5d5e5f",
+                        "outline-variant": "#444748",
+                        "on-primary-container": "#515253",
+                        "outline": "#8e9192",
+                        "nebula-pink": "#e7005c",
+                        "inverse-surface": "#e2e2e2",
+                        "on-surface-variant": "#c4c7c7",
+                        "surface-tint": "#c6c6c6",
+                        "secondary": "#bcc3ff",
+                        "tertiary-fixed-dim": "#ffb2bd",
+                        "surface-dim": "#121414",
+                        "on-secondary": "#252c5e",
+                        "surface-container-lowest": "#0d0f0f",
+                        "on-secondary-container": "#adb5f0",
+                        "on-tertiary-container": "#7b414b",
+                        "on-error": "#690005",
+                        "on-tertiary-fixed-variant": "#6d3640",
+                        "primary-container": "#c6c6c6",
+                        "surface-container": "#1e2020",
+                        "on-primary-fixed": "#1a1c1c",
+                        "on-surface": "#e2e2e2",
+                        "tertiary-container": "#ffb2bd",
+                        "error-container": "#93000a",
+                        "background": "#121414",
+                        "surface-container-highest": "#333535",
+                        "primary-fixed-dim": "#c6c6c6",
+                        "on-background": "#e2e2e2"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.125rem",
+                        "lg": "0.25rem",
+                        "xl": "0.5rem",
+                        "full": "0.75rem"
+                    },
+                    "spacing": {
+                        "stack-xl": "5rem",
+                        "margin-mobile": "1.25rem",
+                        "stack-sm": "0.75rem",
+                        "stack-lg": "3rem",
+                        "base": "8px",
+                        "stack-xs": "0.25rem",
+                        "container-max": "1440px",
+                        "margin-desktop": "5rem",
+                        "stack-md": "1.5rem",
+                        "gutter": "1.5rem"
+                    },
+                    "fontFamily": {
+                        "headline-xl": ["Montserrat"],
+                        "headline-lg": ["Montserrat"],
+                        "display-lg-mobile": ["Montserrat"],
+                        "headline-md": ["Montserrat"],
+                        "body-lg": ["Inter"],
+                        "label-sm": ["Inter"],
+                        "label-md": ["Inter"],
+                        "display-lg": ["Montserrat"],
+                        "body-md": ["Inter"]
+                    },
+                    "fontSize": {
+                        "headline-xl": ["48px", { "lineHeight": "1.2", "letterSpacing": "-0.02em", "fontWeight": "700" }],
+                        "headline-lg": ["32px", { "lineHeight": "1.3", "fontWeight": "700" }],
+                        "display-lg-mobile": ["48px", { "lineHeight": "1.1", "letterSpacing": "-0.02em", "fontWeight": "900" }],
+                        "headline-md": ["24px", { "lineHeight": "1.4", "fontWeight": "600" }],
+                        "body-lg": ["18px", { "lineHeight": "1.6", "fontWeight": "400" }],
+                        "label-sm": ["12px", { "lineHeight": "1.2", "letterSpacing": "0.02em", "fontWeight": "500" }],
+                        "label-md": ["14px", { "lineHeight": "1.2", "letterSpacing": "0.05em", "fontWeight": "600" }],
+                        "display-lg": ["72px", { "lineHeight": "1.1", "letterSpacing": "-0.04em", "fontWeight": "900" }],
+                        "body-md": ["16px", { "lineHeight": "1.6", "fontWeight": "400" }]
+                    }
+                },
+            },
+        }
+    </script>
+<style>
+        .glass-panel {
+            background: rgba(255, 255, 255, 0.03);
+            backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+        .glass-panel-hover:hover {
+            background: rgba(255, 255, 255, 0.08);
+            border-color: rgba(255, 255, 255, 0.2);
+            box-shadow: 0 0 30px rgba(0, 51, 255, 0.2);
+        }
+        .text-glow {
+            text-shadow: 0 0 20px rgba(188, 195, 255, 0.5);
+        }
+        .btn-cosmic {
+            background: linear-gradient(135deg, #001a97, #e7005c);
+            position: relative;
+            z-index: 1;
+            overflow: hidden;
+            transition: all 0.3s ease;
+        }
+        .btn-cosmic::before {
+            content: '';
+            position: absolute;
+            top: 0; left: 0; right: 0; bottom: 0;
+            background: linear-gradient(135deg, #e7005c, #001a97);
+            z-index: -1;
+            transition: opacity 0.5s ease;
+            opacity: 0;
+        }
+        .btn-cosmic:hover::before {
+            opacity: 1;
+        }
+        .btn-cosmic:hover {
+            box-shadow: 0 0 25px rgba(231, 0, 92, 0.5);
+            transform: scale(1.05);
+        }
+        .reveal-text {
+            opacity: 0;
+            filter: blur(10px);
+            transform: translateY(20px);
+            transition: opacity 1s cubic-bezier(0.19, 1, 0.22, 1), filter 1s cubic-bezier(0.19, 1, 0.22, 1), transform 1s cubic-bezier(0.19, 1, 0.22, 1);
+        }
+        .reveal-text.visible {
+            opacity: 1;
+            filter: blur(0);
+            transform: translateY(0);
+        }
+        .char {
+            display: inline-block;
+            opacity: 0;
+            filter: blur(8px);
+            transform: translateY(10px);
+            transition: opacity 0.6s ease, filter 0.6s ease, transform 0.6s ease;
+        }
+        .stagger-text.visible .char {
+            opacity: 1;
+            filter: blur(0);
+            transform: translateY(0);
+        }
+        #flashlight-cursor {
+            pointer-events: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100vw;
+            height: 100vh;
+            background: radial-gradient(circle 300px at var(--x, 50%) var(--y, 50%), rgba(255, 255, 255, 0.05) 0%, transparent 80%);
+            z-index: 9999;
+            mix-blend-mode: screen;
+        }
+        .haptic-card {
+            transition: transform 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+        }
+        .haptic-card:hover {
+            transform: translateY(-8px) scale(1.02);
+        }
+        .card-highlight::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 40%;
+            height: 1px;
+            background: linear-gradient(90deg, rgba(255,255,255,0.4), transparent);
+        }
+    </style>
+</head>
+<body class="bg-background text-on-background antialiased selection:bg-secondary-container selection:text-on-secondary-container overflow-x-hidden">
+<div id="flashlight-cursor"></div>
+<!-- Navigation -->
+<nav class="fixed top-0 w-full z-50 bg-black/40 backdrop-blur-xl border-b border-white/10 shadow-[0_0_30px_rgba(0,51,255,0.1)]">
+<div class="flex justify-between items-center px-margin-mobile md:px-margin-desktop py-4 max-w-container-max mx-auto">
+<a class="font-headline-md text-headline-md font-bold text-on-surface tracking-tighter hover:scale-105 transition-transform duration-300" href="index.html">Mashoori Productions</a>
+<div class="hidden md:flex gap-gutter items-center">
+<a class="font-body-md text-body-md uppercase tracking-[0.05em] text-on-surface-variant hover:text-on-surface transition-colors" href="services.html">Services</a>
+<a class="font-body-md text-body-md uppercase tracking-[0.05em] text-primary border-b-2 border-primary pb-1" href="portfolio.html">Portfolio</a>
+<a class="font-body-md text-body-md uppercase tracking-[0.05em] text-on-surface-variant hover:text-on-surface transition-colors" href="pricing.html">Pricing</a>
+<a class="font-body-md text-body-md uppercase tracking-[0.05em] text-on-surface-variant hover:text-on-surface transition-colors" href="contact.html">Contact</a>
+</div>
+<a class="hidden md:block px-6 py-2 rounded-full font-label-md text-label-md btn-cosmic text-white text-center" href="contact.html">Get Started</a>
+<button class="md:hidden text-on-surface">
+<span class="material-symbols-outlined">menu</span>
+</button>
+</div>
+</nav>
+<main class="pt-[100px] pb-stack-xl max-w-container-max mx-auto relative z-10">
+<!-- Background Effects -->
+<div class="fixed inset-0 z-0 pointer-events-none">
+<div class="absolute top-[-10%] left-[-10%] w-[50%] h-[50%] bg-secondary-container/10 rounded-full blur-[150px]"></div>
+<div class="absolute bottom-[-10%] right-[-10%] w-[40%] h-[40%] bg-tertiary-container/10 rounded-full blur-[150px]"></div>
+</div>
+<!-- Hero Section -->
+<section class="px-margin-mobile md:px-margin-desktop py-stack-xl flex flex-col items-center justify-center min-h-[50vh] text-center relative z-10">
+<h1 class="font-display-lg-mobile md:font-display-lg text-display-lg-mobile md:text-display-lg text-glow mb-stack-md stagger-text" id="hero-title">Galactic Portfolio</h1>
+<p class="font-body-lg text-body-lg text-on-surface-variant max-w-2xl reveal-text">
+            Showcasing cosmic excellence in digital marketing. We craft immersive campaigns that propel brands into new dimensions of engagement and reach.
+        </p>
+</section>
+<!-- Navigation Filters -->
+<section class="px-margin-mobile md:px-margin-desktop mb-stack-lg relative z-10">
+<div class="flex flex-wrap justify-center gap-stack-sm reveal-text" style="transition-delay: 0.3s;">
+<a class="px-5 py-2 rounded-full glass-panel glass-panel-hover font-label-sm text-label-sm text-tertiary border-tertiary/20 transition-all" href="portfolio.html">All Missions</a>
+<a class="px-5 py-2 rounded-full glass-panel glass-panel-hover font-label-sm text-label-sm text-on-surface-variant transition-all" href="{{DATA:SCREEN:SCREEN_17}}">Graphic Design</a>
+<a class="px-5 py-2 rounded-full glass-panel glass-panel-hover font-label-sm text-label-sm text-on-surface-variant transition-all" href="{{DATA:SCREEN:SCREEN_2}}">Video Editing</a>
+<a class="px-5 py-2 rounded-full glass-panel glass-panel-hover font-label-sm text-label-sm text-on-surface-variant transition-all" href="{{DATA:SCREEN:SCREEN_6}}">Video Production</a>
+<a class="px-5 py-2 rounded-full glass-panel glass-panel-hover font-label-sm text-label-sm text-on-surface-variant transition-all" href="{{DATA:SCREEN:SCREEN_13}}">SEO</a>
+<a class="px-5 py-2 rounded-full glass-panel glass-panel-hover font-label-sm text-label-sm text-on-surface-variant transition-all" href="{{DATA:SCREEN:SCREEN_16}}">Web Dev</a>
+<a class="px-5 py-2 rounded-full glass-panel glass-panel-hover font-label-sm text-label-sm text-on-surface-variant transition-all" href="{{DATA:SCREEN:SCREEN_15}}">Meta Ads</a>
+<a class="px-5 py-2 rounded-full glass-panel glass-panel-hover font-label-sm text-label-sm text-on-surface-variant transition-all" href="{{DATA:SCREEN:SCREEN_5}}">Automation/AI</a>
+</div>
+</section>
+<!-- Bento Portfolio Grid -->
+<section class="px-margin-mobile md:px-margin-desktop mb-stack-xl relative z-10 grid grid-cols-1 md:grid-cols-12 gap-gutter auto-rows-[350px] md:auto-rows-[450px]">
+<!-- Large Item -->
+<div class="md:col-span-8 rounded-xl glass-panel haptic-card overflow-hidden group card-highlight relative reveal-text">
+<div class="absolute inset-0 bg-cover bg-center transition-transform duration-700 group-hover:scale-105" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuDJHV9aqrxMfU6KAvPyvYf5OYExHzm_yQxMzdz7kfrEepD2o3oa65K9g1k-wwlEFXnmhD3W8V1OWGTZoA7_ZZRE1QR8jPoBQZqCHFAoiNNWL9ZVEzhG5v-dzRn7AGvKfB0TYcXlnrP2YBEEOpSEMzNofB8uYrpFmYxD4kiHeXk76YQuGTzUPBXxycscA3q1r2-W6euylkMs5l_-pLu-TQUPUq13mFQ2LgrCpNtZXNFSSonFkBvcwrOpB3OiIraLiUu688P38BXv28I');"></div>
+<div class="absolute inset-0 bg-gradient-to-t from-background via-background/60 to-transparent opacity-90 transition-opacity group-hover:opacity-80"></div>
+<div class="absolute inset-0 p-stack-md flex flex-col justify-end">
+<div class="flex justify-between items-end">
+<div>
+<span class="inline-block px-3 py-1 mb-2 rounded-full bg-secondary-container/50 text-secondary font-label-sm text-label-sm backdrop-blur-md">Full Launch</span>
+<h3 class="font-headline-xl text-headline-xl text-on-surface mb-2">Project Orion</h3>
+</div>
+<div class="text-right opacity-0 group-hover:opacity-100 transform translate-y-4 group-hover:translate-y-0 transition-all duration-300">
+<p class="font-label-sm text-label-sm text-on-surface-variant">Mission Reach</p>
+<p class="font-body-md text-body-md text-primary">3M+ Engagements</p>
+</div>
+</div>
+</div>
+</div>
+<!-- Medium Item -->
+<div class="md:col-span-4 rounded-xl glass-panel haptic-card overflow-hidden group card-highlight relative reveal-text" style="transition-delay: 0.1s;">
+<div class="absolute inset-0 bg-cover bg-center transition-transform duration-700 group-hover:scale-105" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuBdBVFis72ig31XuFNX1d_LurWvnNewThVYEt0RTBAMJRsVi-baGGkq9Dag6k1Pbu9zaAoIzXP1tZd7iz94xk7X5m3wCpydfEMC8DsUKoFEQM0L5CJXGgyc4_YP3WfWCXB4ntfQXG53ichWlsSIYDyJJDexGvUHQVeSU3AJn6YZ4S4VDuqHTHb2Vphox4safWwmTGmtuvZ84H88QZN08ZvkGELWQrjOOMtwK3ArcuOCZOw4uqwAdktwEA');"></div>
+<div class="absolute inset-0 bg-gradient-to-t from-background via-background/40 to-transparent opacity-95"></div>
+<div class="absolute inset-0 p-stack-md flex flex-col justify-end">
+<span class="inline-block px-3 py-1 mb-2 rounded-full bg-tertiary-container/30 text-tertiary font-label-sm text-label-sm backdrop-blur-md self-start">Creative Director</span>
+<h3 class="font-headline-md text-headline-md text-on-surface">Saad Akram</h3>
+</div>
+</div>
+<!-- Medium Item -->
+<div class="md:col-span-4 rounded-xl glass-panel haptic-card overflow-hidden group card-highlight relative reveal-text" style="transition-delay: 0.2s;">
+<div class="absolute inset-0 bg-cover bg-center transition-transform duration-700 group-hover:scale-105" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuBKv3z22Jd7Kx3dvxs96MmusCRdoGqMxhRY7G8Kb4vCv9xgq9RVDvbWS-9BkJ7WzAB15DvIwHTqnUO2GCAX-w2UVugNKSdQtN7pEtu32p0qKykGdPFjepSwwUyynTwjXWefOTR9MtI0oIj4UcUrVamM6LshM58fMrbS5cUEk31AuYQmwJ-vVP4vD7ncRLv5ZWBlyl3d7Xf9FA5b9lOfBgTsxOp7mpEMwkFRhXbPYRvyiioBO08stU4a6SUPMzKyM4bSt9NZrBGYqbI');"></div>
+<div class="absolute inset-0 bg-gradient-to-t from-background via-background/40 to-transparent opacity-95"></div>
+<div class="absolute inset-0 p-stack-md flex flex-col justify-end">
+<span class="inline-block px-3 py-1 mb-2 rounded-full bg-secondary-container/30 text-secondary font-label-sm text-label-sm backdrop-blur-md self-start">Identity Mission</span>
+<h3 class="font-headline-md text-headline-md text-on-surface">Lunar Echo</h3>
+</div>
+</div>
+<!-- Large Item -->
+<div class="md:col-span-8 rounded-xl glass-panel haptic-card overflow-hidden group card-highlight relative reveal-text" style="transition-delay: 0.3s;">
+<div class="absolute inset-0 bg-cover bg-center transition-transform duration-700 group-hover:scale-105" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuAjKxv5yMp2NAabnqu5qmepm6Gds1LKGxq1tuPfFvCl0cLZ7Fz7da3Y-oufBeUWUrb95_v6Rjpuj5LXKR4L3W73-WS-pmrnx1yfT2Bfqp9ZDavUMmbvJN-SUSlSysu3GzR0UosbuNuuF3ZUe9lK4Rdfdzxq5GaXCKP_HyMh7ZmdkGopMJ387GJqzBWHU-kNQTdTVx-Tb7y6gFBI0Ecz-e9HImOrojzIcVLs_Q_BO5iHMZch3O-EWqkcNpGHh75q5TP9oGkuqV2IRuM');"></div>
+<div class="absolute inset-0 bg-gradient-to-t from-background via-background/60 to-transparent opacity-90 transition-opacity group-hover:opacity-80"></div>
+<div class="absolute inset-0 p-stack-md flex flex-col justify-end">
+<div class="flex justify-between items-end">
+<div>
+<span class="inline-block px-3 py-1 mb-2 rounded-full bg-tertiary-container/30 text-tertiary font-label-sm text-label-sm backdrop-blur-md">Cinematic Production</span>
+<h3 class="font-headline-xl text-headline-xl text-on-surface mb-2">Stellar Dynamics</h3>
+</div>
+<div class="text-right opacity-0 group-hover:opacity-100 transform translate-y-4 group-hover:translate-y-0 transition-all duration-300">
+<p class="font-label-sm text-label-sm text-on-surface-variant">Views</p>
+<p class="font-body-md text-body-md text-primary">12M+ Worldwide</p>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Featured Case Study -->
+<section class="px-margin-mobile md:px-margin-desktop mb-stack-xl relative z-10">
+<div class="glass-panel rounded-2xl p-stack-lg md:p-stack-xl card-highlight overflow-hidden relative group reveal-text">
+<div class="absolute top-0 right-0 w-[400px] h-[400px] bg-cosmic-blue/5 rounded-full blur-[100px] -translate-y-1/2 translate-x-1/2"></div>
+<div class="grid grid-cols-1 md:grid-cols-2 gap-gutter relative z-10 items-center">
+<div>
+<span class="font-label-md text-label-md text-secondary uppercase tracking-widest mb-4 block">Featured Mission</span>
+<h2 class="font-display-lg-mobile md:font-headline-xl text-display-lg-mobile md:text-headline-xl text-on-surface mb-stack-sm">The Apollo Rebrand</h2>
+<p class="font-body-lg text-body-lg text-on-surface-variant mb-stack-md">
+                        A comprehensive architectural overhaul of a legacy brand. We implemented a unified visual language and a targeted social strategy that elevated their market presence from terrestrial to cosmic.
+                    </p>
+<ul class="mb-stack-lg space-y-4">
+<li class="flex items-center gap-3 font-body-md text-body-md text-primary">
+<span class="material-symbols-outlined text-tertiary" style="font-variation-settings: 'FILL' 1;">check_circle</span>
+                            300% Increase in Organic Traffic
+                        </li>
+<li class="flex items-center gap-3 font-body-md text-body-md text-primary">
+<span class="material-symbols-outlined text-tertiary" style="font-variation-settings: 'FILL' 1;">check_circle</span>
+                            Award-winning Visual Identity
+                        </li>
+</ul>
+<button class="px-8 py-4 rounded-xl border border-white/20 glass-panel hover:bg-white/5 font-label-md text-label-md text-white transition-all inline-flex items-center gap-2 group/btn">
+                        Explore Full Case Study <span class="material-symbols-outlined group-hover/btn:translate-x-1 transition-transform">arrow_forward</span>
+</button>
+</div>
+<div class="relative h-[450px] rounded-2xl overflow-hidden glass-panel">
+<img alt="The Apollo Rebrand Visual" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-1000" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAz_UuvoizvOe3LtQjMuYSb8sZUGnaIUHi0GjX31Psr36vUrBPOYp9pSP_neuuOgiMw7fvteY1ZijUWqTKd_5S4KYL8dPdxKVfW4hbUVtseR71k2Af1Ye1akhLJhws64WxbrbQV7ixjKsr-o_GX5IyA-JB3qljXGVCIfi8Kkb1UcGj4x93Anq7JNJxz5V6QL0m1CEA7mNUhovCjRhFW9qGf0a5IhWzHscoapjDfi_BKvVePgW7XKuoF4R4FSfZI3oU-DwpgIwVnHms"/>
+<div class="absolute inset-0 bg-gradient-to-t from-background/60 to-transparent"></div>
+</div>
+</div>
+</div>
+</section>
+<!-- CTA Section -->
+<section class="px-margin-mobile md:px-margin-desktop py-stack-xl text-center relative z-10 reveal-text">
+<h2 class="font-display-lg-mobile md:font-headline-xl text-display-lg-mobile md:text-headline-xl text-on-surface mb-stack-md">Ready for Liftoff?</h2>
+<p class="font-body-lg text-body-lg text-on-surface-variant mb-stack-lg max-w-2xl mx-auto">
+            Join the vanguard of digital innovation. Let's engineer a campaign that defies gravity and dominates your market.
+        </p>
+<button class="px-12 py-5 rounded-full font-label-md text-label-md btn-cosmic text-white text-lg transition-all shadow-[0_0_30px_rgba(0,51,254,0.3)] hover:shadow-[0_0_40px_rgba(231,0,92,0.5)]">
+            Initiate Your Launch
+        </button>
+</section>
+</main>
+<!-- Footer -->
+<footer class="w-full bg-surface-container-lowest border-t border-white/5 relative z-10">
+<div class="flex flex-col md:flex-row justify-between items-center px-margin-mobile md:px-margin-desktop py-stack-lg gap-gutter max-w-container-max mx-auto">
+<div class="font-headline-md text-headline-md text-primary mb-4 md:mb-0">
+<a href="index.html">Mashoori Productions</a>
+</div>
+<div class="flex flex-wrap justify-center gap-6 mb-4 md:mb-0">
+<a class="font-label-sm text-label-sm text-on-surface-variant hover:text-secondary transition-colors" href="index.html">Home</a>
+<a class="font-label-sm text-label-sm text-on-surface-variant hover:text-secondary transition-colors" href="services.html">Services</a>
+<a class="font-label-sm text-label-sm text-on-surface-variant hover:text-secondary transition-colors" href="pricing.html">Pricing</a>
+<a class="font-label-sm text-label-sm text-on-surface-variant hover:text-secondary transition-colors" href="contact.html">Contact</a>
+<a class="font-label-sm text-label-sm text-on-surface-variant hover:text-secondary transition-colors" href="#">Instagram</a>
+<a class="font-label-sm text-label-sm text-on-surface-variant hover:text-secondary transition-colors" href="#">LinkedIn</a>
+</div>
+<div class="font-label-sm text-label-sm text-on-surface-variant text-center md:text-right opacity-60">
+            © 2024 Mashoori Productions. Cosmic Excellence in Digital Marketing.
+        </div>
+</div>
+</footer>
+<script>
+    // Flashlight Cursor Effect
+    const cursor = document.getElementById('flashlight-cursor');
+    document.addEventListener('mousemove', (e) => {
+        cursor.style.setProperty('--x', e.clientX + 'px');
+        cursor.style.setProperty('--y', e.clientY + 'px');
+    });
+
+    // Staggered Character Text Reveal for Hero Title
+    const heroTitle = document.getElementById('hero-title');
+    const titleText = heroTitle.innerText;
+    heroTitle.innerText = '';
+    heroTitle.classList.add('stagger-text');
+    
+    [...titleText].forEach((char, index) => {
+        const span = document.createElement('span');
+        span.innerText = char === ' ' ? '\u00A0' : char;
+        span.className = 'char';
+        span.style.transitionDelay = `${index * 0.05}s`;
+        heroTitle.appendChild(span);
+    });
+
+    setTimeout(() => {
+        heroTitle.classList.add('visible');
+    }, 100);
+
+    // Intersection Observer for Reveal Elements
+    const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                entry.target.classList.add('visible');
+            }
+        });
+    }, { threshold: 0.1 });
+
+    document.querySelectorAll('.reveal-text').forEach(el => {
+        observer.observe(el);
+    });
+</script>
+</body></html>

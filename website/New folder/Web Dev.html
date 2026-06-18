@@ -1,0 +1,380 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Web Development | Mashoori Productions</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700;900&amp;family=Inter:wght@400;500;600&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<!-- Theme Configuration -->
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            "colors": {
+                    "secondary-container": "#3e4578",
+                    "surface-variant": "#333535",
+                    "background": "#121414",
+                    "on-secondary-fixed": "#0e1648",
+                    "on-surface": "#e2e2e2",
+                    "deep-space": "#001a97",
+                    "secondary": "#bcc3ff",
+                    "cosmic-blue": "#0033fe",
+                    "secondary-fixed": "#dfe0ff",
+                    "tertiary": "#ffd9dd",
+                    "surface-container-low": "#1a1c1c",
+                    "inverse-on-surface": "#2f3131",
+                    "on-secondary": "#252c5e",
+                    "surface-dim": "#121414",
+                    "tertiary-fixed": "#ffd9dd",
+                    "error-container": "#93000a",
+                    "outline": "#8e9192",
+                    "surface-container-highest": "#333535",
+                    "inverse-primary": "#5d5e5f",
+                    "on-primary": "#2f3131",
+                    "tertiary-container": "#ffb2bd",
+                    "surface-container-lowest": "#0d0f0f",
+                    "surface": "#121414",
+                    "on-error": "#690005",
+                    "primary-fixed": "#e3e2e2",
+                    "secondary-fixed-dim": "#bcc3ff",
+                    "on-error-container": "#ffdad6",
+                    "on-tertiary": "#52202a",
+                    "on-secondary-fixed-variant": "#3b4376",
+                    "inverse-surface": "#e2e2e2",
+                    "on-tertiary-fixed-variant": "#6d3640",
+                    "on-primary-fixed": "#1a1c1c",
+                    "surface-container-high": "#282a2a",
+                    "starlight-white": "#e2e2e2",
+                    "surface-tint": "#c6c6c6",
+                    "void-black": "#0c0f0f",
+                    "on-primary-container": "#515253",
+                    "on-tertiary-fixed": "#380b16",
+                    "on-tertiary-container": "#7b414b",
+                    "on-primary-fixed-variant": "#464747",
+                    "error": "#ffb4ab",
+                    "on-surface-variant": "#c4c7c7",
+                    "outline-variant": "#444748",
+                    "surface-bright": "#383939",
+                    "tertiary-fixed-dim": "#ffb2bd",
+                    "on-secondary-container": "#adb5f0",
+                    "nebula-pink": "#e7005c",
+                    "primary-container": "#c6c6c6",
+                    "on-background": "#e2e2e2",
+                    "primary": "#e2e2e2",
+                    "surface-container": "#1e2020",
+                    "primary-fixed-dim": "#c6c6c6"
+            },
+            "borderRadius": {
+                    "DEFAULT": "0.125rem",
+                    "lg": "0.25rem",
+                    "xl": "0.5rem",
+                    "full": "0.75rem"
+            },
+            "spacing": {
+                    "stack-xs": "0.25rem",
+                    "stack-lg": "3rem",
+                    "stack-xl": "5rem",
+                    "stack-md": "1.5rem",
+                    "stack-sm": "0.75rem",
+                    "margin-desktop": "5rem",
+                    "base": "8px",
+                    "margin-mobile": "1.25rem",
+                    "container-max": "1440px",
+                    "gutter": "1.5rem"
+            },
+            "fontFamily": {
+                    "headline-xl": ["Montserrat"],
+                    "label-md": ["Inter"],
+                    "body-md": ["Inter"],
+                    "display-lg": ["Montserrat"],
+                    "display-lg-mobile": ["Montserrat"],
+                    "label-sm": ["Inter"],
+                    "headline-lg": ["Montserrat"],
+                    "body-lg": ["Inter"],
+                    "headline-md": ["Montserrat"]
+            },
+            "fontSize": {
+                    "headline-xl": ["48px", {"lineHeight": "1.2", "letterSpacing": "-0.02em", "fontWeight": "700"}],
+                    "label-md": ["14px", {"lineHeight": "1.2", "letterSpacing": "0.05em", "fontWeight": "600"}],
+                    "body-md": ["16px", {"lineHeight": "1.6", "fontWeight": "400"}],
+                    "display-lg": ["72px", {"lineHeight": "1.1", "letterSpacing": "-0.04em", "fontWeight": "900"}],
+                    "display-lg-mobile": ["48px", {"lineHeight": "1.1", "letterSpacing": "-0.02em", "fontWeight": "900"}],
+                    "label-sm": ["12px", {"lineHeight": "1.2", "letterSpacing": "0.02em", "fontWeight": "500"}],
+                    "headline-lg": ["32px", {"lineHeight": "1.3", "fontWeight": "700"}],
+                    "body-lg": ["18px", {"lineHeight": "1.6", "fontWeight": "400"}],
+                    "headline-md": ["24px", {"lineHeight": "1.4", "fontWeight": "600"}]
+            }
+          },
+        },
+      }
+    </script>
+<style>
+        body {
+            background-color: #121414;
+            color: #e2e2e2;
+            overflow-x: hidden;
+            cursor: default;
+        }
+
+        .glass-panel {
+            background: rgba(255, 255, 255, 0.03);
+            backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px);
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .rim-light {
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            background: linear-gradient(to bottom, rgba(255,255,255,0.05) 0%, transparent 100%);
+        }
+
+        .nebula-glow-blue {
+            position: absolute;
+            width: 600px;
+            height: 600px;
+            background: radial-gradient(circle, rgba(0, 51, 254, 0.15) 0%, transparent 70%);
+            filter: blur(100px);
+            z-index: -1;
+            pointer-events: none;
+        }
+
+        .nebula-glow-pink {
+            position: absolute;
+            width: 500px;
+            height: 500px;
+            background: radial-gradient(circle, rgba(231, 0, 92, 0.12) 0%, transparent 70%);
+            filter: blur(100px);
+            z-index: -1;
+            pointer-events: none;
+        }
+
+        .flashlight {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100vw;
+            height: 100vh;
+            pointer-events: none;
+            background: radial-gradient(circle at var(--x) var(--y), rgba(255,255,255,0.04) 0%, transparent 20%);
+            z-index: 50;
+        }
+
+        .portfolio-card:hover .card-image {
+            transform: scale(1.08);
+        }
+
+        .haptic-bounce {
+            transition: transform 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+        }
+
+        .haptic-bounce:hover {
+            transform: translateY(-8px);
+        }
+
+        .reveal-text {
+            animation: reveal 1s cubic-bezier(0.2, 0, 0.2, 1) forwards;
+            opacity: 0;
+            filter: blur(10px);
+            transform: translateY(20px);
+        }
+
+        @keyframes reveal {
+            to {
+                opacity: 1;
+                filter: blur(0);
+                transform: translateY(0);
+            }
+        }
+    </style>
+</head>
+<body class="selection:bg-nebula-pink/30">
+<div class="flashlight" id="flashlight"></div>
+<!-- Navigation Shell -->
+<header class="fixed top-0 w-full bg-background/80 backdrop-blur-xl border-b border-white/10 z-[60]">
+<div class="flex justify-between items-center px-5 md:px-20 py-4 max-w-container-max mx-auto">
+<div class="font-headline-md text-headline-md text-primary tracking-tighter">
+                Mashoori Productions
+            </div>
+<nav class="hidden md:flex items-center gap-8">
+<a class="font-body-md text-body-md text-on-surface-variant hover:text-primary transition-colors" href="#">Home</a>
+<a class="font-body-md text-body-md text-on-surface-variant hover:text-primary transition-colors" href="#">Services</a>
+<a class="font-body-md text-body-md text-primary border-b-2 border-primary pb-1" href="#">Portfolio</a>
+<a class="font-body-md text-body-md text-on-surface-variant hover:text-primary transition-colors" href="#">Pricing</a>
+<a class="font-body-md text-body-md text-on-surface-variant hover:text-primary transition-colors" href="#">Contact</a>
+</nav>
+<button class="bg-gradient-to-r from-nebula-pink to-deep-space text-on-surface px-6 py-2 rounded-full font-label-md text-label-md hover:scale-105 transition-transform hover:shadow-[0_0_20px_rgba(231,0,92,0.4)]">
+                Get Started
+            </button>
+</div>
+</header>
+<main class="relative pt-32 pb-stack-xl">
+<!-- Background Elements -->
+<div class="nebula-glow-blue top-[-100px] left-[-200px]"></div>
+<div class="nebula-glow-pink top-[200px] right-[-100px]"></div>
+<div class="nebula-glow-blue bottom-[500px] left-[30%]"></div>
+<!-- Hero Section -->
+<section class="px-margin-mobile md:px-margin-desktop max-w-container-max mx-auto mb-stack-xl">
+<div class="flex flex-col items-start gap-stack-sm max-w-4xl">
+<span class="font-label-md text-label-md text-nebula-pink tracking-widest uppercase reveal-text" style="animation-delay: 0.1s;">Web Development</span>
+<h1 class="font-display-lg-mobile md:font-display-lg text-display-lg-mobile md:text-display-lg text-on-surface reveal-text" style="animation-delay: 0.2s;">
+                    Engineering the <span class="text-transparent bg-clip-text bg-gradient-to-r from-secondary via-primary to-nebula-pink">Digital Frontier</span>.
+                </h1>
+<p class="font-body-lg text-body-lg text-on-surface-variant mt-stack-md reveal-text" style="animation-delay: 0.3s;">
+                    We craft immersive, high-performance web experiences that live at the intersection of technical precision and artistic storytelling.
+                </p>
+</div>
+</section>
+<!-- Featured Projects Grid -->
+<section class="px-margin-mobile md:px-margin-desktop max-w-container-max mx-auto">
+<div class="grid grid-cols-1 md:grid-cols-12 gap-gutter">
+<!-- Large Featured Card -->
+<div class="md:col-span-8 group haptic-bounce">
+<div class="glass-panel rim-light rounded-xl overflow-hidden h-[500px] relative flex flex-col justify-end p-stack-lg border border-white/5">
+<div class="absolute inset-0 z-0">
+<img alt="Project Image" class="card-image w-full h-full object-cover transition-transform duration-700 opacity-60" data-alt="A high-fidelity mockup of a futuristic fintech dashboard displayed on a large screen in a dark, atmospheric studio. The UI features glowing blue data visualizations, translucent cards, and sharp typography. The scene is illuminated by soft cyan and magenta neon rim lights reflecting off sleek glass surfaces, creating a premium cosmic tech aesthetic consistent with the brand's dark-mode identity." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDZTmFr9fMpeU5ZttxhjmZT0aOxVBzWU4kr7KXsp0sywxZN2eVVu0leob8geZHLl-Mn0ExPFPPmp_73SasESQr-6KNElDil8A198ljVE0kfZgCRMMtBy4ekBpKgMG-8xOK2YP2QSgHUgrl-40_-9EeWMEA8GVA2fwPfZj61nDWX3nj3XBoMdNcZ0pfJ9UKvaXhbVjN8HH0DNWs6s62XrQgiZBS_qTGPKJqjG93IL3fz4jUeEyiAVVhevg"/>
+</div>
+<div class="relative z-10">
+<div class="flex gap-2 mb-4">
+<span class="px-3 py-1 bg-white/10 backdrop-blur-md rounded-full text-label-sm font-label-sm text-secondary border border-white/10">Next.js 14</span>
+<span class="px-3 py-1 bg-white/10 backdrop-blur-md rounded-full text-label-sm font-label-sm text-secondary border border-white/10">WebGL</span>
+</div>
+<h3 class="font-headline-xl text-headline-xl text-on-surface mb-2">Aether Financial</h3>
+<p class="font-body-md text-body-md text-on-surface-variant max-w-lg mb-6">Real-time data visualization platform for high-frequency trading firms.</p>
+<a class="inline-flex items-center gap-2 font-label-md text-label-md text-primary hover:text-nebula-pink transition-colors" href="#">
+                                View Case Study <span class="material-symbols-outlined">arrow_forward</span>
+</a>
+</div>
+</div>
+</div>
+<!-- Vertical Card -->
+<div class="md:col-span-4 group haptic-bounce">
+<div class="glass-panel rim-light rounded-xl overflow-hidden h-[500px] relative flex flex-col justify-end p-stack-md border border-white/5">
+<div class="absolute inset-0 z-0">
+<img alt="Project Image" class="card-image w-full h-full object-cover transition-transform duration-700 opacity-50" data-alt="A macro shot of a sleek mobile interface designed for an AI analytics tool, showcasing intricate detail and high-contrast typography. The screen glows with a soft nebula-pink light against a pitch-black background. Sharp glass-like textures and thin borders define the UI elements, while floating particles in the background suggest a sense of deep-space immersion." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBzv0qJ2e4Dzk4NqOfpTD9EwF1NviKfZ-0ZmV-TLbo09rMZy0nknvYaRc8bMYDxAe9U9jr2pzOLn4bNc5ogiq8cwmtcknCgcLhOtfDgLEepGlOIxYy_YR8_ZdK7jvUj9JOWTD3qZzHMYwwX_nQkCA97DHhINcsjgGNLzqxv-hkiC8pgyknT9ne517sLDk_ql414MviE0RxdQZPkcQ-mb6syZnV-c4bzvVoUYIw7qJUtvQ1lxB5QTuwFZw"/>
+</div>
+<div class="relative z-10">
+<div class="mb-4">
+<span class="px-3 py-1 bg-white/10 backdrop-blur-md rounded-full text-label-sm font-label-sm text-secondary border border-white/10">AI Integration</span>
+</div>
+<h3 class="font-headline-lg text-headline-lg text-on-surface mb-2">Neural Engine</h3>
+<p class="font-body-md text-body-md text-on-surface-variant mb-6">Automation hub for creative agencies powered by GPT-4.</p>
+<a class="inline-flex items-center gap-2 font-label-md text-label-md text-primary hover:text-nebula-pink transition-colors" href="#">
+                                Live Preview <span class="material-symbols-outlined">open_in_new</span>
+</a>
+</div>
+</div>
+</div>
+<!-- Bento Grid Middle Row -->
+<div class="md:col-span-6 group haptic-bounce">
+<div class="glass-panel rim-light rounded-xl overflow-hidden h-[400px] relative border border-white/5 p-stack-md flex flex-col gap-4">
+<img alt="Project Image" class="w-full h-48 object-cover rounded-lg opacity-80" data-alt="A minimalist architectural portfolio website shown in a split-screen layout. On one side, a clean monochromatic image of a brutalist building; on the other, elegant serif typography on a textured dark background. The lighting is dramatic, with a single beam of white light cutting across the screen, embodying the cinematic professionalism of high-end web design." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCtEwQNhYHAaNocY9SYsfsx7KClcAx-WypjGa0alqx_oUui5UkJ4OBvVSrovibK2ZWreYUylJ7-_dMxLcHRazToFP30YH8bgkMewrA1pl8m1SqkryA7FadPNOBcAdmoP6l0iQol_7JQYjZ30ILCDz4JvOaT6pgE5KX76a0bwuDhXc3OCl-U46qE2INmPwP6_3CfTDfI-q8tpxdU5DMKLnnIy2u6Vnnd_XTgCIg_EIxgJ4ob07aypR8pZg"/>
+<div>
+<h3 class="font-headline-md text-headline-md text-on-surface">Vanguard Studios</h3>
+<p class="font-body-md text-body-md text-on-surface-variant mt-2">Award-winning portfolio for a global architecture firm.</p>
+</div>
+</div>
+</div>
+<div class="md:col-span-6 group haptic-bounce">
+<div class="glass-panel rim-light rounded-xl overflow-hidden h-[400px] relative border border-white/5 p-stack-md flex flex-col gap-4">
+<div class="w-full h-48 bg-void-black rounded-lg border border-white/10 flex items-center justify-center overflow-hidden">
+
+</div>
+<div>
+<h3 class="font-headline-md text-headline-md text-on-surface">Nebula XR</h3>
+<p class="font-body-md text-body-md text-on-surface-variant mt-2">Interactive 3D landing page with custom GLSL shaders and physics.</p>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Tech Stack Horizontal Scroll/Marquee -->
+<section class="mt-stack-xl py-12 border-y border-white/5 bg-void-black/50">
+<div class="px-margin-mobile md:px-margin-desktop max-w-container-max mx-auto overflow-hidden">
+<div class="flex items-center gap-16 grayscale opacity-50 hover:grayscale-0 hover:opacity-100 transition-all duration-700 animate-marquee whitespace-nowrap">
+<div class="flex items-center gap-2 font-headline-md text-headline-md"><span class="material-symbols-outlined text-cosmic-blue">code</span> React</div>
+<div class="flex items-center gap-2 font-headline-md text-headline-md"><span class="material-symbols-outlined text-nebula-pink">bolt</span> Astro</div>
+<div class="flex items-center gap-2 font-headline-md text-headline-md"><span class="material-symbols-outlined text-secondary">database</span> Supabase</div>
+<div class="flex items-center gap-2 font-headline-md text-headline-md"><span class="material-symbols-outlined text-cosmic-blue">animation</span> Three.js</div>
+<div class="flex items-center gap-2 font-headline-md text-headline-md"><span class="material-symbols-outlined text-nebula-pink">grid_view</span> Tailwind CSS</div>
+<div class="flex items-center gap-2 font-headline-md text-headline-md"><span class="material-symbols-outlined text-secondary">api</span> GraphQL</div>
+</div>
+</div>
+</section>
+<!-- CTA Section -->
+<section class="mt-stack-xl px-margin-mobile md:px-margin-desktop max-w-container-max mx-auto text-center">
+<div class="glass-panel rim-light py-20 px-8 rounded-full border border-white/10 overflow-hidden relative group">
+<div class="absolute inset-0 bg-gradient-to-r from-nebula-pink/10 to-cosmic-blue/10 opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+<h2 class="font-headline-xl text-headline-xl text-on-surface relative z-10">Ready to launch your vision?</h2>
+<p class="font-body-lg text-body-lg text-on-surface-variant mt-4 mb-10 relative z-10">Let's build something that outshines the competition.</p>
+<button class="bg-primary text-void-black px-12 py-4 rounded-full font-label-md text-label-md hover:scale-105 transition-transform relative z-10">
+                    Inquire Now
+                </button>
+</div>
+</section>
+</main>
+<!-- Footer Shell -->
+<footer class="w-full border-t border-white/5 bg-void-black pt-stack-xl pb-stack-md">
+<div class="grid grid-cols-1 md:grid-cols-4 gap-gutter px-5 md:px-20 max-w-container-max mx-auto">
+<div class="md:col-span-1">
+<div class="font-headline-md text-headline-md text-primary mb-6">Mashoori Productions</div>
+<p class="font-body-md text-body-md text-on-surface-variant">Cinematic digital craftsmanship for the next generation of brands.</p>
+</div>
+<div>
+<h4 class="font-label-md text-label-md text-primary uppercase mb-6 tracking-widest">Services</h4>
+<ul class="flex flex-col gap-4">
+<li><a class="font-body-md text-body-md text-on-surface-variant hover:text-nebula-pink transition-colors" href="#">Graphic Design</a></li>
+<li><a class="font-body-md text-body-md text-on-surface-variant hover:text-nebula-pink transition-colors" href="#">Video Production</a></li>
+<li><a class="font-body-md text-body-md text-on-surface-variant hover:text-nebula-pink transition-colors" href="#">SEO</a></li>
+</ul>
+</div>
+<div>
+<h4 class="font-label-md text-label-md text-primary uppercase mb-6 tracking-widest">Tech</h4>
+<ul class="flex flex-col gap-4">
+<li><a class="font-body-md text-body-md text-on-surface-variant hover:text-nebula-pink transition-colors" href="#">Web Dev</a></li>
+<li><a class="font-body-md text-body-md text-on-surface-variant hover:text-nebula-pink transition-colors" href="#">AI Automation</a></li>
+<li><a class="font-body-md text-body-md text-on-surface-variant hover:text-nebula-pink transition-colors" href="#">Privacy Policy</a></li>
+</ul>
+</div>
+<div>
+<h4 class="font-label-md text-label-md text-primary uppercase mb-6 tracking-widest">Newsletter</h4>
+<div class="flex flex-col gap-4">
+<input class="bg-void-black border border-white/10 px-4 py-2 rounded-lg focus:outline-none focus:border-secondary text-on-surface" placeholder="Your email" type="email"/>
+<button class="w-full bg-secondary-container text-secondary px-4 py-2 rounded-lg font-label-md text-label-md hover:bg-secondary-container/80 transition-colors">Subscribe</button>
+</div>
+</div>
+</div>
+<div class="mt-stack-lg border-t border-white/5 pt-stack-md px-margin-desktop text-center">
+<p class="font-body-md text-body-md text-on-surface-variant opacity-50">© 2024 Mashoori Productions. All rights reserved.</p>
+</div>
+</footer>
+<script>
+        // Flashlight Cursor Effect
+        const flashlight = document.getElementById('flashlight');
+        document.addEventListener('mousemove', e => {
+            flashlight.style.setProperty('--x', e.clientX + 'px');
+            flashlight.style.setProperty('--y', e.clientY + 'px');
+        });
+
+        // Simple Reveal Observer
+        const observerOptions = {
+            threshold: 0.1
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('reveal-text');
+                }
+            });
+        }, observerOptions);
+
+        document.querySelectorAll('h1, h2, h3, p, .portfolio-card').forEach(el => {
+            // Pre-reveal cleanup for observer logic
+            // el.classList.add('reveal-text');
+        });
+    </script>
+</body></html>

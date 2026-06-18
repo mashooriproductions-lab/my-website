@@ -1,0 +1,465 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>SEO Portfolio | Mashoori Productions</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700;900&amp;family=Inter:wght@400;500;600&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            "colors": {
+                    "secondary-container": "#3e4578",
+                    "surface-variant": "#333535",
+                    "background": "#121414",
+                    "on-secondary-fixed": "#0e1648",
+                    "on-surface": "#e2e2e2",
+                    "deep-space": "#001a97",
+                    "secondary": "#bcc3ff",
+                    "cosmic-blue": "#0033fe",
+                    "secondary-fixed": "#dfe0ff",
+                    "tertiary": "#ffd9dd",
+                    "surface-container-low": "#1a1c1c",
+                    "inverse-on-surface": "#2f3131",
+                    "on-secondary": "#252c5e",
+                    "surface-dim": "#121414",
+                    "tertiary-fixed": "#ffd9dd",
+                    "error-container": "#93000a",
+                    "outline": "#8e9192",
+                    "surface-container-highest": "#333535",
+                    "inverse-primary": "#5d5e5f",
+                    "on-primary": "#2f3131",
+                    "tertiary-container": "#ffb2bd",
+                    "surface-container-lowest": "#0d0f0f",
+                    "surface": "#121414",
+                    "on-error": "#690005",
+                    "primary-fixed": "#e3e2e2",
+                    "secondary-fixed-dim": "#bcc3ff",
+                    "on-error-container": "#ffdad6",
+                    "on-tertiary": "#52202a",
+                    "on-secondary-fixed-variant": "#3b4376",
+                    "inverse-surface": "#e2e2e2",
+                    "on-tertiary-fixed-variant": "#6d3640",
+                    "on-primary-fixed": "#1a1c1c",
+                    "surface-container-high": "#282a2a",
+                    "starlight-white": "#e2e2e2",
+                    "surface-tint": "#c6c6c6",
+                    "void-black": "#0c0f0f",
+                    "on-primary-container": "#515253",
+                    "on-tertiary-fixed": "#380b16",
+                    "on-tertiary-container": "#7b414b",
+                    "on-primary-fixed-variant": "#464747",
+                    "error": "#ffb4ab",
+                    "on-surface-variant": "#c4c7c7",
+                    "outline-variant": "#444748",
+                    "surface-bright": "#383939",
+                    "tertiary-fixed-dim": "#ffb2bd",
+                    "on-secondary-container": "#adb5f0",
+                    "nebula-pink": "#e7005c",
+                    "primary-container": "#c6c6c6",
+                    "on-background": "#e2e2e2",
+                    "primary": "#e2e2e2",
+                    "surface-container": "#1e2020",
+                    "primary-fixed-dim": "#c6c6c6"
+            },
+            "borderRadius": {
+                    "DEFAULT": "0.125rem",
+                    "lg": "0.25rem",
+                    "xl": "0.5rem",
+                    "full": "0.75rem"
+            },
+            "spacing": {
+                    "stack-xs": "0.25rem",
+                    "stack-lg": "3rem",
+                    "stack-xl": "5rem",
+                    "stack-md": "1.5rem",
+                    "stack-sm": "0.75rem",
+                    "margin-desktop": "5rem",
+                    "base": "8px",
+                    "margin-mobile": "1.25rem",
+                    "container-max": "1440px",
+                    "gutter": "1.5rem"
+            },
+            "fontFamily": {
+                    "headline-xl": ["Montserrat"],
+                    "label-md": ["Inter"],
+                    "body-md": ["Inter"],
+                    "display-lg": ["Montserrat"],
+                    "display-lg-mobile": ["Montserrat"],
+                    "label-sm": ["Inter"],
+                    "headline-lg": ["Montserrat"],
+                    "body-lg": ["Inter"],
+                    "headline-md": ["Montserrat"]
+            },
+            "fontSize": {
+                    "headline-xl": ["48px", {"lineHeight": "1.2", "letterSpacing": "-0.02em", "fontWeight": "700"}],
+                    "label-md": ["14px", {"lineHeight": "1.2", "letterSpacing": "0.05em", "fontWeight": "600"}],
+                    "body-md": ["16px", {"lineHeight": "1.6", "fontWeight": "400"}],
+                    "display-lg": ["72px", {"lineHeight": "1.1", "letterSpacing": "-0.04em", "fontWeight": "900"}],
+                    "display-lg-mobile": ["48px", {"lineHeight": "1.1", "letterSpacing": "-0.02em", "fontWeight": "900"}],
+                    "label-sm": ["12px", {"lineHeight": "1.2", "letterSpacing": "0.02em", "fontWeight": "500"}],
+                    "headline-lg": ["32px", {"lineHeight": "1.3", "fontWeight": "700"}],
+                    "body-lg": ["18px", {"lineHeight": "1.6", "fontWeight": "400"}],
+                    "headline-md": ["24px", {"lineHeight": "1.4", "fontWeight": "600"}]
+            }
+          },
+        },
+      }
+    </script>
+<style>
+        body {
+            background-color: #121414;
+            color: #e2e2e2;
+            overflow-x: hidden;
+        }
+
+        .glass-panel {
+            background: rgba(255, 255, 255, 0.03);
+            backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px);
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .rim-light {
+            position: relative;
+        }
+        .rim-light::after {
+            content: '';
+            position: absolute;
+            top: 0; left: 0; right: 0;
+            height: 1px;
+            background: linear-gradient(90deg, transparent, rgba(255,255,255,0.2), transparent);
+            pointer-events: none;
+        }
+
+        .nebula-glow-blue {
+            position: absolute;
+            width: 600px;
+            height: 600px;
+            background: radial-gradient(circle, rgba(0, 51, 254, 0.15) 0%, transparent 70%);
+            filter: blur(100px);
+            z-index: -1;
+        }
+
+        .nebula-glow-pink {
+            position: absolute;
+            width: 600px;
+            height: 600px;
+            background: radial-gradient(circle, rgba(231, 0, 92, 0.1) 0%, transparent 70%);
+            filter: blur(100px);
+            z-index: -1;
+        }
+
+        .haptic-hover {
+            transition: transform 0.7s cubic-bezier(0.175, 0.885, 0.32, 1.275), box-shadow 0.3s ease;
+        }
+        .haptic-hover:hover {
+            transform: scale(1.02);
+            box-shadow: 0 0 30px rgba(0, 51, 255, 0.15);
+        }
+
+        .flashlight-overlay {
+            position: fixed;
+            top: 0; left: 0;
+            width: 100vw; height: 100vh;
+            pointer-events: none;
+            background: radial-gradient(600px circle at var(--x) var(--y), rgba(255,255,255,0.04), transparent 80%);
+            z-index: 50;
+        }
+
+        .cosmic-btn {
+            background: linear-gradient(135deg, #e7005c 0%, #001a97 100%);
+            transition: all 0.3s ease;
+        }
+        .cosmic-btn:hover {
+            transform: scale(1.05);
+            box-shadow: 0 0 20px rgba(231, 0, 92, 0.4);
+        }
+
+        .chart-line {
+            stroke-dasharray: 1000;
+            stroke-dashoffset: 1000;
+            animation: draw 3s ease-out forwards;
+        }
+
+        @keyframes draw {
+            to { stroke-dashoffset: 0; }
+        }
+    </style>
+</head>
+<body class="font-body-md text-body-md selection:bg-nebula-pink/30">
+<div class="flashlight-overlay" id="flashlight"></div>
+<!-- Background Nebulas -->
+<div class="nebula-glow-blue top-[-200px] left-[-100px]"></div>
+<div class="nebula-glow-pink top-[400px] right-[-100px]"></div>
+<div class="nebula-glow-blue bottom-[-100px] left-[200px]"></div>
+<!-- TopNavBar -->
+<header class="fixed top-0 w-full bg-background/80 backdrop-blur-xl border-b border-white/10 z-[100]">
+<div class="flex justify-between items-center px- margin-mobile md:px-margin-desktop py-4 max-w-container-max mx-auto">
+<div class="font-headline-md text-headline-md text-primary tracking-tighter"><a href="index.html"> Mashoori Productions </a></div>
+<nav class="hidden md:flex items-center space-x-8">
+<a class="font-body-md text-body-md text-on-surface-variant hover:text-primary transition-colors duration-300 ease-in-out" href="index.html">Home</a>
+<a class="font-body-md text-body-md text-on-surface-variant hover:text-primary transition-colors duration-300 ease-in-out" href="services.html">Services</a>
+<a class="font-body-md text-body-md text-primary border-b-2 border-primary pb-1 duration-300 ease-in-out" href="Main Portflio Page.html">Portfolio</a>
+<a class="font-body-md text-body-md text-on-surface-variant hover:text-primary transition-colors duration-300 ease-in-out" href="pricing.html">Pricing</a>
+<a class="font-body-md text-body-md text-on-surface-variant hover:text-primary transition-colors duration-300 ease-in-out" href="contact.html">Contact</a>
+</nav>
+<button class="cosmic-btn px-6 py-2 rounded-full font-label-md text-label-md text-white">
+                Get Started
+            </button>
+</div>
+</header>
+<main class="pt-32 pb-stack-xl max-w-container-max mx-auto px-margin-mobile md:px-margin-desktop">
+<!-- Hero Section -->
+<section class="mb-stack-xl text-center md:text-left">
+<div class="inline-block px-3 py-1 mb-stack-sm rounded-full bg-secondary-container/30 border border-secondary/20">
+<span class="text-secondary font-label-sm text-label-sm uppercase tracking-widest">Data-Driven Growth</span>
+</div>
+<h1 class="font-display-lg-mobile md:font-display-lg text-display-lg-mobile md:text-display-lg mb-stack-md leading-none">
+                Organic Dominance <br/> <span class="text-nebula-pink">Through Precision.</span>
+</h1>
+<p class="font-body-lg text-body-lg text-on-surface-variant max-w-2xl mb-stack-lg">
+                We don't just optimize for search engines; we engineer visibility. Explore our portfolio of algorithm-defying results and explosive traffic metrics.
+            </p>
+<!-- Quick Stats -->
+<div class="grid grid-cols-2 md:grid-cols-4 gap-gutter mt-stack-xl">
+<div class="glass-panel p-stack-md rounded-xl border border-white/5 rim-light">
+<div class="text-nebula-pink font-headline-xl text-headline-xl">420%</div>
+<div class="font-label-md text-label-md text-on-surface-variant">Avg. Traffic Increase</div>
+</div>
+<div class="glass-panel p-stack-md rounded-xl border border-white/5 rim-light">
+<div class="text-cosmic-blue font-headline-xl text-headline-xl">1.2M+</div>
+<div class="font-label-md text-label-md text-on-surface-variant">Keywords Ranked</div>
+</div>
+<div class="glass-panel p-stack-md rounded-xl border border-white/5 rim-light">
+<div class="text-secondary font-headline-xl text-headline-xl">15+</div>
+<div class="font-label-md text-label-md text-on-surface-variant">Industry Verticals</div>
+</div>
+<div class="glass-panel p-stack-md rounded-xl border border-white/5 rim-light">
+<div class="text-starlight-white font-headline-xl text-headline-xl">0</div>
+<div class="font-label-md text-label-md text-on-surface-variant">Black Hat Shortcuts</div>
+</div>
+</div>
+</section>
+<!-- Case Studies Bento Grid -->
+<section class="grid grid-cols-1 md:grid-cols-12 gap-gutter mb-stack-xl">
+<!-- Featured Case Study -->
+<div class="md:col-span-8 glass-panel p-stack-lg rounded-xl border border-white/5 rim-light haptic-hover relative overflow-hidden group">
+<div class="flex flex-col h-full justify-between z-10 relative">
+<div>
+<div class="flex items-center gap-2 mb-stack-sm">
+<span class="material-symbols-outlined text-nebula-pink">monitoring</span>
+<span class="font-label-md text-label-md text-on-surface-variant uppercase">E-Commerce Titan</span>
+</div>
+<h2 class="font-headline-xl text-headline-xl mb-stack-md">From Zero to $2.4M in Organic Revenue</h2>
+<p class="text-on-surface-variant font-body-md text-body-md max-w-xl mb-stack-lg">
+                            An aggressive technical SEO overhaul and content cluster strategy that captured high-intent commercial keywords during a competitive holiday season.
+                        </p>
+</div>
+<div class="flex flex-wrap gap-8 items-end">
+<div class="flex-1 min-w-[200px]">
+<svg class="w-full h-32 opacity-80" viewbox="0 0 400 100">
+<path class="chart-line" d="M0,90 Q50,85 100,70 T200,50 T300,20 T400,5" fill="none" stroke="url(#gradient-blue)" stroke-width="3"></path>
+<defs>
+<lineargradient id="gradient-blue" x1="0%" x2="100%" y1="0%" y2="0%">
+<stop offset="0%" stop-color="#0033fe"></stop>
+<stop offset="100%" stop-color="#e7005c"></stop>
+</lineargradient>
+</defs>
+</svg>
+</div>
+<div class="flex gap-12">
+<div>
+<div class="text-secondary font-headline-md text-headline-md">+145%</div>
+<div class="font-label-sm text-label-sm text-on-surface-variant">CTR Boost</div>
+</div>
+<div>
+<div class="text-nebula-pink font-headline-md text-headline-md">Top 3</div>
+<div class="font-label-sm text-label-sm text-on-surface-variant">Avg. Position</div>
+</div>
+</div>
+</div>
+</div>
+<div class="absolute -right-20 -bottom-20 opacity-10 group-hover:opacity-20 transition-opacity">
+<span class="material-symbols-outlined" style="font-size: 300px;">query_stats</span>
+</div>
+</div>
+<!-- Side Card 1 -->
+<div class="md:col-span-4 glass-panel p-stack-md rounded-xl border border-white/5 rim-light haptic-hover">
+<div class="mb-stack-lg">
+<div class="material-symbols-outlined text-secondary mb-2">speed</div>
+<h3 class="font-headline-md text-headline-md">SaaS Scale-Up</h3>
+<p class="text-on-surface-variant text-body-md mt-2">Core Web Vitals remediation leading to a 32% bounce rate reduction.</p>
+</div>
+<div class="mt-auto pt-stack-md border-t border-white/10">
+<div class="text-secondary text-headline-xl">99/100</div>
+<div class="text-label-sm text-on-surface-variant">Lighthouse Score</div>
+</div>
+</div>
+<!-- Side Card 2 -->
+<div class="md:col-span-4 glass-panel p-stack-md rounded-xl border border-white/5 rim-light haptic-hover">
+<div class="mb-stack-lg">
+<div class="material-symbols-outlined text-tertiary-container mb-2">public</div>
+<h3 class="font-headline-md text-headline-md">Global Expansion</h3>
+<p class="text-on-surface-variant text-body-md mt-2">Hreflang implementation for 12 localized domains.</p>
+</div>
+<div class="mt-auto pt-stack-md border-t border-white/10">
+<div class="text-tertiary-container text-headline-xl">140k+</div>
+<div class="text-label-sm text-on-surface-variant">Monthly Int'l Leads</div>
+</div>
+</div>
+<!-- Wide Content Card -->
+<div class="md:col-span-8 glass-panel p-stack-lg rounded-xl border border-white/5 rim-light haptic-hover flex flex-col md:flex-row gap-gutter">
+<div class="flex-1">
+<div class="material-symbols-outlined text-nebula-pink mb-2">article</div>
+<h3 class="font-headline-lg text-headline-lg">Content Authority Engine</h3>
+<p class="text-on-surface-variant text-body-md mt-stack-sm mb-stack-md">
+                        Developing a topical map that established our client as the undisputed authority in the FinTech space.
+                    </p>
+<div class="flex flex-wrap gap-2">
+<span class="px-3 py-1 rounded-full bg-white/5 text-label-sm border border-white/10">Topic Clustering</span>
+<span class="px-3 py-1 rounded-full bg-white/5 text-label-sm border border-white/10">Semantic Search</span>
+<span class="px-3 py-1 rounded-full bg-white/5 text-label-sm border border-white/10">E-E-A-T</span>
+</div>
+</div>
+<div class="w-full md:w-1/3 bg-void-black/50 rounded-lg overflow-hidden relative">
+<!-- Symbolic Growth Visual -->
+<div class="absolute inset-0 flex items-center justify-center p-8">
+<div class="w-full h-full border-b border-l border-white/20 relative">
+<div class="absolute bottom-0 left-0 w-[20%] h-[15%] bg-nebula-pink/20 border-t border-nebula-pink animate-pulse"></div>
+<div class="absolute bottom-0 left-[20%] w-[30%] h-[45%] bg-cosmic-blue/20 border-t border-cosmic-blue"></div>
+<div class="absolute bottom-0 left-[50%] w-[50%] h-[85%] bg-secondary/20 border-t border-secondary"></div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Dynamic Chart Interaction -->
+<section class="mb-stack-xl">
+<div class="text-center mb-stack-lg">
+<h2 class="font-headline-xl text-headline-xl">Live Ranking Trajectory</h2>
+<p class="text-on-surface-variant font-body-lg">Simulating our proprietary "Compound Growth" methodology.</p>
+</div>
+<div class="glass-panel p-stack-lg rounded-xl border border-white/5 rim-light overflow-hidden relative h-[400px]">
+<div class="absolute inset-0 z-0">
+
+</div>
+<div class="relative z-10 h-full flex flex-col justify-end">
+<div class="flex justify-between items-end gap-2 h-64">
+<!-- Bars with hover interactions -->
+<div class="flex-1 bg-white/5 hover:bg-nebula-pink/40 transition-all duration-500 rounded-t-lg h-[10%] group cursor-pointer relative">
+<div class="absolute -top-10 left-1/2 -translate-x-1/2 bg-surface p-2 rounded text-label-sm opacity-0 group-hover:opacity-100 transition-opacity whitespace-nowrap">Month 1: Foundation</div>
+</div>
+<div class="flex-1 bg-white/5 hover:bg-nebula-pink/40 transition-all duration-500 rounded-t-lg h-[15%] group cursor-pointer relative"></div>
+<div class="flex-1 bg-white/5 hover:bg-nebula-pink/40 transition-all duration-500 rounded-t-lg h-[25%] group cursor-pointer relative"></div>
+<div class="flex-1 bg-white/5 hover:bg-nebula-pink/40 transition-all duration-500 rounded-t-lg h-[22%] group cursor-pointer relative"></div>
+<div class="flex-1 bg-white/5 hover:bg-nebula-pink/40 transition-all duration-500 rounded-t-lg h-[40%] group cursor-pointer relative"></div>
+<div class="flex-1 bg-white/5 hover:bg-nebula-pink/40 transition-all duration-500 rounded-t-lg h-[65%] group cursor-pointer relative"></div>
+<div class="flex-1 bg-white/5 hover:bg-nebula-pink/40 transition-all duration-500 rounded-t-lg h-[60%] group cursor-pointer relative"></div>
+<div class="flex-1 bg-white/5 hover:bg-nebula-pink/40 transition-all duration-500 rounded-t-lg h-[85%] group cursor-pointer relative"></div>
+<div class="flex-1 bg-white/5 hover:bg-nebula-pink/40 transition-all duration-500 rounded-t-lg h-[95%] group cursor-pointer relative">
+<div class="absolute -top-10 left-1/2 -translate-x-1/2 bg-surface p-2 rounded text-label-sm opacity-0 group-hover:opacity-100 transition-opacity whitespace-nowrap">Month 9: Peak Authority</div>
+</div>
+</div>
+<div class="mt-4 flex justify-between text-label-sm text-on-surface-variant border-t border-white/10 pt-4">
+<span>Q1 Analysis</span>
+<span>Q2 Implementation</span>
+<span>Q3 Acceleration</span>
+<span>Q4 Dominance</span>
+</div>
+</div>
+</div>
+</section>
+<!-- CTA Section -->
+<section class="glass-panel p-stack-xl rounded-2xl border border-white/5 rim-light text-center relative overflow-hidden">
+<div class="absolute inset-0 bg-gradient-to-br from-nebula-pink/5 to-cosmic-blue/5"></div>
+<div class="relative z-10">
+<h2 class="font-headline-xl text-headline-xl mb-stack-md">Ready for Orbit?</h2>
+<p class="font-body-lg text-body-lg text-on-surface-variant max-w-xl mx-auto mb-stack-lg">
+                    Stop guessing. Start growing. Let’s audit your site and find the untapped gravity wells in your niche.
+                </p>
+<div class="flex flex-col md:flex-row gap-4 justify-center items-center">
+<button class="cosmic-btn px-10 py-4 rounded-full font-label-md text-label-md text-white">
+                        Book a Strategy Call
+                    </button>
+<button class="px-10 py-4 rounded-full border border-white/20 hover:bg-white/5 transition-colors font-label-md text-label-md">
+                        Download Case Studies
+                    </button>
+</div>
+</div>
+</section>
+</main>
+<!-- Footer -->
+<footer class="bg-void-black w-full border-t border-white/5">
+<div class="grid grid-cols-1 md:grid-cols-4 gap-gutter px-margin-mobile md:px-margin-desktop pt-stack-xl pb-stack-md max-w-container-max mx-auto">
+<div class="md:col-span-1">
+<div class="font-headline-md text-headline-md text-primary mb-stack-sm">
+                    Mashoori <span class="text-nebula-pink">Productions</span>
+</div>
+<p class="text-on-surface-variant text-body-md">
+                    The intersection of creative storytelling and technical SEO dominance.
+                </p>
+</div>
+<div class="flex flex-col gap-2">
+<h4 class="font-label-md text-label-md text-primary mb-2">Services</h4>
+<a class="text-on-surface-variant hover:text-nebula-pink transition-colors" href="Graphic Designing.html">Graphic Design</a>
+<a class="text-on-surface-variant hover:text-nebula-pink transition-colors" href="Video Production.html">Video Production</a>
+<a class="text-on-surface-variant hover:text-nebula-pink transition-colors" href="SEO.html">SEO Mastery</a>
+</div>
+<div class="flex flex-col gap-2">
+<h4 class="font-label-md text-label-md text-primary mb-2">Tech</h4>
+<a class="text-on-surface-variant hover:text-nebula-pink transition-colors" href="Web Dev.html">Web Dev</a>
+<a class="text-on-surface-variant hover:text-nebula-pink transition-colors" href="Automation.html">AI Automation</a>
+<a class="text-on-surface-variant hover:text-nebula-pink transition-colors" href="services.html">Platform Audit</a>
+</div>
+<div class="flex flex-col gap-2">
+<h4 class="font-label-md text-label-md text-primary mb-2">Legal</h4>
+<a class="text-on-surface-variant hover:text-nebula-pink transition-colors" href="#">Privacy Policy</a>
+<a class="text-on-surface-variant hover:text-nebula-pink transition-colors" href="#">Terms of Service</a>
+<div class="flex gap-4 mt-4">
+<span class="material-symbols-outlined text-on-surface-variant cursor-pointer hover:text-nebula-pink transition-colors">language</span>
+<span class="material-symbols-outlined text-on-surface-variant cursor-pointer hover:text-nebula-pink transition-colors">mail</span>
+</div>
+</div>
+</div>
+<div class="max-w-container-max mx-auto px-margin-mobile md:px-margin-desktop py-8 border-t border-white/5 text-center md:text-left">
+<p class="text-on-surface-variant text-label-sm">© 2024 Mashoori Productions. All rights reserved.</p>
+</div>
+</footer>
+<script>
+        // Flashlight cursor effect
+        const flashlight = document.getElementById('flashlight');
+        document.addEventListener('mousemove', e => {
+            flashlight.style.setProperty('--x', e.clientX + 'px');
+            flashlight.style.setProperty('--y', e.clientY + 'px');
+        });
+
+        // Simple Intersection Observer for text reveals
+        const observerOptions = {
+            threshold: 0.1
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.style.opacity = '1';
+                    entry.target.style.transform = 'translateY(0)';
+                    entry.target.style.filter = 'blur(0)';
+                }
+            });
+        }, observerOptions);
+
+        document.querySelectorAll('section > *').forEach(el => {
+            el.style.opacity = '0';
+            el.style.transform = 'translateY(20px)';
+            el.style.filter = 'blur(10px)';
+            el.style.transition = 'all 0.8s ease-out';
+            observer.observe(el);
+        });
+    </script>
+</body></html>

@@ -1,0 +1,622 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Mission Plans | Mashoori Productions</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&amp;family=Montserrat:wght@600;700;900&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script src="https://cdn.jsdelivr.net/gh/studio-freight/lenis@1.0.29/bundled/lenis.min.js"></script>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "on-primary-fixed-variant": "#474747",
+                        "on-error": "#690005",
+                        "on-secondary-fixed": "#000d60",
+                        "on-primary": "#303030",
+                        "surface-variant": "#333535",
+                        "surface-container-lowest": "#0c0f0f",
+                        "surface-container-high": "#282a2b",
+                        "outline-variant": "#4c4546",
+                        "on-tertiary-fixed-variant": "#900036",
+                        "background": "#121414",
+                        "on-primary-fixed": "#1b1b1b",
+                        "on-secondary-fixed-variant": "#0029d3",
+                        "on-error-container": "#ffdad6",
+                        "secondary-container": "#0033fe",
+                        "on-tertiary": "#670024",
+                        "error-container": "#93000a",
+                        "surface": "#121414",
+                        "secondary-fixed": "#dfe0ff",
+                        "secondary": "#bcc3ff",
+                        "tertiary": "#ffb2bd",
+                        "primary": "#c6c6c6",
+                        "on-tertiary-container": "#e7005c",
+                        "on-surface": "#e2e2e2",
+                        "primary-container": "#000000",
+                        "tertiary-container": "#000000",
+                        "on-background": "#e2e2e2",
+                        "primary-fixed": "#e2e2e2",
+                        "tertiary-fixed": "#ffd9dd",
+                        "surface-bright": "#37393a",
+                        "error": "#ffb4ab",
+                        "tertiary-fixed-dim": "#ffb2bd",
+                        "surface-container-low": "#1a1c1c",
+                        "inverse-surface": "#e2e2e2",
+                        "surface-dim": "#121414",
+                        "primary-fixed-dim": "#c6c6c6",
+                        "inverse-primary": "#5e5e5e",
+                        "inverse-on-surface": "#2f3131",
+                        "on-tertiary-fixed": "#400013",
+                        "surface-container-highest": "#333535",
+                        "secondary-fixed-dim": "#bcc3ff",
+                        "on-surface-variant": "#cfc4c5",
+                        "on-secondary": "#001a97",
+                        "on-secondary-container": "#c4caff",
+                        "surface-tint": "#c6c6c6",
+                        "surface-container": "#1e2020",
+                        "outline": "#988e90",
+                        "on-primary-container": "#757575"
+                    },
+                    borderRadius: {
+                        "DEFAULT": "0.125rem",
+                        "lg": "0.25rem",
+                        "xl": "0.5rem",
+                        "full": "0.75rem"
+                    },
+                    spacing: {
+                        "stack-lg": "48px",
+                        "base": "8px",
+                        "margin-mobile": "20px",
+                        "stack-md": "24px",
+                        "gutter": "24px",
+                        "container-max": "1440px",
+                        "stack-xs": "4px",
+                        "stack-xl": "80px",
+                        "stack-sm": "12px",
+                        "margin-desktop": "80px"
+                    },
+                    fontFamily: {
+                        "headline-md": ["Montserrat", "sans-serif"],
+                        "label-md": ["Inter", "sans-serif"],
+                        "display-lg-mobile": ["Montserrat", "sans-serif"],
+                        "display-lg": ["Montserrat", "sans-serif"],
+                        "body-md": ["Inter", "sans-serif"],
+                        "headline-lg": ["Montserrat", "sans-serif"],
+                        "label-sm": ["Inter", "sans-serif"],
+                        "headline-xl": ["Montserrat", "sans-serif"],
+                        "body-lg": ["Inter", "sans-serif"]
+                    },
+                    fontSize: {
+                        "headline-md": ["24px", { "lineHeight": "1.4", "fontWeight": "600" }],
+                        "label-md": ["14px", { "lineHeight": "1.2", "letterSpacing": "0.05em", "fontWeight": "600" }],
+                        "display-lg-mobile": ["48px", { "lineHeight": "1.1", "letterSpacing": "-0.02em", "fontWeight": "900" }],
+                        "display-lg": ["72px", { "lineHeight": "1.1", "letterSpacing": "-0.04em", "fontWeight": "900" }],
+                        "body-md": ["16px", { "lineHeight": "1.6", "fontWeight": "400" }],
+                        "headline-lg": ["32px", { "lineHeight": "1.3", "fontWeight": "700" }],
+                        "label-sm": ["12px", { "lineHeight": "1.2", "letterSpacing": "0.02em", "fontWeight": "500" }],
+                        "headline-xl": ["48px", { "lineHeight": "1.2", "letterSpacing": "-0.02em", "fontWeight": "700" }],
+                        "body-lg": ["18px", { "lineHeight": "1.6", "fontWeight": "400" }]
+                    }
+                }
+            }
+        }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .icon-fill {
+            font-variation-settings: 'FILL' 1;
+        }
+        
+        /* Cosmic ambient effects */
+        .ambient-glow-1 {
+            background: radial-gradient(circle, rgba(0,51,254,0.15) 0%, rgba(0,0,0,0) 70%);
+        }
+        .ambient-glow-2 {
+            background: radial-gradient(circle, rgba(231,0,92,0.1) 0%, rgba(0,0,0,0) 70%);
+        }
+
+        /* Gradient Button as per style guide */
+        .btn-primary-cosmic {
+            background: linear-gradient(90deg, #0033fe 0%, #e7005c 100%);
+            box-shadow: 0 0 30px rgba(0, 51, 255, 0.3);
+            transition: transform 0.4s cubic-bezier(0.25, 1, 0.5, 1), box-shadow 0.4s ease;
+            will-change: transform;
+        }
+        .btn-primary-cosmic:hover {
+            box-shadow: 0 0 40px rgba(231, 0, 92, 0.4);
+        }
+
+        /* Glass Cards */
+        .glass-card-base {
+            background: rgba(255, 255, 255, 0.03);
+            backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            transition: transform 0.4s cubic-bezier(0.25, 1, 0.5, 1), box-shadow 0.4s cubic-bezier(0.25, 1, 0.5, 1), border-color 0.4s ease;
+            will-change: transform;
+        }
+        .glass-card-base:hover {
+            box-shadow: 0 10px 40px rgba(0, 0, 0, 0.3);
+            border-color: rgba(255,255,255,0.2);
+        }
+        
+        .glass-card-highlight {
+            background: rgba(255, 255, 255, 0.08);
+            backdrop-filter: blur(40px);
+            -webkit-backdrop-filter: blur(40px);
+            border: 1px solid rgba(188, 195, 255, 0.3); /* secondary color with opacity */
+            box-shadow: 0 0 30px rgba(0, 51, 255, 0.3);
+            transition: transform 0.4s cubic-bezier(0.25, 1, 0.5, 1), box-shadow 0.4s cubic-bezier(0.25, 1, 0.5, 1), border-color 0.4s ease;
+            will-change: transform;
+        }
+        .glass-card-highlight:hover {
+            box-shadow: 0 15px 50px rgba(0, 51, 255, 0.5);
+            border-color: rgba(188, 195, 255, 0.6);
+        }
+
+        /* Subtle top-left highlight pseudo-element for cards */
+        .glass-card-base::before, .glass-card-highlight::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 1px;
+            background: linear-gradient(90deg, rgba(255,255,255,0.4) 0%, rgba(255,255,255,0) 100%);
+            opacity: 0.5;
+            pointer-events: none;
+        }
+        
+        /* Table gradient bottom borders */
+        .table-row-border {
+            border-bottom: 1px solid;
+            border-image: linear-gradient(to right, transparent, rgba(255,255,255,0.1), transparent) 1;
+        }
+
+        /* --- INVISIBLE POLISH MOTION SYSTEM --- */
+
+        /* 1. Inertial Smooth Scroll Base */
+        html.lenis, html.lenis body {
+            height: auto;
+            width: 100vw;
+        }
+        .lenis.lenis-smooth {
+            scroll-behavior: auto !important;
+        }
+        .lenis.lenis-smooth [data-scroll-container] {
+            will-change: transform;
+        }
+        .lenis.lenis-stopped {
+            overflow: hidden;
+        }
+
+        /* 2. The Slow Reveal Typography */
+        .slow-reveal-word {
+            display: inline-block;
+            white-space: pre;
+        }
+        .slow-reveal-char {
+            display: inline-block;
+            opacity: 0;
+            filter: blur(10px);
+            transform: translateZ(0) scale(1.1);
+            animation: slowRevealChar 1.5s cubic-bezier(0.19, 1, 0.22, 1) forwards;
+            will-change: opacity, filter, transform, letter-spacing;
+        }
+
+        @keyframes slowRevealChar {
+            0% {
+                opacity: 0;
+                filter: blur(10px);
+                transform: translateZ(0) scale(1.1);
+                letter-spacing: -0.05em;
+            }
+            100% {
+                opacity: 1;
+                filter: blur(0px);
+                transform: translateZ(0) scale(1);
+                letter-spacing: normal;
+            }
+        }
+
+        /* 3. Stealth Cursor */
+        #stealth-cursor {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 400px;
+            height: 400px;
+            border-radius: 50%;
+            background: radial-gradient(circle, rgba(255,255,255,0.03) 0%, rgba(255,255,255,0) 70%);
+            pointer-events: none;
+            z-index: 9999;
+            transform: translate(-50%, -50%);
+            transition: width 0.3s, height 0.3s, background 0.3s;
+            mix-blend-mode: screen;
+            will-change: transform;
+        }
+        #stealth-cursor.hovering {
+            width: 600px;
+            height: 600px;
+            background: radial-gradient(circle, rgba(0, 51, 254, 0.05) 0%, rgba(231, 0, 92, 0.02) 40%, rgba(0,0,0,0) 70%);
+        }
+
+        @media (prefers-reduced-motion: reduce) {
+            .slow-reveal-char {
+                animation: none;
+                opacity: 1;
+                filter: blur(0px);
+                transform: none;
+                letter-spacing: normal;
+            }
+            #stealth-cursor {
+                display: none;
+            }
+            .glass-card-base, .glass-card-highlight, .btn-primary-cosmic {
+                transition: none;
+                transform: none !important;
+            }
+        }
+    </style>
+</head>
+<body class="bg-background text-on-surface font-body-md text-body-md relative overflow-x-hidden min-h-screen flex flex-col">
+<!-- Stealth Cursor -->
+<div id="stealth-cursor"></div>
+<!-- Ambient Cosmic Background Glows -->
+<div class="fixed top-[-20%] left-[-10%] w-[50vw] h-[50vw] rounded-full ambient-glow-1 pointer-events-none z-0"></div>
+<div class="fixed bottom-[-20%] right-[-10%] w-[60vw] h-[60vw] rounded-full ambient-glow-2 pointer-events-none z-0"></div>
+<!-- TopNavBar Component -->
+<header class="bg-black/30 backdrop-blur-xl font-body-md text-body-md uppercase tracking-[0.05em] fixed top-0 w-full border-b border-white/10 shadow-[0_0_30px_rgba(0,51,255,0.1)] transition-all duration-300 ease-in-out flex justify-between items-center px-margin-desktop py-4 z-50">
+<div class="font-headline-md text-headline-md font-bold text-on-surface tracking-tighter"><a href="index.html">Mashoori Productions</a>
+        </div>
+<nav class="hidden md:flex gap-8">
+<!-- Active State on Services -->
+<a class="text-primary border-b-2 border-primary pb-1 hover:scale-105 transition-transform duration-300" href="services.html">Services</a>
+<a class="text-on-surface-variant hover:text-on-surface hover:scale-105 transition-transform duration-300" href="Main Portflio Page.html">Portfolio</a>
+<a class="text-on-surface-variant hover:text-on-surface hover:scale-105 transition-transform duration-300" href="pricing.html">Pricing</a>
+<a class="text-on-surface-variant hover:text-on-surface hover:scale-105 transition-transform duration-300" href="contact.html">Contact</a>
+</nav>
+<button class="hidden md:block btn-primary-cosmic text-white font-label-md text-label-md px-6 py-2 rounded-full uppercase tracking-widest">
+            Get Started
+        </button>
+<!-- Mobile Menu Icon Placeholder -->
+<button class="md:hidden text-on-surface">
+<span class="material-symbols-outlined">menu</span>
+</button>
+</header>
+<!-- Main Content Canvas -->
+<main class="flex-grow z-10 pt-[120px] pb-stack-xl relative">
+<!-- Hero Section -->
+<section class="px-margin-mobile md:px-margin-desktop text-center max-w-[1000px] mx-auto mb-stack-xl">
+<h1 class="font-display-lg-mobile md:font-display-lg text-display-lg-mobile md:text-display-lg text-on-surface mb-stack-md relative inline-block slow-reveal-heading">
+<span class="slow-reveal-text">Pricing Plans</span>
+<span class="absolute -right-8 -top-8 text-on-tertiary-container blur-[2px] opacity-50"><span class="material-symbols-outlined" style="font-size: 48px;">stars</span></span>
+</h1>
+<p class="font-body-lg text-body-lg text-on-surface-variant max-w-2xl mx-auto">
+                Launch your digital presence into the stratosphere. Select the trajectory that aligns with your cosmic ambitions and let our master navigators handle the rest.
+            </p>
+</section>
+<!-- Pricing Bento Grid -->
+<section class="px-margin-mobile md:px-margin-desktop max-w-container-max mx-auto mb-stack-xl">
+<div class="grid grid-cols-1 lg:grid-cols-3 gap-gutter items-center">
+<!-- Basic (Starter) -->
+<div class="glass-card-base rounded-xl p-stack-md relative overflow-hidden flex flex-col h-full lg:h-[95%]">
+<div class="mb-stack-sm">
+<span class="inline-block px-3 py-1 bg-surface-container-high border border-outline-variant text-on-surface-variant font-label-sm text-label-sm rounded-full mb-4 uppercase tracking-wider">Starter</span>
+<h2 class="font-headline-xl text-headline-xl text-on-surface mb-2">Basic</h2>
+<p class="font-body-md text-body-md text-on-surface-variant min-h-[48px]">Initiate your digital journey with essential orbital presence.</p>
+</div>
+<div class="my-stack-md">
+<span class="font-display-lg-mobile text-display-lg-mobile text-on-surface">35,000 PKR</span><span class="text-on-surface-variant">/mo</span>
+</div>
+<ul class="flex flex-col gap-4 mb-stack-lg flex-grow">
+<li class="flex items-start gap-3">
+<span class="material-symbols-outlined text-secondary mt-1">check_circle</span>
+<span class="font-body-md text-body-md text-on-surface">Social Media Management</span>
+</li>
+<li class="flex items-start gap-3">
+<span class="material-symbols-outlined text-secondary mt-1">check_circle</span>
+<span class="font-body-md text-body-md text-on-surface">Monthly Analytics Report</span>
+</li>
+<li class="flex items-start gap-3">
+<span class="material-symbols-outlined text-secondary mt-1">check_circle</span>
+<span class="font-body-md text-body-md text-on-surface">Google Business Profile</span>
+</li>
+<li class="flex items-start gap-3">
+<span class="material-symbols-outlined text-secondary mt-1">check_circle</span>
+<span class="font-body-md text-body-md text-on-surface">Graphic's Designing</span>
+</li>
+</ul>
+<button class="w-full py-4 rounded-lg bg-surface-container-high border border-white/10 text-on-surface font-label-md text-label-md uppercase tracking-widest hover:bg-white/5 transition-colors">
+                        Launch Basic
+                    </button>
+</div>
+<!-- Premium (Growth) - Highlighted -->
+<div class="glass-card-highlight rounded-xl p-stack-md relative overflow-hidden flex flex-col h-full z-10 transform scale-100 lg:scale-105">
+<!-- Absolute glow for the highlighted card -->
+<div class="absolute top-0 right-0 w-32 h-32 bg-secondary-container blur-[50px] opacity-30 rounded-full -mr-10 -mt-10 pointer-events-none"></div>
+<div class="mb-stack-sm relative z-10">
+<span class="inline-block px-3 py-1 bg-on-tertiary-container text-white font-label-sm text-label-sm rounded-full mb-4 uppercase tracking-wider shadow-[0_0_15px_rgba(231,0,92,0.5)]">Recommended • Growth</span>
+<h2 class="font-headline-xl text-headline-xl text-on-surface mb-2">Premium</h2>
+<p class="font-body-md text-body-md text-on-surface-variant min-h-[48px]">Accelerate expansion across all digital dimensions.</p>
+</div>
+<div class="my-stack-md relative z-10">
+<span class="font-display-lg-mobile text-display-lg-mobile text-on-surface">45,000 PKR</span><span class="text-on-surface-variant">/mo</span>
+</div>
+<ul class="flex flex-col gap-4 mb-stack-lg flex-grow relative z-10">
+<li class="flex items-start gap-3">
+<span class="material-symbols-outlined text-on-tertiary-container mt-1 icon-fill">stars</span>
+<span class="font-body-md text-body-md text-on-surface">Social Media Management</span>
+</li>
+<li class="flex items-start gap-3">
+<span class="material-symbols-outlined text-on-tertiary-container mt-1 icon-fill">stars</span>
+<span class="font-body-md text-body-md text-on-surface">Graphics Designing</span>
+</li>
+<li class="flex items-start gap-3">
+<span class="material-symbols-outlined text-on-tertiary-container mt-1 icon-fill">stars</span>
+<span class="font-body-md text-body-md text-on-surface">Paid AD's Management</span>
+</li>
+<li class="flex items-start gap-3">
+<span class="material-symbols-outlined text-on-tertiary-container mt-1 icon-fill">stars</span>
+<span class="font-body-md text-body-md text-on-surface">SEO-Ready & Launch Support</span>
+</li>
+<li class="flex items-start gap-3">
+<span class="material-symbols-outlined text-on-tertiary-container mt-1 icon-fill">stars</span>
+<span class="font-body-md text-body-md text-on-surface">Community Management</span>
+</li>
+</ul>
+<button class="w-full py-4 rounded-lg btn-primary-cosmic text-white font-label-md text-label-md uppercase tracking-widest relative z-10">
+                        Engage Premium
+                    </button>
+</div>
+<!-- Custom (Enterprise) -->
+<div class="glass-card-base rounded-xl p-stack-md relative overflow-hidden flex flex-col h-full lg:h-[100%]">
+<div class="mb-stack-sm">
+<span class="inline-block px-3 py-1 bg-surface-container-high border border-outline-variant text-on-surface-variant font-label-sm text-label-sm rounded-full mb-4 uppercase tracking-wider">Enterprise</span>
+<h2 class="font-headline-xl text-headline-xl text-on-surface mb-2">Custom</h2>
+<p class="font-body-md text-body-md text-on-surface-variant min-h-[48px]">Total dominion over your market sector. Bespoke solutions.</p>
+</div>
+<div class="my-stack-md">
+<span class="font-headline-lg text-headline-lg text-on-surface">Custom Build</span>
+</div>
+<ul class="flex flex-col gap-4 mb-stack-lg flex-grow">
+<li class="flex items-start gap-3">
+<span class="material-symbols-outlined text-secondary mt-1">check_circle</span>
+<span class="font-body-md text-body-md text-on-surface">Dedicated Custom Team</span>
+</li>
+<li class="flex items-start gap-3">
+<span class="material-symbols-outlined text-secondary mt-1">check_circle</span>
+<span class="font-body-md text-body-md text-on-surface">Everything in Premium Package</span>
+</li>
+<li class="flex items-start gap-3">
+<span class="material-symbols-outlined text-secondary mt-1">check_circle</span>
+<span class="font-body-md text-body-md text-on-surface">Brand Identity Development</span>
+</li>
+<li class="flex items-start gap-3">
+<span class="material-symbols-outlined text-secondary mt-1">check_circle</span>
+<span class="font-body-md text-body-md text-on-surface">Video/Reel Production</span>
+</li>
+<li class="flex items-start gap-3">
+<span class="material-symbols-outlined text-secondary mt-1">check_circle</span>
+<span class="font-body-md text-body-md text-on-surface">Influencer Outreach and Collab's</span>
+</li>
+</ul>
+<button class="w-full py-4 rounded-lg bg-surface-container-high border border-white/10 text-on-surface font-label-md text-label-md uppercase tracking-widest hover:bg-white/5 transition-colors">
+                        Get Custom
+                    </button>
+</div>
+</div>
+</section>
+<!-- Cosmic Comparison Table -->
+<section class="px-margin-mobile md:px-margin-desktop max-w-[1000px] mx-auto mb-stack-xl">
+<h3 class="font-headline-lg text-headline-lg text-on-surface mb-stack-md text-center slow-reveal-heading">
+<span class="slow-reveal-text">Feature Constellations</span>
+</h3>
+<div class="glass-card-base rounded-xl overflow-hidden">
+<!-- Header Row -->
+<div class="grid grid-cols-4 p-6 table-row-border bg-black/20">
+<div class="col-span-1 font-label-md text-label-md text-on-surface-variant uppercase tracking-wider">Features</div>
+<div class="col-span-1 text-center font-label-md text-label-md text-on-surface uppercase tracking-wider">Basic</div>
+<div class="col-span-1 text-center font-label-md text-label-md text-secondary uppercase tracking-wider">Premium</div>
+<div class="col-span-1 text-center font-label-md text-label-md text-on-surface uppercase tracking-wider">Custom</div>
+</div>
+<!-- Data Rows -->
+<div class="grid grid-cols-4 p-6 table-row-border hover:bg-white/[0.02] transition-colors">
+<div class="col-span-1 font-body-md text-body-md text-on-surface">Social Platforms</div>
+<div class="col-span-1 text-center text-on-surface-variant">2 Platforms</div>
+<div class="col-span-1 text-center text-on-surface font-semibold">4 Platforms</div>
+<div class="col-span-1 text-center text-on-surface-variant">Unlimited</div>
+</div>
+<div class="grid grid-cols-4 p-6 table-row-border hover:bg-white/[0.02] transition-colors">
+<div class="col-span-1 font-body-md text-body-md text-on-surface">Cinematic Video Assets</div>
+<div class="col-span-1 text-center text-on-surface-variant"><span class="material-symbols-outlined text-outline">remove</span></div>
+<div class="col-span-1 text-center text-secondary"><span class="material-symbols-outlined">check</span></div>
+<div class="col-span-1 text-center text-on-surface-variant"><span class="material-symbols-outlined text-on-surface">done_all</span> (3D Included)</div>
+</div>
+<div class="grid grid-cols-4 p-6 hover:bg-white/[0.02] transition-colors">
+<div class="col-span-1 font-body-md text-body-md text-on-surface">Strategic Consulting</div>
+<div class="col-span-1 text-center text-on-surface-variant">Monthly</div>
+<div class="col-span-1 text-center text-secondary font-semibold">Bi-Weekly</div>
+<div class="col-span-1 text-center text-on-surface-variant">On-Demand</div>
+</div>
+</div>
+</section>
+<!-- FAQ Section (Pakistan Context) -->
+<section class="px-margin-mobile md:px-margin-desktop max-w-[800px] mx-auto">
+<h3 class="font-headline-lg text-headline-lg text-on-surface mb-stack-md text-center">Telemetry &amp; Support</h3>
+<div class="flex flex-col gap-4">
+<!-- FAQ Item 1 -->
+<div class="glass-card-base rounded-xl p-6 transition-all hover:bg-white/[0.05] group cursor-pointer border-l-2 border-l-transparent hover:border-l-secondary">
+<div class="flex justify-between items-center mb-2">
+<h4 class="font-headline-md text-headline-md text-on-surface">Do you localize campaigns for the Pakistani market?</h4>
+<span class="material-symbols-outlined text-on-surface-variant group-hover:text-secondary transition-colors">add</span>
+</div>
+<p class="font-body-md text-body-md text-on-surface-variant hidden group-hover:block mt-4">
+                        Absolutely. Our strategies are deeply rooted in local cultural nuances. From navigating the complexities of multi-lingual content (Urdu &amp; English) to understanding regional aesthetic preferences and peak engagement times across Pakistan, we ensure your message resonates authentically while maintaining global cinematic standards.
+                    </p>
+</div>
+<!-- FAQ Item 2 -->
+<div class="glass-card-base rounded-xl p-6 transition-all hover:bg-white/[0.05] group cursor-pointer border-l-2 border-l-transparent hover:border-l-secondary">
+<div class="flex justify-between items-center mb-2">
+<h4 class="font-headline-md text-headline-md text-on-surface">How does billing work for international vs local clients?</h4>
+<span class="material-symbols-outlined text-on-surface-variant group-hover:text-secondary transition-colors">add</span>
+</div>
+<p class="font-body-md text-body-md text-on-surface-variant hidden group-hover:block mt-4">
+                        For our partners based in Pakistan, we offer localized billing structures in PKR, accounting for local tax regulations (PRA/SRB/FBR). International clients are billed in USD. All plans ensure transparent, upfront pricing with no hidden cosmic debris.
+                    </p>
+</div>
+</div>
+</section>
+</main>
+<!-- Footer Component -->
+<footer class="bg-surface-container-lowest font-label-sm text-label-sm w-full border-t border-white/5 flex flex-col md:flex-row justify-between items-center px-margin-desktop py-stack-lg gap-gutter z-20 relative">
+<div class="font-headline-md text-headline-md text-on-surface">
+            Mashoori Productions
+        </div>
+<div class="text-on-surface-variant text-center md:text-left">
+            © 2024 Mashoori Productions. Cosmic Excellence in Digital Marketing.
+        </div>
+<nav class="flex gap-6">
+<a class="text-on-surface-variant hover:text-secondary transition-colors opacity-80 hover:opacity-100" href="index.html">Home</a>
+<a class="font-label-sm text-label-sm text-on-surface-variant hover:text-secondary transition-colors opacity-80 hover:opacity-100" href="services.html">Services</a>
+<a class="font-label-sm text-label-sm text-on-surface-variant hover:text-secondary transition-colors opacity-80 hover:opacity-100" href="Main Portflio Page.html">Portfolio</a>
+<a class="font-label-sm text-label-sm text-on-surface-variant hover:text-secondary transition-colors opacity-80 hover:opacity-100" href="contact.html">Contact</a>
+<a class="font-label-sm text-label-sm text-on-surface-variant hover:text-secondary transition-colors opacity-80 hover:opacity-100" href="https://www.instagram.com/mashoori_production/?hl=en">Instagram</a>
+<a class="text-on-surface-variant hover:text-secondary transition-colors opacity-80 hover:opacity-100" href="#">LinkedIn</a>
+<a class="text-on-surface-variant hover:text-secondary transition-colors opacity-80 hover:opacity-100" href="#">Twitter</a>
+<a class="text-on-surface-variant hover:text-secondary transition-colors opacity-80 hover:opacity-100" href="#">Privacy Policy</a>
+<a class="text-on-surface-variant hover:text-secondary transition-colors opacity-80 hover:opacity-100" href="#">Terms of Service</a>
+</nav>
+</footer>
+<!-- Simple JS for FAQ interaction and Motion System -->
+<script>
+        document.querySelectorAll('.group').forEach(item => {
+            item.addEventListener('click', () => {
+                const p = item.querySelector('p');
+                const icon = item.querySelector('.material-symbols-outlined');
+                if (p.classList.contains('hidden')) {
+                    p.classList.remove('hidden');
+                    icon.textContent = 'remove';
+                    item.classList.add('border-l-secondary');
+                    item.classList.remove('border-l-transparent');
+                } else {
+                    p.classList.add('hidden');
+                    icon.textContent = 'add';
+                    item.classList.remove('border-l-secondary');
+                    item.classList.add('border-l-transparent');
+                }
+            });
+        });
+
+        document.addEventListener("DOMContentLoaded", () => {
+            const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+            
+            if (!prefersReducedMotion) {
+                // 1. Smooth Scroll (Lenis)
+                const lenis = new Lenis({
+                    duration: 1.2,
+                    easing: (t) => Math.min(1, 1.001 - Math.pow(2, -10 * t)),
+                    direction: 'vertical',
+                    gestureDirection: 'vertical',
+                    smooth: true,
+                    mouseMultiplier: 1,
+                    smoothTouch: false,
+                    touchMultiplier: 2,
+                    infinite: false,
+                });
+
+                function raf(time) {
+                    lenis.raf(time);
+                    requestAnimationFrame(raf);
+                }
+                requestAnimationFrame(raf);
+
+                // 2. Slow Reveal Typography
+                const revealTexts = document.querySelectorAll('.slow-reveal-text');
+                revealTexts.forEach(el => {
+                    const text = el.textContent;
+                    el.textContent = '';
+                    let charIndex = 0;
+                    const words = text.split(' ');
+                    words.forEach((word, wordIndex) => {
+                        const wordSpan = document.createElement('span');
+                        wordSpan.className = 'slow-reveal-word';
+                        
+                        const chars = word.split('');
+                        chars.forEach((char) => {
+                            const charSpan = document.createElement('span');
+                            charSpan.className = 'slow-reveal-char';
+                            charSpan.textContent = char;
+                            charSpan.style.animationDelay = `${charIndex * 0.04}s`;
+                            wordSpan.appendChild(charSpan);
+                            charIndex++;
+                        });
+                        
+                        el.appendChild(wordSpan);
+                        if (wordIndex < words.length - 1) {
+                            const space = document.createTextNode(' ');
+                            el.appendChild(space);
+                        }
+                    });
+                });
+
+                // 3. Stealth Cursor
+                const cursor = document.getElementById('stealth-cursor');
+                let mouseX = window.innerWidth / 2;
+                let mouseY = window.innerHeight / 2;
+                let cursorX = mouseX;
+                let cursorY = mouseY;
+
+                window.addEventListener('mousemove', (e) => {
+                    mouseX = e.clientX;
+                    mouseY = e.clientY;
+                });
+
+                function animateCursor() {
+                    cursorX += (mouseX - cursorX) * 0.1;
+                    cursorY += (mouseY - cursorY) * 0.1;
+                    cursor.style.transform = `translate(${cursorX}px, ${cursorY}px) translate(-50%, -50%)`;
+                    requestAnimationFrame(animateCursor);
+                }
+                animateCursor();
+
+                const interactives = document.querySelectorAll('a, button, .glass-card-base, .glass-card-highlight');
+                interactives.forEach(el => {
+                    el.addEventListener('mouseenter', () => cursor.classList.add('hovering'));
+                    el.addEventListener('mouseleave', () => cursor.classList.remove('hovering'));
+                });
+
+                // 4. Haptic Visual Feedback (Magnetic)
+                const magnets = document.querySelectorAll('.btn-primary-cosmic, .glass-card-highlight, .glass-card-base');
+                magnets.forEach(btn => {
+                    btn.addEventListener('mousemove', (e) => {
+                        const rect = btn.getBoundingClientRect();
+                        const x = e.clientX - rect.left - rect.width / 2;
+                        const y = e.clientY - rect.top - rect.height / 2;
+                        
+                        const strength = btn.classList.contains('glass-card-base') || btn.classList.contains('glass-card-highlight') ? 15 : 20;
+                        const scale = btn.classList.contains('glass-card-highlight') ? 1.05 : 1.02;
+                        
+                        btn.style.transform = `translate(${x / strength}px, ${y / strength}px) scale(${scale})`;
+                    });
+                    
+                    btn.addEventListener('mouseleave', () => {
+                        const defaultScale = btn.classList.contains('glass-card-highlight') ? 1.05 : 1;
+                        if(window.innerWidth >= 1024 && btn.classList.contains('glass-card-highlight')){
+                            btn.style.transform = `scale(1.05)`;
+                        } else {
+                            btn.style.transform = '';
+                        }
+                    });
+                });
+            }
+        });
+    </script>
+</body></html>

@@ -1,0 +1,491 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Services | Mashoori Productions</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700;800&amp;family=Inter:wght@400;600&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "outline-variant": "#5c3f45",
+                        "on-secondary-container": "#00566b",
+                        "primary-fixed": "#ffd9e0",
+                        "on-primary-fixed": "#3f0019",
+                        "on-error-container": "#ffdad6",
+                        "surface": "#131313",
+                        "outline": "#ac878f",
+                        "on-tertiary-fixed-variant": "#5700c9",
+                        "on-surface-variant": "#e5bcc4",
+                        "primary-container": "#ff4b89",
+                        "error": "#ffb4ab",
+                        "on-background": "#e5e2e1",
+                        "secondary-fixed": "#b7eaff",
+                        "inverse-surface": "#e5e2e1",
+                        "on-tertiary": "#3c0090",
+                        "secondary-fixed-dim": "#4cd6ff",
+                        "surface-tint": "#ffb1c3",
+                        "on-tertiary-container": "#34007f",
+                        "tertiary-container": "#a178ff",
+                        "tertiary-fixed": "#e9ddff",
+                        "secondary": "#a6e6ff",
+                        "on-secondary": "#003543",
+                        "surface-container-lowest": "#0e0e0e",
+                        "on-secondary-fixed": "#001f28",
+                        "tertiary-fixed-dim": "#d1bcff",
+                        "secondary-container": "#14d1ff",
+                        "on-tertiary-fixed": "#23005b",
+                        "surface-variant": "#353534",
+                        "tertiary": "#d1bcff",
+                        "surface-container-high": "#2a2a2a",
+                        "primary": "#ffb1c3",
+                        "on-primary-fixed-variant": "#8f0041",
+                        "error-container": "#93000a",
+                        "on-secondary-fixed-variant": "#004e60",
+                        "on-primary": "#66002c",
+                        "primary-fixed-dim": "#ffb1c3",
+                        "background": "#050505",
+                        "surface-container-highest": "#353534",
+                        "surface-dim": "#131313",
+                        "on-surface": "#e5e2e1",
+                        "on-error": "#690005",
+                        "inverse-primary": "#bb0058",
+                        "surface-container": "#201f1f",
+                        "surface-bright": "#3a3939",
+                        "on-primary-container": "#590026",
+                        "surface-container-low": "#1c1b1b",
+                        "inverse-on-surface": "#313030"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                    "spacing": {
+                        "margin-desktop": "64px",
+                        "gutter": "24px",
+                        "margin-mobile": "20px",
+                        "unit": "8px",
+                        "container-max": "1280px"
+                    },
+                    "fontFamily": {
+                        "headline-md": ["Montserrat"],
+                        "body-lg": ["Inter"],
+                        "label-md": ["Inter"],
+                        "body-md": ["Inter"],
+                        "headline-lg": ["Montserrat"],
+                        "display-lg-mobile": ["Montserrat"],
+                        "display-lg": ["Montserrat"]
+                    },
+                    "fontSize": {
+                        "headline-md": ["32px", {"lineHeight": "1.3", "fontWeight": "700"}],
+                        "body-lg": ["18px", {"lineHeight": "1.6", "fontWeight": "400"}],
+                        "label-md": ["14px", {"lineHeight": "1", "letterSpacing": "0.1em", "fontWeight": "600"}],
+                        "body-md": ["16px", {"lineHeight": "1.6", "fontWeight": "400"}],
+                        "headline-lg": ["48px", {"lineHeight": "1.2", "fontWeight": "700"}],
+                        "display-lg-mobile": ["40px", {"lineHeight": "1.2", "letterSpacing": "-0.02em", "fontWeight": "800"}],
+                        "display-lg": ["72px", {"lineHeight": "1.1", "letterSpacing": "-0.04em", "fontWeight": "800"}]
+                    }
+                }
+            }
+        }
+    </script>
+<style>
+        body {
+            background-color: #050505;
+            color: #e5e2e1;
+            overflow-x: hidden;
+            cursor: none; /* For custom flashlight effect */
+        }
+
+        .flashlight {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100vw;
+            height: 100vh;
+            pointer-events: none;
+            z-index: 9999;
+            background: radial-gradient(circle at 0% 0%, rgba(255, 75, 137, 0.08) 0%, transparent 40%),
+                        radial-gradient(circle at var(--x, 0%) var(--y, 0%), rgba(20, 209, 255, 0.12) 0%, transparent 25%);
+        }
+
+        .glass-card {
+            background: rgba(255, 255, 255, 0.03);
+            backdrop-filter: blur(12px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            transition: all 0.4s cubic-bezier(0.23, 1, 0.32, 1);
+        }
+
+        .glass-card:hover {
+            background: rgba(255, 255, 255, 0.07);
+            border: 1px solid rgba(255, 75, 137, 0.3);
+            transform: translateY(-8px);
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4);
+        }
+
+        .gradient-text {
+            background: linear-gradient(90deg, #ff4b89, #14d1ff);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .gradient-btn {
+            background: linear-gradient(135deg, #ff4b89, #14d1ff);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .gradient-btn::after {
+            content: '';
+            position: absolute;
+            top: 0; left: 0; width: 100%; height: 100%;
+            background: linear-gradient(135deg, #ff4b89, #14d1ff);
+            filter: blur(15px);
+            opacity: 0;
+            transition: opacity 0.3s;
+            z-index: -1;
+        }
+
+        .gradient-btn:hover::after {
+            opacity: 1;
+        }
+
+        .step-line {
+            background: linear-gradient(90deg, #ff4b89, #14d1ff);
+            height: 2px;
+            width: 100%;
+            position: absolute;
+            top: 24px;
+            left: 0;
+            z-index: -1;
+        }
+
+        .reveal-text {
+            opacity: 0;
+            transform: translateY(20px);
+            animation: reveal 0.8s forwards;
+        }
+
+        @keyframes reveal {
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .stagger-1 { animation-delay: 0.1s; }
+        .stagger-2 { animation-delay: 0.3s; }
+        .stagger-3 { animation-delay: 0.5s; }
+
+        ::-webkit-scrollbar {
+            width: 8px;
+        }
+        ::-webkit-scrollbar-track {
+            background: #050505;
+        }
+        ::-webkit-scrollbar-thumb {
+            background: #201f1f;
+            border-radius: 10px;
+        }
+        ::-webkit-scrollbar-thumb:hover {
+            background: #ff4b89;
+        }
+    </style>
+</head>
+<body class="selection:bg-primary-container selection:text-white">
+<div class="flashlight" id="flashlight"></div>
+<!-- Navigation -->
+<nav class="bg-surface/80 backdrop-blur-md dark:bg-surface/80 docked full-width top-0 sticky z-50 border-b border-white/10 shadow-lg">
+<div class="flex justify-between items-center w-full px-margin-desktop py-4 max-w-container-max mx-auto">
+<div class="text-headline-md font-headline-md font-bold text-on-surface dark:text-on-surface">
+                Mashoori Productions
+            </div>
+<div class="hidden md:flex gap-8 items-center">
+<a class="text-label-md font-label-md text-on-surface-variant hover:text-primary transition-colors duration-300" href="#">Services</a>
+<a class="text-label-md font-label-md text-on-surface-variant hover:text-primary transition-colors duration-300" href="#">Portfolio</a>
+<a class="text-label-md font-label-md text-on-surface-variant hover:text-primary transition-colors duration-300" href="#">Process</a>
+<a class="text-label-md font-label-md text-on-surface-variant hover:text-primary transition-colors duration-300" href="#">About</a>
+<button class="gradient-btn px-6 py-2 rounded-full font-label-md text-white transition-all">Get Started</button>
+</div>
+<div class="md:hidden">
+<span class="material-symbols-outlined text-on-surface cursor-pointer">menu</span>
+</div>
+</div>
+</nav>
+<main>
+<!-- Hero Section -->
+<section class="relative min-h-[716px] flex flex-col items-center justify-center text-center px-6 overflow-hidden">
+<div class="absolute inset-0 z-0">
+<div class="absolute top-1/4 left-1/4 w-96 h-96 bg-primary/10 rounded-full blur-[120px]"></div>
+<div class="absolute bottom-1/4 right-1/4 w-96 h-96 bg-secondary/10 rounded-full blur-[120px]"></div>
+</div>
+<div class="relative z-10 max-w-4xl">
+<span class="text-label-md font-label-md text-primary uppercase tracking-[0.2em] mb-6 block reveal-text stagger-1">Premium Marketing Solutions</span>
+<h1 class="text-display-lg-mobile md:text-display-lg font-display-lg text-white mb-8 reveal-text stagger-2">
+                    Services That Make Brands <br/>
+<span class="gradient-text">Impossible To Ignore</span>
+</h1>
+<p class="text-body-lg font-body-lg text-on-surface-variant max-w-2xl mx-auto mb-12 reveal-text stagger-3">
+                    We combine cinematic aesthetics with data-driven strategy to launch your business into new dimensions of growth and visibility.
+                </p>
+<div class="reveal-text stagger-3">
+<a class="inline-flex items-center gap-2 text-label-md font-label-md text-primary group" href="#services">
+                        EXPLORE OUR CAPABILITIES
+                        <span class="material-symbols-outlined group-hover:translate-x-1 transition-transform">arrow_downward</span>
+</a>
+</div>
+</div>
+</section>
+<!-- Services Bento Grid -->
+<section class="py-32 px-margin-desktop max-w-container-max mx-auto" id="services">
+<div class="mb-20 text-center md:text-left">
+<h2 class="text-headline-lg font-headline-lg text-white mb-4">Our Specializations</h2>
+<p class="text-on-surface-variant text-body-md max-w-xl">From high-frequency ads to cinematic brand storytelling, we engineer every touchpoint for maximum impact.</p>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-12 gap-6 auto-rows-[280px]">
+<!-- Digital Marketing (Large) -->
+<div class="md:col-span-8 glass-card rounded-2xl p-8 flex flex-col justify-end group relative overflow-hidden">
+<div class="absolute top-0 right-0 p-8">
+<span class="material-symbols-outlined text-primary text-5xl opacity-40 group-hover:opacity-100 transition-opacity">campaign</span>
+</div>
+<div class="mt-auto">
+<h3 class="text-headline-md font-headline-md text-white mb-2">Digital Marketing Strategy</h3>
+<p class="text-on-surface-variant text-body-md max-w-md">Omni-channel growth roadmaps designed to dominate your specific market niche.</p>
+</div>
+</div>
+<!-- Meta Ads (Square) -->
+<div class="md:col-span-4 glass-card rounded-2xl p-8 group flex flex-col">
+<span class="material-symbols-outlined text-secondary text-4xl mb-6">ads_click</span>
+<h3 class="text-headline-md font-headline-md text-white mb-2 text-2xl">Meta Ads</h3>
+<p class="text-on-surface-variant text-body-md">Precision-targeted social campaigns on Facebook &amp; Instagram with industry-leading ROI.</p>
+</div>
+<!-- SEO (Square) -->
+<div class="md:col-span-4 glass-card rounded-2xl p-8 group flex flex-col">
+<span class="material-symbols-outlined text-primary text-4xl mb-6">search_insights</span>
+<h3 class="text-headline-md font-headline-md text-white mb-2 text-2xl">SEO Excellence</h3>
+<p class="text-on-surface-variant text-body-md">Organic discovery engineered through technical precision and authoritative content.</p>
+</div>
+<!-- Video Production (Large) -->
+<div class="md:col-span-8 glass-card rounded-2xl group relative overflow-hidden">
+<img class="absolute inset-0 w-full h-full object-cover opacity-20 group-hover:opacity-40 transition-opacity duration-700" data-alt="A cinematic behind the scenes shot of a professional film crew operating a high-end camera rig on a dark, moody set. Neon blue and magenta lights reflect off the camera lens and equipment, creating a futuristic, high-production atmosphere. The lighting is focused and dramatic, capturing the essence of premium filmmaking in a cosmic dark-mode style." src="https://lh3.googleusercontent.com/aida-public/AB6AXuC6CMw2Is8-rIUJKEC5d_-auXxjKEQpJmw0XjdoOy4k47l2hq01CJwPq6H3C6C0pVyRqAD5KM66zfeFfnq_M64qDzABRb7WoiTk8v0FX_1asm-NzATCIaJB3Z4ZUjNrL0p1rCO4Huo9rHzcb7HPy73M4BVQz8N7v_3IIANB2DpJXec_biQ8jHYtRDtmaMw8dZGSmem97rDOHUjFezdAtEI0yJLFh_1Is7V7w6zJTokYCcGVAMDenoU2dejuFuy1SLliqiGuhy4o7MQ"/>
+<div class="absolute inset-0 bg-gradient-to-t from-surface to-transparent"></div>
+<div class="relative z-10 h-full p-8 flex flex-col justify-end">
+<h3 class="text-headline-md font-headline-md text-white mb-2">Video Production</h3>
+<p class="text-on-surface-variant text-body-md max-w-md">Cinematic brand films and high-retention social content that captivates audiences.</p>
+</div>
+</div>
+<!-- Branding & Design (Square) -->
+<div class="md:col-span-4 glass-card rounded-2xl p-8 group flex flex-col">
+<span class="material-symbols-outlined text-secondary text-4xl mb-6">palette</span>
+<h3 class="text-headline-md font-headline-md text-white mb-2 text-2xl">Visual Identity</h3>
+<p class="text-on-surface-variant text-body-md">Logos, typography, and visual systems that define the future of your brand.</p>
+</div>
+<!-- Marketing Automation (Square) -->
+<div class="md:col-span-4 glass-card rounded-2xl p-8 group flex flex-col">
+<span class="material-symbols-outlined text-primary text-4xl mb-6">precision_manufacturing</span>
+<h3 class="text-headline-md font-headline-md text-white mb-2 text-2xl">Automation</h3>
+<p class="text-on-surface-variant text-body-md">Scale without limits using AI-driven workflows and automated nurturing sequences.</p>
+</div>
+<!-- Content Writing (Square) -->
+<div class="md:col-span-4 glass-card rounded-2xl p-8 group flex flex-col">
+<span class="material-symbols-outlined text-secondary text-4xl mb-6">auto_awesome</span>
+<h3 class="text-headline-md font-headline-md text-white mb-2 text-2xl">Content Writing</h3>
+<p class="text-on-surface-variant text-body-md">Persuasive copywriting and thought-leadership articles that establish authority.</p>
+</div>
+</div>
+</section>
+<!-- Process Section -->
+<section class="py-32 bg-surface-container-lowest/50">
+<div class="px-margin-desktop max-w-container-max mx-auto">
+<div class="text-center mb-24">
+<span class="text-label-md font-label-md text-secondary uppercase tracking-widest mb-4 block">Our Methodology</span>
+<h2 class="text-headline-lg font-headline-lg text-white">The Launch Sequence</h2>
+</div>
+<div class="relative">
+<div class="hidden md:block step-line"></div>
+<div class="grid grid-cols-1 md:grid-cols-4 gap-12">
+<!-- Step 1 -->
+<div class="relative">
+<div class="w-12 h-12 rounded-full bg-surface border-2 border-primary flex items-center justify-center mb-8 z-10 relative">
+<span class="text-primary font-bold">01</span>
+</div>
+<h4 class="text-headline-md font-headline-md text-2xl text-white mb-4">Discovery</h4>
+<p class="text-on-surface-variant text-body-md">We dive deep into your market dynamics and audit your existing digital footprint to find hidden opportunities.</p>
+</div>
+<!-- Step 2 -->
+<div class="relative">
+<div class="w-12 h-12 rounded-full bg-surface border-2 border-secondary flex items-center justify-center mb-8 z-10 relative">
+<span class="text-secondary font-bold">02</span>
+</div>
+<h4 class="text-headline-md font-headline-md text-2xl text-white mb-4">Strategy</h4>
+<p class="text-on-surface-variant text-body-md">Engineering a bespoke roadmap using high-fidelity data and predictive analytics for your target audience.</p>
+</div>
+<!-- Step 3 -->
+<div class="relative">
+<div class="w-12 h-12 rounded-full bg-surface border-2 border-primary flex items-center justify-center mb-8 z-10 relative">
+<span class="text-primary font-bold">03</span>
+</div>
+<h4 class="text-headline-md font-headline-md text-2xl text-white mb-4">Execution</h4>
+<p class="text-on-surface-variant text-body-md">Deploying campaigns across all channels with cinematic content and aggressive optimization cycles.</p>
+</div>
+<!-- Step 4 -->
+<div class="relative">
+<div class="w-12 h-12 rounded-full bg-surface border-2 border-secondary flex items-center justify-center mb-8 z-10 relative">
+<span class="text-secondary font-bold">04</span>
+</div>
+<h4 class="text-headline-md font-headline-md text-2xl text-white mb-4">Scale</h4>
+<p class="text-on-surface-variant text-body-md">Expanding your winning formulas and automating the growth engine to achieve market dominance.</p>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Why We're Different -->
+<section class="py-32 px-margin-desktop max-w-container-max mx-auto">
+<div class="flex flex-col md:flex-row gap-20 items-center">
+<div class="md:w-1/2">
+<h2 class="text-headline-lg font-headline-lg text-white mb-10 leading-tight">Engineered for <br/><span class="gradient-text">Absolute Performance</span></h2>
+<div class="space-y-8">
+<div class="flex gap-6 items-start">
+<div class="p-3 rounded-lg bg-primary/10 border border-primary/20">
+<span class="material-symbols-outlined text-primary">monitoring</span>
+</div>
+<div>
+<h4 class="text-headline-md font-headline-md text-xl text-white mb-1">ROI Focused</h4>
+<p class="text-on-surface-variant text-body-md">Every dollar spent is tracked against revenue milestones. No vanity metrics, just growth.</p>
+</div>
+</div>
+<div class="flex gap-6 items-start">
+<div class="p-3 rounded-lg bg-secondary/10 border border-secondary/20">
+<span class="material-symbols-outlined text-secondary">database</span>
+</div>
+<div>
+<h4 class="text-headline-md font-headline-md text-xl text-white mb-1">Data Driven</h4>
+<p class="text-on-surface-variant text-body-md">We let the numbers dictate the direction, iterating campaigns until they reach peak efficiency.</p>
+</div>
+</div>
+<div class="flex gap-6 items-start">
+<div class="p-3 rounded-lg bg-primary/10 border border-primary/20">
+<span class="material-symbols-outlined text-primary">auto_fix_high</span>
+</div>
+<div>
+<h4 class="text-headline-md font-headline-md text-xl text-white mb-1">Creative Excellence</h4>
+<p class="text-on-surface-variant text-body-md">Our in-house studio produces high-end assets that elevate your brand above the noise.</p>
+</div>
+</div>
+<div class="flex gap-6 items-start">
+<div class="p-3 rounded-lg bg-secondary/10 border border-secondary/20">
+<span class="material-symbols-outlined text-secondary">smart_toy</span>
+</div>
+<div>
+<h4 class="text-headline-md font-headline-md text-xl text-white mb-1">Automation Experts</h4>
+<p class="text-on-surface-variant text-body-md">We build systems that work while you sleep, qualifying leads and closing sales automatically.</p>
+</div>
+</div>
+</div>
+</div>
+<div class="md:w-1/2 relative group">
+<div class="absolute -inset-4 bg-gradient-to-r from-primary/20 to-secondary/20 blur-2xl opacity-50 group-hover:opacity-80 transition-opacity"></div>
+<div class="relative rounded-2xl overflow-hidden border border-white/10 aspect-square md:aspect-auto md:h-[600px] flex items-center justify-center bg-surface-container">
+<img class="w-full h-full object-cover opacity-80 group-hover:scale-105 transition-transform duration-[2000ms]" data-alt="A highly detailed close-up of futuristic hardware circuitry, with glowing blue and pink light patterns pulsating through complex digital pathways. The style is ultra-modern, echoing the aesthetic of deep space technology and sophisticated computing. The overall atmosphere is dark and cinematic, emphasizing technical precision and advanced digital innovation." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDEXeSO_T6AM7AZZpQWKE4u1oqeZ71fcSCwSruMb2Fg1iGJhMT3ZpuAUiwHCkzLYWmHpKOOPt3vY1TKFMhxJbEe-L64UYlrFfBfttq9ql7WTJmV92iYVz9LDq6Otk0cmUS6NFjP4DN0beGLuWxIDvXy8svF8ljjNLT4MOhACccGb6wFZbpgnbOYt4VK-pOQ3wF3BR3XYmmJGIRw9jTv40YHvQpQBbFKeyyi_A1VTZko0rPODheka3opEALR0fdcoYzdyW60-JeYUtA"/>
+</div>
+</div>
+</div>
+</section>
+<!-- CTA Section -->
+<section class="py-40 relative">
+<div class="absolute inset-0 bg-gradient-to-b from-transparent via-primary/5 to-transparent"></div>
+<div class="px-margin-desktop max-w-container-max mx-auto relative z-10 text-center">
+<h2 class="text-display-lg-mobile md:text-headline-lg font-headline-lg text-white mb-6">Ready for Liftoff?</h2>
+<p class="text-body-lg font-body-lg text-on-surface-variant max-w-2xl mx-auto mb-12">
+                    Join the vanguard of digital innovation. Let’s engineer a campaign that defies gravity and dominates your market.
+                </p>
+<button class="gradient-btn px-12 py-5 rounded-full text-label-md font-label-md text-white text-xl tracking-widest transition-all">
+                    INITIATE YOUR LAUNCH
+                </button>
+</div>
+</section>
+</main>
+<!-- Footer -->
+<footer class="bg-background dark:bg-background border-t border-white/5 mt-20">
+<div class="flex flex-col md:flex-row justify-between items-center w-full px-margin-desktop py-12 max-w-container-max mx-auto gap-8">
+<div class="text-headline-md font-headline-md font-bold text-on-surface dark:text-on-surface">
+                Mashoori Productions
+            </div>
+<div class="flex flex-wrap justify-center gap-6">
+<a class="text-label-md font-label-md text-on-surface-variant/70 hover:text-primary transition-colors duration-200" href="#">Instagram</a>
+<a class="text-label-md font-label-md text-on-surface-variant/70 hover:text-primary transition-colors duration-200" href="#">LinkedIn</a>
+<a class="text-label-md font-label-md text-on-surface-variant/70 hover:text-primary transition-colors duration-200" href="#">Twitter</a>
+<a class="text-label-md font-label-md text-on-surface-variant/70 hover:text-primary transition-colors duration-200" href="#">Privacy Policy</a>
+<a class="text-label-md font-label-md text-on-surface-variant/70 hover:text-primary transition-colors duration-200" href="#">Terms of Service</a>
+</div>
+<div class="text-label-md font-label-md text-on-surface-variant/70">
+                © 2024 Mashoori Productions. Cosmic Excellence in Digital Marketing.
+            </div>
+</div>
+</footer>
+<script>
+        // Flashlight cursor effect
+        const flashlight = document.getElementById('flashlight');
+        window.addEventListener('mousemove', e => {
+            flashlight.style.setProperty('--x', e.clientX + 'px');
+            flashlight.style.setProperty('--y', e.clientY + 'px');
+        });
+
+        // Simple smooth scroll implementation
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                document.querySelector(this.getAttribute('href')).scrollIntoView({
+                    behavior: 'smooth'
+                });
+            });
+        });
+
+        // Intersection Observer for reveal animations
+        const observerOptions = {
+            threshold: 0.1
+        };
+
+        const revealObserver = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('reveal-text');
+                }
+            });
+        }, observerOptions);
+
+        document.querySelectorAll('section').forEach(section => {
+            section.querySelectorAll('h2, p, .glass-card').forEach(el => {
+                // Initial state for animation if not hero
+                if(!el.closest('.hero-section')) {
+                    el.style.opacity = '0';
+                    el.style.transform = 'translateY(30px)';
+                    el.style.transition = 'all 0.8s cubic-bezier(0.23, 1, 0.32, 1)';
+                    revealObserver.observe(el);
+                }
+            });
+        });
+
+        // Custom Reveal Logic since Tailwind classes are added
+        revealObserver.observe = (el) => {
+            const obs = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        el.style.opacity = '1';
+                        el.style.transform = 'translateY(0)';
+                    }
+                });
+            }, {threshold: 0.1});
+            obs.observe(el);
+        };
+    </script>
+</body></html>
