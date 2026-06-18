@@ -1,0 +1,13 @@
+git add .
+git commit -m "what you changed"
+git push
+
+
+
+
+
+
+
+git commit -m "updated hero section"
+git commit -m "added new portfolio item"
+git commit -m "fixed contact form"
