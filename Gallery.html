@@ -1,0 +1,480 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Gallery | Mashoori Productions</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700;900&amp;family=Inter:wght@400;500;600&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+          darkMode: "class",
+          theme: {
+            extend: {
+              "colors": {
+                "outline-dim": "#4c4546",
+                "outline-variant": "#444748",
+                "on-secondary-container": "#adb5f0",
+                "error": "#ffb4ab",
+                "on-secondary": "#252c5e",
+                "inverse-surface": "#e2e2e2",
+                "on-primary-fixed": "#1a1c1c",
+                "primary": "#e2e2e2",
+                "tertiary-fixed": "#ffd9dd",
+                "secondary": "#bcc3ff",
+                "primary-container": "#c6c6c6",
+                "surface-dim": "#121414",
+                "surface-tint": "#c6c6c6",
+                "surface-container-high": "#282a2a",
+                "secondary-fixed-dim": "#bcc3ff",
+                "inverse-primary": "#5d5e5f",
+                "on-primary-fixed-variant": "#464747",
+                "error-container": "#93000a",
+                "secondary-fixed": "#dfe0ff",
+                "on-error-container": "#ffdad6",
+                "on-primary-container": "#515253",
+                "surface-container-lowest": "#0d0f0f",
+                "surface-variant": "#333535",
+                "on-tertiary-fixed-variant": "#6d3640",
+                "on-primary": "#2f3131",
+                "surface-bright": "#383939",
+                "tertiary": "#ffd9dd",
+                "on-tertiary-fixed": "#380b16",
+                "on-tertiary-container": "#7b414b",
+                "nebula-blue": "#0033fe",
+                "surface-container-low": "#1a1c1c",
+                "on-background": "#e2e2e2",
+                "surface-lowest": "#0c0f0f",
+                "surface-container-highest": "#333535",
+                "nebula-pink": "#e7005c",
+                "inverse-on-surface": "#2f3131",
+                "outline": "#988e90",
+                "on-surface": "#e2e2e2",
+                "on-surface-variant": "#c4c7c7",
+                "tertiary-fixed-dim": "#ffb2bd",
+                "tertiary-container": "#ffb2bd",
+                "background": "#121414",
+                "surface-container": "#1e2020",
+                "on-tertiary": "#52202a",
+                "on-error": "#690005",
+                "on-secondary-fixed": "#0e1648",
+                "on-secondary-fixed-variant": "#3b4376",
+                "primary-fixed-dim": "#c6c6c6",
+                "primary-fixed": "#e3e2e2",
+                "surface": "#121414",
+                "cosmic-gradient": "linear-gradient(135deg, #001a97, #e7005c)",
+                "secondary-container": "#3e4578"
+              },
+              "spacing": {
+                "stack-xs": "4px", "base": "8px", "stack-md": "24px", "stack-lg": "48px",
+                "margin-mobile": "20px", "container-max": "1440px", "stack-sm": "12px",
+                "gutter": "24px", "stack-xl": "80px", "margin-desktop": "80px"
+              },
+              "fontFamily": {
+                "label-md": ["Inter"], "headline-md": ["Montserrat"], "display-lg": ["Montserrat"],
+                "headline-lg": ["Montserrat"], "body-lg": ["Inter"], "display-lg-mobile": ["Montserrat"],
+                "headline-xl": ["Montserrat"], "body-md": ["Inter"], "label-sm": ["Inter"]
+              },
+              "fontSize": {
+                "label-md": ["14px", {"lineHeight": "1.2", "letterSpacing": "0.05em", "fontWeight": "600"}],
+                "headline-md": ["24px", {"lineHeight": "1.4", "fontWeight": "600"}],
+                "display-lg": ["72px", {"lineHeight": "1.1", "letterSpacing": "-0.04em", "fontWeight": "900"}],
+                "headline-lg": ["32px", {"lineHeight": "1.3", "fontWeight": "700"}],
+                "body-lg": ["18px", {"lineHeight": "1.6", "fontWeight": "400"}],
+                "display-lg-mobile": ["48px", {"lineHeight": "1.1", "letterSpacing": "-0.02em", "fontWeight": "900"}],
+                "headline-xl": ["48px", {"lineHeight": "1.2", "letterSpacing": "-0.02em", "fontWeight": "700"}],
+                "body-md": ["16px", {"lineHeight": "1.6", "fontWeight": "400"}],
+                "label-sm": ["12px", {"lineHeight": "1.2", "letterSpacing": "0.02em", "fontWeight": "500"}]
+              }
+            }
+          }
+        }
+    </script>
+<style>
+        body {
+            background-color: #121414;
+            color: #e2e2e2;
+            cursor: none;
+            overflow-x: hidden;
+        }
+
+        .glass-panel {
+            background: rgba(255, 255, 255, 0.03);
+            backdrop-filter: blur(20px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            transition: transform 0.3s ease, border-color 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .glass-panel:hover {
+            transform: translateY(-5px);
+            border-color: rgba(255, 255, 255, 0.2);
+            box-shadow: 0 10px 30px -10px rgba(0, 51, 254, 0.3);
+        }
+
+        #flashlight {
+            position: fixed;
+            width: 600px;
+            height: 600px;
+            background: radial-gradient(circle, rgba(0, 51, 254, 0.1) 0%, rgba(231, 0, 92, 0.05) 30%, transparent 70%);
+            border-radius: 50%;
+            pointer-events: none;
+            z-index: 9999;
+            transform: translate(-50%, -50%);
+            mix-blend-mode: screen;
+        }
+
+        .nebula-glow {
+            position: absolute;
+            width: 400px;
+            height: 400px;
+            filter: blur(120px);
+            z-index: 0;
+            opacity: 0.4;
+            border-radius: 100%;
+        }
+
+        .scroll-reveal {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: all 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+        }
+
+        .scroll-reveal.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        .cosmic-text {
+            text-shadow: 0 0 20px rgba(231, 0, 92, 0.5);
+        }
+
+        .active-filter {
+            background: linear-gradient(135deg, #001a97, #e7005c);
+            color: white;
+            box-shadow: 0 4px 15px rgba(231, 0, 92, 0.4);
+        }
+    </style>
+</head>
+<body class="selection:bg-nebula-pink selection:text-white">
+<div id="flashlight"></div>
+<!-- TopNavBar -->
+<header class="fixed top-0 w-full z-50 bg-white/5 backdrop-blur-xl border-b border-white/10 shadow-2xl">
+<nav class="flex justify-between items-center h-20 px-margin-desktop max-w-container-max mx-auto">
+<div class="font-headline-md text-headline-md font-bold tracking-tighter text-on-surface">
+                Mashoori Productions
+            </div>
+<div class="hidden md:flex gap-stack-lg items-center">
+<a class="font-label-md text-label-md text-on-surface-variant hover:text-primary transition-colors duration-300" href="#">Home</a>
+<a class="font-label-md text-label-md text-on-surface-variant hover:text-primary transition-colors duration-300" href="#">Services</a>
+<a class="font-label-md text-label-md text-primary font-bold border-b-2 border-primary pb-1" href="#">Portfolio</a>
+<a class="font-label-md text-label-md text-on-surface-variant hover:text-primary transition-colors duration-300" href="#">Pricing</a>
+<a class="font-label-md text-label-md text-on-surface-variant hover:text-primary transition-colors duration-300" href="#">Contact</a>
+</div>
+<button class="bg-primary text-on-primary px-6 py-2.5 rounded-full font-label-md hover:scale-105 active:scale-95 transition-all">
+                Get Started
+            </button>
+</nav>
+</header>
+<!-- Hero Section -->
+<section class="relative min-h-[70vh] flex items-center justify-center pt-32 pb-stack-xl overflow-hidden">
+<div class="nebula-glow bg-nebula-blue top-1/4 -left-20"></div>
+<div class="nebula-glow bg-nebula-pink bottom-0 -right-20"></div>
+<!-- Background Animation -->
+
+<div class="relative z-10 max-w-4xl text-center px-margin-mobile">
+<span class="font-label-md text-label-md text-nebula-pink tracking-widest uppercase mb-4 block scroll-reveal">Design Excellence</span>
+<h1 class="font-display-lg text-display-lg-mobile md:text-display-lg cosmic-text text-on-surface mb-stack-md scroll-reveal">
+                Creative Showcase
+            </h1>
+<p class="font-body-lg text-body-lg text-on-surface-variant max-w-2xl mx-auto scroll-reveal">
+                A convergence of technical precision and artistic vision. Explore our curated collection of graphic masterpieces that define modern brand identities and visual storytelling.
+            </p>
+</div>
+</section>
+<!-- Gallery Controls -->
+<section class="sticky top-20 z-40 py-stack-md bg-background/80 backdrop-blur-md">
+<div class="max-w-container-max mx-auto px-margin-desktop overflow-x-auto">
+<div class="flex gap-stack-sm min-w-max pb-2">
+<button class="active-filter px-6 py-2 rounded-full font-label-md border border-white/10 transition-all">All Works</button>
+<button class="px-6 py-2 rounded-full font-label-md border border-white/10 hover:border-nebula-blue transition-all">Logos</button>
+<button class="px-6 py-2 rounded-full font-label-md border border-white/10 hover:border-nebula-blue transition-all">Posters</button>
+<button class="px-6 py-2 rounded-full font-label-md border border-white/10 hover:border-nebula-blue transition-all">Branding</button>
+<button class="px-6 py-2 rounded-full font-label-md border border-white/10 hover:border-nebula-blue transition-all">Editorial</button>
+<button class="px-6 py-2 rounded-full font-label-md border border-white/10 hover:border-nebula-blue transition-all">Experimental</button>
+</div>
+</div>
+</section>
+<!-- Gallery Grid -->
+<main class="max-w-container-max mx-auto px-margin-desktop py-stack-xl space-y-stack-xl">
+<!-- Logos Section -->
+<div class="scroll-reveal">
+<div class="flex items-center gap-stack-sm mb-stack-md">
+<span class="w-12 h-[2px] bg-nebula-blue"></span>
+<h2 class="font-headline-lg text-headline-lg text-on-surface">Minimalist Logos</h2>
+</div>
+<div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-gutter">
+<!-- Logo Cards -->
+<div class="glass-panel group aspect-square rounded-xl overflow-hidden relative p-8 flex items-center justify-center">
+<img class="w-2/3 h-2/3 object-contain transition-transform duration-500 group-hover:scale-110" data-alt="A futuristic, high-contrast minimalist logo for a tech company, featuring geometric interlocking shapes in monochrome white on an obsidian black background. The design is sleek, symmetrical, and embodies a cosmic-noir aesthetic with sharp edges and premium digital craftsmanship." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCkDJSSWQxu6E11ShO2WT3vA4Q5gQhxNEWdeJZbofmVXpTlg0FTOAAgiB9YSXqhvh0jPjWblxpG58l8rUHRrB0Q6OUsp235G2dpiffSgi9OttsPmfUqsUBZu1yqmBWx1JCKd8CpllDzxpPIypoXslvon3xRlZtA_t_7_Iex3tpIRm02DOftqctQ-6OpMqUweLa37MTxesrt9EfZzlSj9RUkwXhjPukHaxxWEpsxitXOYrvZX9RsZAHsNw"/>
+<div class="absolute bottom-4 left-4 opacity-0 group-hover:opacity-100 transition-opacity">
+<span class="font-label-sm text-label-sm bg-nebula-blue/20 text-nebula-blue px-2 py-1 rounded">Apex Dynamics</span>
+</div>
+</div>
+<div class="glass-panel group aspect-square rounded-xl overflow-hidden relative p-8 flex items-center justify-center">
+<img class="w-2/3 h-2/3 object-contain transition-transform duration-500 group-hover:scale-110" data-alt="A sophisticated abstract logo design for a luxury creative agency, utilizing negative space and fine lines. The visual language is high-end and modern, set against a deep cosmic-noir gradient background. The lighting highlights the matte textures of the white mark." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCWVb4Q6F5mWpmhGjUuHVcvxLcQ6UZxzv0Ruk2hy3eB81sga6E57ohw7Nqs5mb-iWhxTjfPOVEd1Q8J0DDIpQlaH3iFUAwoaWVJh9R7NMmWGLngKlzIwIUPiOeoHpn7u_LF6gkNRQAB7pjKtl5WC6p1TRDqk0IxIUx-y5eBTFvYCqtuViBUXeoxE8VSDeckkGZR5Hu3Gpef6xMautW5bSpVqlRgy2N8M7g_4BzxcC82QEM-E2Xn3CRf_g"/>
+<div class="absolute bottom-4 left-4 opacity-0 group-hover:opacity-100 transition-opacity">
+<span class="font-label-sm text-label-sm bg-nebula-pink/20 text-nebula-pink px-2 py-1 rounded">Luna Agency</span>
+</div>
+</div>
+<div class="glass-panel group aspect-square rounded-xl overflow-hidden relative p-8 flex items-center justify-center">
+<img class="w-2/3 h-2/3 object-contain transition-transform duration-500 group-hover:scale-110" data-alt="A bold, monogrammatic logo symbol representing innovation. The style is technical and architectural, featuring a heavy glyph rendered in bright primary silver against a textured obsidian surface. Professional studio lighting creates subtle rim highlights on the 2D mark." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDmuBvdyTqU2Js9a05ftUODG643v1RaJWdjpgj4W12nM0cKtjqHf99dbIWTP0UwA5GExXGhmvsCVj1MPQdJofWQrJTXIR-ePhc8Hm3d6-E1Ff6yLAPBq0G1QxW_KiAi_JelshTRzG7Z67VNUiiRVSwEyO-jegEeeRE4ybW7MtRK9_gunwzlutd_OcfuG_CPOYppUk0lpAeBIkHlltg6pDvpT8iijSgvlUDieI2mNpQY89iQMHEOvNrLRg"/>
+<div class="absolute bottom-4 left-4 opacity-0 group-hover:opacity-100 transition-opacity">
+<span class="font-label-sm text-label-sm bg-white/10 text-white px-2 py-1 rounded">Vortex Media</span>
+</div>
+</div>
+<div class="glass-panel group aspect-square rounded-xl overflow-hidden relative p-8 flex items-center justify-center">
+<img class="w-2/3 h-2/3 object-contain transition-transform duration-500 group-hover:scale-110" data-alt="An organic yet geometric logo for a bio-tech startup. It features fluid, liquid-like shapes arranged in a rigid grid structure, creating a sense of controlled chaos. The aesthetic is futuristic and clinical, with a deep blue and pink nebula glow accenting the edges." src="https://lh3.googleusercontent.com/aida-public/AB6AXuAY893eOzuIFJGwUNWLe0NkiRTtBCfbpnbwbbChw2wKm3BVCkKF_Xb1xZRtcsbpLJgkQ4fMMm_lgiOtcMqjoHmfC79OzBBi8FEpIYidtLu6oLcyoMYuR5FuDlanEGx3fVx7fE0NcVIMb8mUGbnF5aoveGckoJafySKjkIZnaug2W_9fIR392xE4FxCtsrMFjF6NJm2C_J-LSl3aUIpPzJ38cLjJNtn2bydTjuHjVZ0y0mToSQUXCzJvrA"/>
+<div class="absolute bottom-4 left-4 opacity-0 group-hover:opacity-100 transition-opacity">
+<span class="font-label-sm text-label-sm bg-nebula-blue/20 text-nebula-blue px-2 py-1 rounded">BioForge</span>
+</div>
+</div>
+<div class="glass-panel group aspect-square rounded-xl overflow-hidden relative p-8 flex items-center justify-center">
+<img class="w-2/3 h-2/3 object-contain transition-transform duration-500 group-hover:scale-110" data-alt="A minimalist tech logo consisting of three staggered vertical bars of varying heights, symbolizing growth and connectivity. The styling is extremely crisp, rendered in a high-contrast white-on-black theme with a subtle metallic sheen that catches a virtual pink light source." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBxwVSJe05lLZgO5UZyFno6mwjBHQc-TblG8aF_FkaxqZYhMW4wmYDzyj876pBG4pz5F1xa3JBSTDrj2CUYN5ADE4bAFFWz66t6Eql5pFs-FmJvim1Len0_VDpHHvlGKF-50p0sSgrNlDORNfUoGiNPvZr_TOfZLWylIpGgSxzgbuhMn7xoPRWunxkKVM0n87dOACEKZA2VNYzTraKwLPD9Gv5cl1lfd6JD9G7Zn3U2Y3H3VaqKFb1cgA"/>
+<div class="absolute bottom-4 left-4 opacity-0 group-hover:opacity-100 transition-opacity">
+<span class="font-label-sm text-label-sm bg-nebula-pink/20 text-nebula-pink px-2 py-1 rounded">Signal Core</span>
+</div>
+</div>
+</div>
+</div>
+<!-- Posters Section -->
+<div class="scroll-reveal">
+<div class="flex items-center gap-stack-sm mb-stack-md">
+<span class="w-12 h-[2px] bg-nebula-pink"></span>
+<h2 class="font-headline-lg text-headline-lg text-on-surface">Cinematic Posters</h2>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-5 gap-gutter">
+<!-- Poster Cards -->
+<div class="glass-panel group h-[400px] rounded-xl overflow-hidden relative">
+<img class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" data-alt="A cinematic graphic design poster featuring bold, oversized typography overlaid on a haunting cosmic landscape. The colors are dominated by deep obsidian and vibrant pink light leaks. The mood is mysterious and avant-garde, with high-contrast shadows and sharp edges." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDakei9D-3w8aog4kYGJjBNSyPmBLVcmpkPK14N9OXLVmu8GLFnP1ZFtzjW8gmk4nyUZvAtNL4eyMGTIJG5lCzeL37ld5BIX3LZ0jiUeILcMQ9YtnHZ7GkXTu08sWZ0-Zj0Ychcaii0GK2xcwC3Mxpv8OqggfMQ8riB56DEqmMrIoQAfAnJlWfYO74AOmvfl965SjZFztTE1x46Ll9gNAFXR1X7yHc1ss2EaQcbXXD_k93jzETcz_9zyg"/>
+<div class="absolute inset-0 bg-gradient-to-t from-black/80 to-transparent p-6 flex flex-col justify-end">
+<h3 class="font-headline-md text-white">Event Horizon</h3>
+<p class="font-label-sm text-on-surface-variant">Film Festival 2024</p>
+</div>
+</div>
+<div class="glass-panel group h-[400px] rounded-xl overflow-hidden relative">
+<img class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" data-alt="A high-end editorial poster design with a minimalist layout. A central abstract 3D shape is rendered with a glass-morphism effect, catching neon blue light. The typography is modern and spaced wide, giving it a premium, futuristic art gallery feel." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBEDEweC_8gm709zBtQ_CxWSXez9gD5MSKDokpaGfuqrbkaaV6xRMeRqj04xCeG5Ghz8yLpbmSgQLAeR0S_3VOxZb58CV0HEDJWgVhXIsPHwRRjldkG893CjpiXZE_Kfl7I6sxKLYwTDWri5DROBWeDpVqzQgHPiDytKp7KHGKZncCpoxqBltmmbU6_NwYyBIyQd3SEE_r0GEHhyj5OM4SEiVbTA-cx-cKS-Cg_EOiisp8e2TgOn8oQWA"/>
+<div class="absolute inset-0 bg-gradient-to-t from-black/80 to-transparent p-6 flex flex-col justify-end">
+<h3 class="font-headline-md text-white">Digital Pulse</h3>
+<p class="font-label-sm text-on-surface-variant">Music Concert</p>
+</div>
+</div>
+<div class="glass-panel group h-[400px] rounded-xl overflow-hidden relative">
+<img class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" data-alt="An experimental poster using distorted typography and grit textures to create a raw, technical aesthetic. The lighting is moody, with a single bright pink spotlight illuminating a central cryptic message. The design feels like a decoded transmission from deep space." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDkICA4RGUFrbgkUTMXFh68KGxkuFNx2jOrMYGj9Cu_3yyc_nxvkgeJ26wTPhsYZvjKn-r5BtrHxcFdFN4haT8b-i8cCFbJ7AVV9kMP9ENljc1svWCsBLJxMicr1spDjOCHVtphkPmNTjDHSKTs6Lmhwu9cjOIXQyzfg1nXQAcPb3NEpQG16437dsUtrng8GK0mwL0rUoiaumI1bs7VPbH0cn8l24HHHbx45ArPeT4VwqVgSz8DoPI-Pg"/>
+<div class="absolute inset-0 bg-gradient-to-t from-black/80 to-transparent p-6 flex flex-col justify-end">
+<h3 class="font-headline-md text-white">Zero Gravity</h3>
+<p class="font-label-sm text-on-surface-variant">Art Exhibition</p>
+</div>
+</div>
+<div class="glass-panel group h-[400px] rounded-xl overflow-hidden relative">
+<img class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" data-alt="A sleek corporate event poster with high-contrast geometric visuals. A grid of luminous squares stretches into the distance, creating deep perspective. The typography is bold and perfectly aligned, rendered in a crisp white that pops against the dark background." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDd20R3lnz8ry6YTypjZdRRuDJsRpQD3WxpOTjkI7FT7s-30h9U5epu3_stwGI_oR5-yCucT8kqHLy0zkE3bNViCzCMK9uzt_nFi_ZVykoDclsLDBMwgAesFdbZfZkdEw0wc3KqLKLQJWymrW5wJ2UUU6F0xVwWg3fWOtYSYQr4lETbuJHzEUH0Ue8CswL37qmaMcqJ0onAE5k4B9awjEjAZIxXS2v_b203nzEYCukc39RXvXc04mXTXQ"/>
+<div class="absolute inset-0 bg-gradient-to-t from-black/80 to-transparent p-6 flex flex-col justify-end">
+<h3 class="font-headline-md text-white">Core Values</h3>
+<p class="font-label-sm text-on-surface-variant">Corporate Summit</p>
+</div>
+</div>
+<div class="glass-panel group h-[400px] rounded-xl overflow-hidden relative">
+<img class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" data-alt="A vibrant, neon-themed poster for a creative workshop. The design features sweeping curves of blue and pink light that look like long-exposure light painting. The overall aesthetic is electric and high-energy, set against a matte black paper texture." src="https://lh3.googleusercontent.com/aida-public/AB6AXuAo4VxOeQ5TRI0PQTjQ3fyV5KAd9Fw2DBlTF_BGE5InV7NGSrdBBz_KM9K5QZJxwYTrfvWQGKOnYYnbpB7Ln_HhbiYa5G5Jee6R4I3ce4ChyHdTBBLzrzItxpPf1cOvZeAnmHkjQdLgaZiEVGLBhunVzb90hNAT4v5pLiSAakFVoXtgQ2FeGcC-gm-yd5cmVmD2CT00Sa-qnwsYakcViPwB8BxJeQOesURjIUWWdA4PL1ZsrBVyg9IDSQ"/>
+<div class="absolute inset-0 bg-gradient-to-t from-black/80 to-transparent p-6 flex flex-col justify-end">
+<h3 class="font-headline-md text-white">Light Shift</h3>
+<p class="font-label-sm text-on-surface-variant">Design Workshop</p>
+</div>
+</div>
+</div>
+</div>
+<!-- Brand Identity Section (Bento Grid Style) -->
+<div class="scroll-reveal">
+<div class="flex items-center gap-stack-sm mb-stack-md">
+<span class="w-12 h-[2px] bg-nebula-blue"></span>
+<h2 class="font-headline-lg text-headline-lg text-on-surface">Brand Identities</h2>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-4 gap-gutter h-auto md:h-[600px]">
+<div class="md:col-span-2 glass-panel rounded-xl overflow-hidden relative p-2">
+<div class="w-full h-full relative rounded-lg overflow-hidden group">
+<img class="w-full h-full object-cover transition-transform duration-1000 group-hover:scale-105" data-alt="A comprehensive brand identity showcase for a futuristic airline. The image shows a sleek stationary set, a mobile app interface, and a branded uniform, all featuring a cohesive logo and a palette of deep navy and neon pink. The scene is illuminated by dramatic studio lighting." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBxCuQj6nCcYCZT4m_aNwqTFRIoCZ3KZLWyFGPgmPW1v-prKhhHsQECMbVsZ8la4SFYTKJENtoGJ-akiHufBZRfIkfX0efwT8lqR9hC_LETAulGULF-U2HhJa9uQBtWpwGmNaMpTIHb3wPvQ4Ng3-MNpdS2ZRlo-HzJdcPZoePQhM_-xk72yn_ERGQ5WCJy3YcvubqwrMJG1lsnhmSfEXKpHt658iYSty8XHzezPRdtjYLVVI_6LqOLKQ"/>
+<div class="absolute inset-0 bg-black/40 p-10 flex flex-col justify-end">
+<h3 class="font-display-lg text-headline-xl text-white">Nebula Airways</h3>
+<p class="font-body-md text-white/80">Full Brand Identity Design</p>
+</div>
+</div>
+</div>
+<div class="glass-panel rounded-xl overflow-hidden p-2">
+<div class="w-full h-full relative rounded-lg overflow-hidden group">
+<img class="w-full h-full object-cover transition-transform duration-1000 group-hover:scale-105" data-alt="Brand identity elements for a luxury skincare line. The packaging is minimalist, using frosted glass and matte black finishes with metallic silver typography. The aesthetic is clean, medical, and premium, presented on a dark, reflective surface." src="https://lh3.googleusercontent.com/aida-public/AB6AXuByzcpu2c06tX1IMEOMu-k3CE-LwyPZunz0LIYW4mdmo6U7XGeBFUoqUN6Ao5Ech7oeanZm9uqz1ZGGejRx-O-dBe1cD6tPHDPPKiGjNmRlPbHjt-vtwbcahE4DTIiktkqxTtufnval24aJtwduy7cJzJm1ZQgzyVENVe0D1HiCe0EfvdQKXcpgCe0L1Mn7hhfIYsQy5wIgMKxB3IxO-OYsdMB-QVRDPTiM8LbeUh-u_VjsxramPOx5hQ"/>
+<div class="absolute inset-0 bg-black/40 p-6 flex flex-col justify-end">
+<h4 class="font-headline-md text-white">Essence Tech</h4>
+</div>
+</div>
+</div>
+<div class="glass-panel rounded-xl overflow-hidden p-2">
+<div class="w-full h-full relative rounded-lg overflow-hidden group">
+<img class="w-full h-full object-cover transition-transform duration-1000 group-hover:scale-105" data-alt="A brand manual spread for a digital bank, showing the grid systems, color palettes, and typography rules. The layout is technical and clean, following a strict 12-column grid. The brand colors are electric blue and obsidian." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDA50gKCXo8LsOCab_9vQQ82PxYbaTd3Wa2Of3ycmPNAljugVDYL3ckxDlA6KuuQY_Vf4IVGpR5mii85vzudOXfXiWG7DJCmvnLKOsPWz-ElCUOjQkja3-bIcfRz80RgG_l35h58awj0R4F52R9AudXPKaKxjwaIRjwf-2ze3-BDOiUieMEA-egnFhbnMJxghh7ii-vaXPvtMwhOwh6mJ33nlNGTxkhaRtSSyX_xl660VFqic8zZfjFuA"/>
+<div class="absolute inset-0 bg-black/40 p-6 flex flex-col justify-end">
+<h4 class="font-headline-md text-white">Vault Fin</h4>
+</div>
+</div>
+</div>
+<div class="glass-panel rounded-xl overflow-hidden p-2">
+<div class="w-full h-full relative rounded-lg overflow-hidden group">
+<img class="w-full h-full object-cover transition-transform duration-1000 group-hover:scale-105" data-alt="Outdoor advertising mockups for a music streaming service. Large digital billboards feature vibrant, motion-blurred graphics and bold, high-contrast text. The city environment is dark and moody, making the neon billboards glow intensely." src="https://lh3.googleusercontent.com/aida-public/AB6AXuA3Qfnta9nubWBAlDsmopZ9qOu8WZ49OiYAG6pv2h1TK1tm0UuuDwOGVHoGH5DmxrJHgwSOojRZHV8oPE4WQa7Bs7oQbYvjS50ef2Iu1eYHrbdcacQVcBEqWkdi3BTN86xRA3E8Qiu3FeCzWsxfoJc7FdN9euMrVrDBfxXO4yOnAT8uOHHFsIJTRCT2VKvLU-ykpjEVIzbqk6KPr1rcV-4jh4l1aKVC-ap66GUQ3jsKdJFYbdLMQxS4rA"/>
+<div class="absolute inset-0 bg-black/40 p-6 flex flex-col justify-end">
+<h4 class="font-headline-md text-white">Sonic Stream</h4>
+</div>
+</div>
+</div>
+<div class="glass-panel rounded-xl overflow-hidden p-2">
+<div class="w-full h-full relative rounded-lg overflow-hidden group">
+<img class="w-full h-full object-cover transition-transform duration-1000 group-hover:scale-105" data-alt="Apparel and merchandise branding for an esports team. The logo is aggressive and sharp, applied to high-tech jerseys and caps. The color scheme is a classic cosmic-noir blend of black, charcoal, and electric cyan." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCdphhd9aRZK_30S0giK-6v2SuFhKN2fWHWwwZAmDDzJ_nSxXXqWy9G1-tzr13fiyzxAO_uUZ1jyrdu4lnNpWlPv9QnbeSlIHjFxfrDtOBJXdSnFHHGbhr1L4ZrJln1QzNvBl6j6hLhAWWDMnhOOlGVgK5WhXtU97SY7AVT2Ho9BL1nkZlO4EBIFJvAFXVUXYkRu0oZgGXfh_lHaADQ3xtLeLT-N8t74u1c7K8cBX2a_ndXE52vYSjKMg"/>
+<div class="absolute inset-0 bg-black/40 p-6 flex flex-col justify-end">
+<h4 class="font-headline-md text-white">Nova Gaming</h4>
+</div>
+</div>
+</div>
+<div class="md:col-span-2 glass-panel rounded-xl overflow-hidden relative p-2">
+<div class="w-full h-full relative rounded-lg overflow-hidden group">
+<img class="w-full h-full object-cover transition-transform duration-1000 group-hover:scale-105" data-alt="A 3D spatial branding project for a modern office lobby. The logo is a massive, glowing neon installation on a dark slate wall. The lighting is cinematic, with floor-to-ceiling windows showing a futuristic cityscape at night." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBfsdt-C3CSt9xR0waTNu14h3CjGHmTRH0owSyeJug1Ym2HZFCviMdpwRSycwHlDoqHnpHm6RhD94VClDRT3_NszdE8s8vDg3sfBhMZkEGLQKFlwVYmd9DFgMz11viAJYQiPDSV5oC8CIRp7uzypNMqKeAGXN90dZ4oD7lhFIgz7JmzC-YYZ6a5W8TwJU7TMx2QTfwFSLbnkNZ3LPC00ayUcDkQpdxrqaLI5xKKzin0hJ34AgLdheN02Q"/>
+<div class="absolute inset-0 bg-black/40 p-10 flex flex-col justify-end">
+<h3 class="font-headline-xl text-white">Obsidian HQ</h3>
+<p class="font-body-md text-white/80">Spatial Branding &amp; Wayfinding</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+<!-- Brochures & Print -->
+<div class="scroll-reveal">
+<div class="flex items-center gap-stack-sm mb-stack-md">
+<span class="w-12 h-[2px] bg-nebula-blue"></span>
+<h2 class="font-headline-lg text-headline-lg text-on-surface">Premium Print</h2>
+</div>
+<div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-gutter">
+<!-- Brochure Cards -->
+<div class="glass-panel group aspect-[3/4] rounded-xl overflow-hidden relative">
+<img class="w-full h-full object-cover grayscale group-hover:grayscale-0 transition-all duration-500" data-alt="A premium tri-fold brochure for a luxury car brand. The cover features a spot UV finish on a matte black stock, creating a subtle contrast. The design is minimalist and high-end, showcasing the car's sleek lines in dramatic low-key lighting." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCmZuGLQHfTSOdojrtYxcdN-lOXk__CTSGngVEcweGDDjqtXa5ygF7l1NJ6OUume4mRmaH5BXsHUnlff2WSkn2IxnAB3MB-vOUrRJ2VpeSbssTm42yeDN5VtzYEWkCrPcSBKq8FXShTNXx1VP72VaNUsSVM8GQLxbLrTvBYKadIrulB2VQFEwdHtrKtE7i5L0waLgE6Wi59rPQjbtOE_YDpPpJfI1d8WUv0ocKK-xTN67U1PoY8EQjVnQ"/>
+</div>
+<div class="glass-panel group aspect-[3/4] rounded-xl overflow-hidden relative">
+<img class="w-full h-full object-cover grayscale group-hover:grayscale-0 transition-all duration-500" data-alt="An art gallery catalog with a clean, editorial layout. Large images are paired with minimalist typography and generous white space. The cover is a thick, textured charcoal paper with a silver foil-stamped title." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCXwdrKh0V98cG1e_QLXiTUMqTXOKI_8J3FokdkYr-bm0MQQ2HLZZFeSX1i6qvLVyGaRcT6bQhTHy8vbeOHGVDs1roaUzHMtToqghozChXO3ji6loOD5n7_IQUeuFDH1iFbPT_SygenGEUApa7VaNCVr2JGd9_hCuBRKDGypok9tbqyawniBAuIeqn6BXNuAvt49if-9vc2kC5-KW0HuI52mhysGq9K4qNv52as_EJcb9wbiPsF35yAWg"/>
+</div>
+<div class="glass-panel group aspect-[3/4] rounded-xl overflow-hidden relative">
+<img class="w-full h-full object-cover grayscale group-hover:grayscale-0 transition-all duration-500" data-alt="A futuristic tech manual with a complex grid layout. The pages feature technical illustrations and blueprints rendered in thin white lines on a dark background. The overall look is functional yet highly aesthetic and modern." src="https://lh3.googleusercontent.com/aida-public/AB6AXuD6mnwMykstt5ClJZZkLW6xKiM2PG-xpcdASLg5y7FiwiCdCDJQqftW5m4zTOejXqFfBOX4GjJA7vOz6icEYnTQ9mUVpAVIFHIw4mj8T43GivH8onZIjRBrkI54r_IWlWa9FSyMg-7UCi2nVmASzHZGzxMIYWfq-ffi27-NVE0M3Yy-30GsZfgGSt7hAxNOybsHQU3EbWugI0nNGiUevwwCrSTc43zvax7UxOfhVi1sLleKqhTqojZEiw"/>
+</div>
+<div class="glass-panel group aspect-[3/4] rounded-xl overflow-hidden relative">
+<img class="w-full h-full object-cover grayscale group-hover:grayscale-0 transition-all duration-500" data-alt="A series of promotional postcards for a design conference. Each card features a different abstract graphic inspired by space and light. The colors are vibrant and punchy, using neon pinks and blues against black." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDhUqPYZYNFXFAauynDrgmRkaPZ9LNbVQaN-MQf2q8B6d_ZN83Ykhj7VyJrQt4D8H6291hf5SmXa5iLhIUOfHOKOhVnMlELjacIOLsaflXaN__f-1KPGY7fsjXUcS1oqJbjRrBHMEfvQGYz5EgClt8D7HctXgwFWFfe5yEY0gVhnj4hO91Og2USq90uaaqlc0AhR6xiqJo2Q9nWP_cSpVu2Bbb63C_GlpcIEpbcWsgNEj6kZSMFsmcC7w"/>
+</div>
+<div class="glass-panel group aspect-[3/4] rounded-xl overflow-hidden relative">
+<img class="w-full h-full object-cover grayscale group-hover:grayscale-0 transition-all duration-500" data-alt="High-end packaging for a collector's edition vinyl record. The box set features intricate laser-cut patterns and hidden glowing elements. The design is immersive and experiential, utilizing premium materials." src="https://lh3.googleusercontent.com/aida-public/AB6AXuC6VAGk9kASK9H3lteiJK3WVPkYpIdFN3i0ygO_yA6NlQknJsvHWSjjZhqA_N-dzXEHPUnh2wOPZY_jjjYz5mAKv4lxytucCvTITGbqRP4mLYs39Eb-hsHZR2jtNsQPJwQblx0Cr6DGsKFTok76dEUTbdzmz1Ay3EwVKrRE3kuO67vqIOyZw7wuG1KjdDqBFccSB5ZfShJB7LabuTfBX1C-EmcsOTdQfad5nZ6nwMIQJDxibFG7D4z3ow"/>
+</div>
+</div>
+</div>
+<!-- Misc/Other Section -->
+<div class="scroll-reveal">
+<div class="flex items-center gap-stack-sm mb-stack-md">
+<span class="w-12 h-[2px] bg-nebula-pink"></span>
+<h2 class="font-headline-lg text-headline-lg text-on-surface">Experimental &amp; Misc</h2>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-2 gap-gutter">
+<div class="glass-panel rounded-xl p-stack-md flex flex-col md:flex-row gap-stack-md items-center">
+<div class="w-full md:w-1/3 aspect-square bg-surface-container rounded-lg overflow-hidden">
+<img class="w-full h-full object-cover" data-alt="Experimental glitch art exploration. The design is a digital distortion of a classical sculpture, mixed with neon scan lines and pixelated textures. The style is aggressive and modern, reflecting a cyberpunk cosmic aesthetic." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDqJN1FOYIWOEx-IHatcGIs-ae1HGRw_XBAKYbrIyUKXEMN8rK2iM3SUv5gHl8niAaK6sy6X7OdxmTvwPCPbRY95AsK7NF5QwD7rr77jvZs_RKXYGXyGn6pYymTqCXm6v7K0GcrPaeHT4sWswy3MqqB0ffaciXyO-vNJzO89PFO9jncctBntpGvNeIoDbt7LpBhCVcokdmeiRskMecPfu9lgLUkwbTi_YoaR0ZtJYunG0GI3dVG_GnkcA"/>
+</div>
+<div class="flex-1">
+<h4 class="font-headline-md text-on-surface mb-2">Digital Distortions</h4>
+<p class="font-body-md text-on-surface-variant mb-4">Exploring the limits of digital entropy and pixel-level aesthetics in a series of abstract glitch compositions.</p>
+<button class="text-nebula-blue font-label-md hover:underline flex items-center gap-2">
+                            View Study <span class="material-symbols-outlined">arrow_forward</span>
+</button>
+</div>
+</div>
+<div class="glass-panel rounded-xl p-stack-md flex flex-col md:flex-row gap-stack-md items-center">
+<div class="w-full md:w-1/3 aspect-square bg-surface-container rounded-lg overflow-hidden">
+<img class="w-full h-full object-cover" data-alt="3D typography exploration where letters are constructed from glowing liquid glass. The scene is set in a void with multiple colored light sources creating complex refractions and shadows. Technical and beautiful." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBDBkCAoM7fSm0Z2f97vzCD1CSzd2HdxXfPHQhJOq7v2svYunh5OOyLeY4kAV1tIWLc3oyltjlVfTvxa9mZA8to1kw4wP2j0Ug7LsFg1EHa0TmahXJFWj7WAOSbakWbCmuSHjuymp2jA0WslU7Mu9Pm7n9_kg82DZZ6cOIzoA_FOXBOfepPheLz21MkeSDtldPdQdPSokawnmT3YxNVABDC_wIAGhQ2txDmo_TpaZxHou5BqTOP4Fm8vQ"/>
+</div>
+<div class="flex-1">
+<h4 class="font-headline-md text-on-surface mb-2">Refractive Type</h4>
+<p class="font-body-md text-on-surface-variant mb-4">A study on light refraction and material physics applied to three-dimensional typographic structures.</p>
+<button class="text-nebula-pink font-label-md hover:underline flex items-center gap-2">
+                            View Study <span class="material-symbols-outlined">arrow_forward</span>
+</button>
+</div>
+</div>
+</div>
+</div>
+</main>
+<!-- Footer -->
+<footer class="w-full py-stack-xl border-t border-white/10 bg-surface-container-lowest mt-stack-xl">
+<div class="grid grid-cols-1 md:grid-cols-4 gap-gutter px-margin-desktop max-w-container-max mx-auto">
+<div class="col-span-1 md:col-span-1">
+<div class="font-headline-md text-headline-md font-bold text-on-surface mb-stack-md">Mashoori Productions</div>
+<p class="font-body-md text-body-md text-on-surface-variant">Defining the visual frontier with cosmic precision and artistic innovation.</p>
+</div>
+<div class="flex flex-col gap-4">
+<span class="font-label-md text-primary uppercase">Explore</span>
+<a class="font-body-md text-on-surface-variant hover:text-nebula-blue transition-colors" href="#">Home</a>
+<a class="font-body-md text-on-surface-variant hover:text-nebula-blue transition-colors" href="#">Services</a>
+<a class="font-body-md text-on-surface-variant hover:text-nebula-blue transition-colors" href="#">Portfolio</a>
+</div>
+<div class="flex flex-col gap-4">
+<span class="font-label-md text-primary uppercase">Legal</span>
+<a class="font-body-md text-on-surface-variant hover:text-nebula-blue transition-colors" href="#">Privacy Policy</a>
+<a class="font-body-md text-on-surface-variant hover:text-nebula-blue transition-colors" href="#">Terms of Service</a>
+</div>
+<div class="flex flex-col gap-4">
+<span class="font-label-md text-primary uppercase">Contact</span>
+<p class="font-body-md text-on-surface-variant">hello@mashoori.com</p>
+<div class="flex gap-4 mt-2">
+<span class="material-symbols-outlined text-on-surface-variant cursor-pointer hover:text-nebula-pink">language</span>
+<span class="material-symbols-outlined text-on-surface-variant cursor-pointer hover:text-nebula-pink">hub</span>
+<span class="material-symbols-outlined text-on-surface-variant cursor-pointer hover:text-nebula-pink">animation</span>
+</div>
+</div>
+</div>
+<div class="max-w-container-max mx-auto px-margin-desktop mt-stack-xl pt-stack-md border-t border-white/5 text-center font-body-md text-on-surface-variant">
+            © 2024 Mashoori Productions. All rights reserved.
+        </div>
+</footer>
+<script>
+        // Flashlight Cursor Effect
+        const flashlight = document.getElementById('flashlight');
+        document.addEventListener('mousemove', (e) => {
+            flashlight.style.left = `${e.clientX}px`;
+            flashlight.style.top = `${e.clientY}px`;
+        });
+
+        // Scroll Reveal Animation
+        const revealElements = document.querySelectorAll('.scroll-reveal');
+        const revealOnScroll = () => {
+            revealElements.forEach(el => {
+                const rect = el.getBoundingClientRect();
+                const isVisible = (rect.top <= window.innerHeight * 0.85);
+                if (isVisible) {
+                    el.classList.add('visible');
+                }
+            });
+        };
+
+        window.addEventListener('scroll', revealOnScroll);
+        window.addEventListener('load', revealOnScroll);
+
+        // Hover Effect Enhancement for Glass Panels
+        document.querySelectorAll('.glass-panel').forEach(panel => {
+            panel.addEventListener('mousemove', (e) => {
+                const rect = panel.getBoundingClientRect();
+                const x = e.clientX - rect.left;
+                const y = e.clientY - rect.top;
+                panel.style.setProperty('--mouse-x', `${x}px`);
+                panel.style.setProperty('--mouse-y', `${y}px`);
+            });
+        });
+    </script>
+</body></html>
