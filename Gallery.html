@@ -4,6 +4,7 @@
 <meta charset="utf-8"/>
 <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
 <title>Gallery | Mashoori Productions</title>
+<link rel="icon" type="image/png" href="favicon.png">
 <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
 <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700;900&amp;family=Inter:wght@400;500;600&amp;display=swap" rel="stylesheet"/>
 <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
@@ -162,19 +163,19 @@
 <!-- TopNavBar -->
 <header class="fixed top-0 w-full z-50 bg-white/5 backdrop-blur-xl border-b border-white/10 shadow-2xl">
 <nav class="flex justify-between items-center h-20 px-margin-desktop max-w-container-max mx-auto">
-<div class="font-headline-md text-headline-md font-bold tracking-tighter text-on-surface">
+<a href="index.html"><div class="font-headline-md text-headline-md font-bold tracking-tighter text-on-surface">
                 Mashoori Productions
-            </div>
+            </div></a>
 <div class="hidden md:flex gap-stack-lg items-center">
-<a class="font-label-md text-label-md text-on-surface-variant hover:text-primary transition-colors duration-300" href="#">Home</a>
-<a class="font-label-md text-label-md text-on-surface-variant hover:text-primary transition-colors duration-300" href="#">Services</a>
-<a class="font-label-md text-label-md text-primary font-bold border-b-2 border-primary pb-1" href="#">Portfolio</a>
-<a class="font-label-md text-label-md text-on-surface-variant hover:text-primary transition-colors duration-300" href="#">Pricing</a>
-<a class="font-label-md text-label-md text-on-surface-variant hover:text-primary transition-colors duration-300" href="#">Contact</a>
+<a class="font-label-md text-label-md text-on-surface-variant hover:text-primary transition-colors duration-300" href="index.html">Home</a>
+<a class="font-label-md text-label-md text-on-surface-variant hover:text-primary transition-colors duration-300" href="services.html">Services</a>
+<a class="font-label-md text-label-md text-primary font-bold border-b-2 border-primary pb-1" href="Main Portflio Page.html">Portfolio</a>
+<a class="font-label-md text-label-md text-on-surface-variant hover:text-primary transition-colors duration-300" href="pricing.html">Pricing</a>
+<a class="font-label-md text-label-md text-on-surface-variant hover:text-primary transition-colors duration-300" href="contact.html">Contact</a>
 </div>
-<button class="bg-primary text-on-primary px-6 py-2.5 rounded-full font-label-md hover:scale-105 active:scale-95 transition-all">
+<a href="contact.html"><button class="bg-primary text-on-primary px-6 py-2.5 rounded-full font-label-md hover:scale-105 active:scale-95 transition-all">
                 Get Started
-            </button>
+            </button></a>
 </nav>
 </header>
 <!-- Hero Section -->
@@ -194,22 +195,22 @@
 </div>
 </section>
 <!-- Gallery Controls -->
-<section class="sticky top-20 z-40 py-stack-md bg-background/80 backdrop-blur-md">
+<section class="top-20 z-40 py-stack-md bg-background/80 backdrop-blur-md">
 <div class="max-w-container-max mx-auto px-margin-desktop overflow-x-auto">
 <div class="flex gap-stack-sm min-w-max pb-2">
 <button class="active-filter px-6 py-2 rounded-full font-label-md border border-white/10 transition-all">All Works</button>
-<button class="px-6 py-2 rounded-full font-label-md border border-white/10 hover:border-nebula-blue transition-all">Logos</button>
-<button class="px-6 py-2 rounded-full font-label-md border border-white/10 hover:border-nebula-blue transition-all">Posters</button>
-<button class="px-6 py-2 rounded-full font-label-md border border-white/10 hover:border-nebula-blue transition-all">Branding</button>
-<button class="px-6 py-2 rounded-full font-label-md border border-white/10 hover:border-nebula-blue transition-all">Editorial</button>
-<button class="px-6 py-2 rounded-full font-label-md border border-white/10 hover:border-nebula-blue transition-all">Experimental</button>
+<a href="#logos" class="px-6 py-2 rounded-full font-label-md border border-white/10 hover:border-nebula-blue transition-all">Logos</a>
+<a href="#posters" class="px-6 py-2 rounded-full font-label-md border border-white/10 hover:border-nebula-blue transition-all">Posters</a>
+<a href="#branding" class="px-6 py-2 rounded-full font-label-md border border-white/10 hover:border-nebula-blue transition-all">Branding</a>
+<a href="#edit" class="px-6 py-2 rounded-full font-label-md border border-white/10 hover:border-nebula-blue transition-all">Editorial</a>
+<a href="#exp" class="px-6 py-2 rounded-full font-label-md border border-white/10 hover:border-nebula-blue transition-all">Experimental</a>
 </div>
 </div>
 </section>
 <!-- Gallery Grid -->
 <main class="max-w-container-max mx-auto px-margin-desktop py-stack-xl space-y-stack-xl">
 <!-- Logos Section -->
-<div class="scroll-reveal">
+<div class="scroll-reveal scroll-mt-28" id="logos">
 <div class="flex items-center gap-stack-sm mb-stack-md">
 <span class="w-12 h-[2px] bg-nebula-blue"></span>
 <h2 class="font-headline-lg text-headline-lg text-on-surface">Minimalist Logos</h2>
@@ -217,9 +218,9 @@
 <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-gutter">
 <!-- Logo Cards -->
 <div class="glass-panel group aspect-square rounded-xl overflow-hidden relative p-8 flex items-center justify-center">
-<img class="w-2/3 h-2/3 object-contain transition-transform duration-500 group-hover:scale-110" data-alt="A futuristic, high-contrast minimalist logo for a tech company, featuring geometric interlocking shapes in monochrome white on an obsidian black background. The design is sleek, symmetrical, and embodies a cosmic-noir aesthetic with sharp edges and premium digital craftsmanship." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCkDJSSWQxu6E11ShO2WT3vA4Q5gQhxNEWdeJZbofmVXpTlg0FTOAAgiB9YSXqhvh0jPjWblxpG58l8rUHRrB0Q6OUsp235G2dpiffSgi9OttsPmfUqsUBZu1yqmBWx1JCKd8CpllDzxpPIypoXslvon3xRlZtA_t_7_Iex3tpIRm02DOftqctQ-6OpMqUweLa37MTxesrt9EfZzlSj9RUkwXhjPukHaxxWEpsxitXOYrvZX9RsZAHsNw"/>
+<img class="w-2/3 h-2/3 object-contain transition-transform duration-500 group-hover:scale-110" data-alt="A futuristic, high-contrast minimalist logo for a tech company, featuring geometric interlocking shapes in monochrome white on an obsidian black background. The design is sleek, symmetrical, and embodies a cosmic-noir aesthetic with sharp edges and premium digital craftsmanship." src="Top Fragrances.jpg.jpeg"/>
 <div class="absolute bottom-4 left-4 opacity-0 group-hover:opacity-100 transition-opacity">
-<span class="font-label-sm text-label-sm bg-nebula-blue/20 text-nebula-blue px-2 py-1 rounded">Apex Dynamics</span>
+<span class="font-label-sm text-label-sm bg-nebula-blue/20 text-nebula-blue px-2 py-1 rounded">Top Fragrances</span>
 </div>
 </div>
 <div class="glass-panel group aspect-square rounded-xl overflow-hidden relative p-8 flex items-center justify-center">
@@ -249,7 +250,7 @@
 </div>
 </div>
 <!-- Posters Section -->
-<div class="scroll-reveal">
+<div class="scroll-reveal scroll-mt-28" id="posters">
 <div class="flex items-center gap-stack-sm mb-stack-md">
 <span class="w-12 h-[2px] bg-nebula-pink"></span>
 <h2 class="font-headline-lg text-headline-lg text-on-surface">Cinematic Posters</h2>
@@ -294,7 +295,7 @@
 </div>
 </div>
 <!-- Brand Identity Section (Bento Grid Style) -->
-<div class="scroll-reveal">
+<div class="scroll-reveal scroll-mt-28" id="branding">
 <div class="flex items-center gap-stack-sm mb-stack-md">
 <span class="w-12 h-[2px] bg-nebula-blue"></span>
 <h2 class="font-headline-lg text-headline-lg text-on-surface">Brand Identities</h2>
@@ -353,7 +354,7 @@
 </div>
 </div>
 <!-- Brochures & Print -->
-<div class="scroll-reveal">
+<div class="scroll-reveal scroll-mt-28" id="edit">
 <div class="flex items-center gap-stack-sm mb-stack-md">
 <span class="w-12 h-[2px] bg-nebula-blue"></span>
 <h2 class="font-headline-lg text-headline-lg text-on-surface">Premium Print</h2>
@@ -378,7 +379,7 @@
 </div>
 </div>
 <!-- Misc/Other Section -->
-<div class="scroll-reveal">
+<div class="scroll-reveal scroll-mt-28" id="exp">
 <div class="flex items-center gap-stack-sm mb-stack-md">
 <span class="w-12 h-[2px] bg-nebula-pink"></span>
 <h2 class="font-headline-lg text-headline-lg text-on-surface">Experimental &amp; Misc</h2>
@@ -420,9 +421,9 @@
 </div>
 <div class="flex flex-col gap-4">
 <span class="font-label-md text-primary uppercase">Explore</span>
-<a class="font-body-md text-on-surface-variant hover:text-nebula-blue transition-colors" href="#">Home</a>
-<a class="font-body-md text-on-surface-variant hover:text-nebula-blue transition-colors" href="#">Services</a>
-<a class="font-body-md text-on-surface-variant hover:text-nebula-blue transition-colors" href="#">Portfolio</a>
+<a class="font-body-md text-on-surface-variant hover:text-nebula-blue transition-colors" href="index.html">Home</a>
+<a class="font-body-md text-on-surface-variant hover:text-nebula-blue transition-colors" href="services.html">Services</a>
+<a class="font-body-md text-on-surface-variant hover:text-nebula-blue transition-colors" href="Main Portflio Page.html">Portfolio</a>
 </div>
 <div class="flex flex-col gap-4">
 <span class="font-label-md text-primary uppercase">Legal</span>
@@ -431,7 +432,7 @@
 </div>
 <div class="flex flex-col gap-4">
 <span class="font-label-md text-primary uppercase">Contact</span>
-<p class="font-body-md text-on-surface-variant">hello@mashoori.com</p>
+<p class="font-body-md text-on-surface-variant">mashooriproductions@gmail.com</p>
 <div class="flex gap-4 mt-2">
 <span class="material-symbols-outlined text-on-surface-variant cursor-pointer hover:text-nebula-pink">language</span>
 <span class="material-symbols-outlined text-on-surface-variant cursor-pointer hover:text-nebula-pink">hub</span>
