@@ -247,7 +247,7 @@ window.addEventListener('scroll',()=>{
   if(window.scrollY>50){nb.classList.add('bg-black/80');nb.classList.remove('bg-black/30');}
   else{nb.classList.add('bg-black/30');nb.classList.remove('bg-black/80');}
 });
-if(typeof Lenis!=='undefined'){const lenis=new Lenis({duration:1.4,easing:t=>Math.min(1,1.001-Math.pow(2,-10*t))});function raf(time){lenis.raf(time);requestAnimationFrame(raf);}requestAnimationFrame(raf);}
+// if(typeof Lenis!=='undefined'){const lenis=new Lenis({duration:1.4,easing:t=>Math.min(1,1.001-Math.pow(2,-10*t))});function raf(time){lenis.raf(time);requestAnimationFrame(raf);}requestAnimationFrame(raf);}
 </script>
 </body>
 </html>
