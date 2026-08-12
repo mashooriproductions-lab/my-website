@@ -1,10 +1,4 @@
-<<<<<<< HEAD
 User-agent: *
 Allow: /
 
-=======
-User-agent: *
-Allow: /
-
->>>>>>> aa77bff29c482ec292cc42e8f0d775e3baddcc23
 Sitemap: https://www.mashooriproductions.com/sitemap.xml
